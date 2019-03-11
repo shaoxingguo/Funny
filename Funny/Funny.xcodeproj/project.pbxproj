@@ -9,10 +9,6 @@
 /* Begin PBXBuildFile section */
 		6A1D5AC25020DC3B30150EBE /* Pods_Funny.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6169A5BE55DA4D17666F389D /* Pods_Funny.framework */; };
 		8C4A2E9E223687F800108DE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4A2E9D223687F800108DE1 /* AppDelegate.swift */; };
-		8C4A2EA0223687F800108DE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4A2E9F223687F800108DE1 /* ViewController.swift */; };
-		8C4A2EA3223687F800108DE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C4A2EA1223687F800108DE1 /* Main.storyboard */; };
-		8C4A2EA5223687F900108DE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C4A2EA4223687F900108DE1 /* Assets.xcassets */; };
-		8C4A2EA8223687F900108DE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C4A2EA6223687F900108DE1 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +16,6 @@
 		6169A5BE55DA4D17666F389D /* Pods_Funny.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Funny.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C4A2E9A223687F800108DE1 /* Funny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Funny.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C4A2E9D223687F800108DE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8C4A2E9F223687F800108DE1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8C4A2EA2223687F800108DE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8C4A2EA4223687F900108DE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8C4A2EA7223687F900108DE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C4A2EA9223687F900108DE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF8B5809719FF8054333F056 /* Pods-Funny.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Funny.debug.xcconfig"; path = "Target Support Files/Pods-Funny/Pods-Funny.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,12 +53,8 @@
 		8C4A2E9C223687F800108DE1 /* Funny */ = {
 			isa = PBXGroup;
 			children = (
+				8CB5F55822368A76009D7A10 /* Supporting Files */,
 				8C4A2E9D223687F800108DE1 /* AppDelegate.swift */,
-				8C4A2E9F223687F800108DE1 /* ViewController.swift */,
-				8C4A2EA1223687F800108DE1 /* Main.storyboard */,
-				8C4A2EA4223687F900108DE1 /* Assets.xcassets */,
-				8C4A2EA6223687F900108DE1 /* LaunchScreen.storyboard */,
-				8C4A2EA9223687F900108DE1 /* Info.plist */,
 			);
 			path = Funny;
 			sourceTree = "<group>";
@@ -77,8 +65,15 @@
 				BF8B5809719FF8054333F056 /* Pods-Funny.debug.xcconfig */,
 				1E3FC2A792F29E37B5F15D78 /* Pods-Funny.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		8CB5F55822368A76009D7A10 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8C4A2EA9223687F900108DE1 /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		EBD9C81FA56CA903739E59F1 /* Frameworks */ = {
@@ -149,9 +144,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C4A2EA8223687F900108DE1 /* LaunchScreen.storyboard in Resources */,
-				8C4A2EA5223687F900108DE1 /* Assets.xcassets in Resources */,
-				8C4A2EA3223687F800108DE1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,31 +211,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C4A2EA0223687F800108DE1 /* ViewController.swift in Sources */,
 				8C4A2E9E223687F800108DE1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		8C4A2EA1223687F800108DE1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8C4A2EA2223687F800108DE1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		8C4A2EA6223687F900108DE1 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8C4A2EA7223687F900108DE1 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		8C4A2EAA223687F900108DE1 /* Debug */ = {
@@ -367,8 +339,10 @@
 			baseConfigurationReference = BF8B5809719FF8054333F056 /* Pods-Funny.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Funny/Info.plist;
+				INFOPLIST_FILE = "Funny/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -376,7 +350,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.itcast.heima.Funny;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -385,8 +359,10 @@
 			baseConfigurationReference = 1E3FC2A792F29E37B5F15D78 /* Pods-Funny.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Funny/Info.plist;
+				INFOPLIST_FILE = "Funny/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -394,7 +370,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.itcast.heima.Funny;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
