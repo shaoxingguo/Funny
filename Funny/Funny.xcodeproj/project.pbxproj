@@ -8,15 +8,39 @@
 
 /* Begin PBXBuildFile section */
 		6A1D5AC25020DC3B30150EBE /* Pods_Funny.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6169A5BE55DA4D17666F389D /* Pods_Funny.framework */; };
+		8C3FE08222368DF300CAF4B0 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE07622368DF300CAF4B0 /* UIColor+Extension.swift */; };
+		8C3FE08322368DF300CAF4B0 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE07722368DF300CAF4B0 /* UILabel+Extension.swift */; };
+		8C3FE08422368DF300CAF4B0 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE07822368DF300CAF4B0 /* UIButton+Extension.swift */; };
+		8C3FE08522368DF300CAF4B0 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE07922368DF300CAF4B0 /* UIView+Extension.swift */; };
+		8C3FE08622368DF300CAF4B0 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE07A22368DF300CAF4B0 /* UIImage+Extension.swift */; };
+		8C3FE08722368DF300CAF4B0 /* XGCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE07C22368DF300CAF4B0 /* XGCommon.swift */; };
+		8C3FE08822368DF300CAF4B0 /* XGMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE08122368DF300CAF4B0 /* XGMainViewController.swift */; };
+		8C3FE08A223691BB00CAF4B0 /* XGNewTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE089223691BB00CAF4B0 /* XGNewTopicViewController.swift */; };
+		8C3FE08C223691DB00CAF4B0 /* XGEssenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE08B223691DB00CAF4B0 /* XGEssenceViewController.swift */; };
+		8C3FE08E223691EA00CAF4B0 /* XGFocusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE08D223691EA00CAF4B0 /* XGFocusViewController.swift */; };
+		8C3FE090223691FE00CAF4B0 /* XGMineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE08F223691FE00CAF4B0 /* XGMineTableViewController.swift */; };
 		8C4A2E9E223687F800108DE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4A2E9D223687F800108DE1 /* AppDelegate.swift */; };
+		8CB5F57222368C2C009D7A10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CB5F57122368C2C009D7A10 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1E3FC2A792F29E37B5F15D78 /* Pods-Funny.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Funny.release.xcconfig"; path = "Target Support Files/Pods-Funny/Pods-Funny.release.xcconfig"; sourceTree = "<group>"; };
 		6169A5BE55DA4D17666F389D /* Pods_Funny.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Funny.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C3FE07622368DF300CAF4B0 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		8C3FE07722368DF300CAF4B0 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		8C3FE07822368DF300CAF4B0 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		8C3FE07922368DF300CAF4B0 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		8C3FE07A22368DF300CAF4B0 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		8C3FE07C22368DF300CAF4B0 /* XGCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XGCommon.swift; sourceTree = "<group>"; };
+		8C3FE08122368DF300CAF4B0 /* XGMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XGMainViewController.swift; sourceTree = "<group>"; };
+		8C3FE089223691BB00CAF4B0 /* XGNewTopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGNewTopicViewController.swift; sourceTree = "<group>"; };
+		8C3FE08B223691DB00CAF4B0 /* XGEssenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGEssenceViewController.swift; sourceTree = "<group>"; };
+		8C3FE08D223691EA00CAF4B0 /* XGFocusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGFocusViewController.swift; sourceTree = "<group>"; };
+		8C3FE08F223691FE00CAF4B0 /* XGMineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGMineTableViewController.swift; sourceTree = "<group>"; };
 		8C4A2E9A223687F800108DE1 /* Funny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Funny.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C4A2E9D223687F800108DE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C4A2EA9223687F900108DE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CB5F57122368C2C009D7A10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF8B5809719FF8054333F056 /* Pods-Funny.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Funny.debug.xcconfig"; path = "Target Support Files/Pods-Funny/Pods-Funny.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -32,6 +56,240 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C3FE05F22368DF300CAF4B0 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8C3FE06022368DF300CAF4B0 /* Essence(精华) */,
+				8C3FE06422368DF300CAF4B0 /* Compose(发布) */,
+				8C3FE06822368DF300CAF4B0 /* Focus(关注) */,
+				8C3FE06C22368DF300CAF4B0 /* Mine(我的) */,
+				8C3FE07022368DF300CAF4B0 /* New(新帖) */,
+				8C3FE07422368DF300CAF4B0 /* Other(其他) */,
+				8C3FE07D22368DF300CAF4B0 /* Main(主要) */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		8C3FE06022368DF300CAF4B0 /* Essence(精华) */ = {
+			isa = PBXGroup;
+			children = (
+				8C3FE06122368DF300CAF4B0 /* ViewModel */,
+				8C3FE06222368DF300CAF4B0 /* Model */,
+				8C3FE06322368DF300CAF4B0 /* View */,
+			);
+			path = "Essence(精华)";
+			sourceTree = "<group>";
+		};
+		8C3FE06122368DF300CAF4B0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8C3FE06222368DF300CAF4B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8C3FE06322368DF300CAF4B0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8C3FE08B223691DB00CAF4B0 /* XGEssenceViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8C3FE06422368DF300CAF4B0 /* Compose(发布) */ = {
+			isa = PBXGroup;
+			children = (
+				8C3FE06522368DF300CAF4B0 /* ViewModel */,
+				8C3FE06622368DF300CAF4B0 /* Model */,
+				8C3FE06722368DF300CAF4B0 /* View */,
+			);
+			path = "Compose(发布)";
+			sourceTree = "<group>";
+		};
+		8C3FE06522368DF300CAF4B0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8C3FE06622368DF300CAF4B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8C3FE06722368DF300CAF4B0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8C3FE06822368DF300CAF4B0 /* Focus(关注) */ = {
+			isa = PBXGroup;
+			children = (
+				8C3FE06922368DF300CAF4B0 /* ViewModel */,
+				8C3FE06A22368DF300CAF4B0 /* Model */,
+				8C3FE06B22368DF300CAF4B0 /* View */,
+			);
+			path = "Focus(关注)";
+			sourceTree = "<group>";
+		};
+		8C3FE06922368DF300CAF4B0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8C3FE06A22368DF300CAF4B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8C3FE06B22368DF300CAF4B0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8C3FE08D223691EA00CAF4B0 /* XGFocusViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8C3FE06C22368DF300CAF4B0 /* Mine(我的) */ = {
+			isa = PBXGroup;
+			children = (
+				8C3FE06D22368DF300CAF4B0 /* ViewModel */,
+				8C3FE06E22368DF300CAF4B0 /* Model */,
+				8C3FE06F22368DF300CAF4B0 /* View */,
+			);
+			path = "Mine(我的)";
+			sourceTree = "<group>";
+		};
+		8C3FE06D22368DF300CAF4B0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8C3FE06E22368DF300CAF4B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8C3FE06F22368DF300CAF4B0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8C3FE08F223691FE00CAF4B0 /* XGMineTableViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8C3FE07022368DF300CAF4B0 /* New(新帖) */ = {
+			isa = PBXGroup;
+			children = (
+				8C3FE07122368DF300CAF4B0 /* ViewModel */,
+				8C3FE07222368DF300CAF4B0 /* Model */,
+				8C3FE07322368DF300CAF4B0 /* View */,
+			);
+			path = "New(新帖)";
+			sourceTree = "<group>";
+		};
+		8C3FE07122368DF300CAF4B0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8C3FE07222368DF300CAF4B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8C3FE07322368DF300CAF4B0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8C3FE089223691BB00CAF4B0 /* XGNewTopicViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8C3FE07422368DF300CAF4B0 /* Other(其他) */ = {
+			isa = PBXGroup;
+			children = (
+				8C3FE07522368DF300CAF4B0 /* Category */,
+				8C3FE07B22368DF300CAF4B0 /* Common */,
+			);
+			path = "Other(其他)";
+			sourceTree = "<group>";
+		};
+		8C3FE07522368DF300CAF4B0 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				8C3FE07622368DF300CAF4B0 /* UIColor+Extension.swift */,
+				8C3FE07722368DF300CAF4B0 /* UILabel+Extension.swift */,
+				8C3FE07822368DF300CAF4B0 /* UIButton+Extension.swift */,
+				8C3FE07922368DF300CAF4B0 /* UIView+Extension.swift */,
+				8C3FE07A22368DF300CAF4B0 /* UIImage+Extension.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		8C3FE07B22368DF300CAF4B0 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				8C3FE07C22368DF300CAF4B0 /* XGCommon.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		8C3FE07D22368DF300CAF4B0 /* Main(主要) */ = {
+			isa = PBXGroup;
+			children = (
+				8C3FE07E22368DF300CAF4B0 /* ViewModel */,
+				8C3FE07F22368DF300CAF4B0 /* Model */,
+				8C3FE08022368DF300CAF4B0 /* View */,
+			);
+			path = "Main(主要)";
+			sourceTree = "<group>";
+		};
+		8C3FE07E22368DF300CAF4B0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8C3FE07F22368DF300CAF4B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8C3FE08022368DF300CAF4B0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8C3FE08122368DF300CAF4B0 /* XGMainViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8C4A2E91223687F800108DE1 = {
 			isa = PBXGroup;
 			children = (
@@ -53,6 +311,7 @@
 		8C4A2E9C223687F800108DE1 /* Funny */ = {
 			isa = PBXGroup;
 			children = (
+				8C3FE05F22368DF300CAF4B0 /* Classes */,
 				8CB5F55822368A76009D7A10 /* Supporting Files */,
 				8C4A2E9D223687F800108DE1 /* AppDelegate.swift */,
 			);
@@ -71,6 +330,7 @@
 		8CB5F55822368A76009D7A10 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8CB5F57122368C2C009D7A10 /* Assets.xcassets */,
 				8C4A2EA9223687F900108DE1 /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -144,6 +404,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CB5F57222368C2C009D7A10 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,7 +472,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C3FE08822368DF300CAF4B0 /* XGMainViewController.swift in Sources */,
 				8C4A2E9E223687F800108DE1 /* AppDelegate.swift in Sources */,
+				8C3FE08422368DF300CAF4B0 /* UIButton+Extension.swift in Sources */,
+				8C3FE08722368DF300CAF4B0 /* XGCommon.swift in Sources */,
+				8C3FE08222368DF300CAF4B0 /* UIColor+Extension.swift in Sources */,
+				8C3FE090223691FE00CAF4B0 /* XGMineTableViewController.swift in Sources */,
+				8C3FE08622368DF300CAF4B0 /* UIImage+Extension.swift in Sources */,
+				8C3FE08522368DF300CAF4B0 /* UIView+Extension.swift in Sources */,
+				8C3FE08E223691EA00CAF4B0 /* XGFocusViewController.swift in Sources */,
+				8C3FE08A223691BB00CAF4B0 /* XGNewTopicViewController.swift in Sources */,
+				8C3FE08C223691DB00CAF4B0 /* XGEssenceViewController.swift in Sources */,
+				8C3FE08322368DF300CAF4B0 /* UILabel+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +619,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.itcast.heima.Funny;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -367,6 +640,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.itcast.heima.Funny;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
