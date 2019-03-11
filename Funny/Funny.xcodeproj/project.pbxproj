@@ -19,6 +19,11 @@
 		8C3FE08C223691DB00CAF4B0 /* XGEssenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE08B223691DB00CAF4B0 /* XGEssenceViewController.swift */; };
 		8C3FE08E223691EA00CAF4B0 /* XGFocusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE08D223691EA00CAF4B0 /* XGFocusViewController.swift */; };
 		8C3FE090223691FE00CAF4B0 /* XGMineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE08F223691FE00CAF4B0 /* XGMineTableViewController.swift */; };
+		8C3FE09C22369DA200CAF4B0 /* XGPictureTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE09B22369DA200CAF4B0 /* XGPictureTableViewController.swift */; };
+		8C3FE09E22369DAB00CAF4B0 /* XGVideoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE09D22369DAB00CAF4B0 /* XGVideoTableViewController.swift */; };
+		8C3FE0A022369DB200CAF4B0 /* XGVoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE09F22369DB200CAF4B0 /* XGVoiceTableViewController.swift */; };
+		8C3FE0A222369DBB00CAF4B0 /* XGWordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE0A122369DBB00CAF4B0 /* XGWordTableViewController.swift */; };
+		8C3FE0A422369DC300CAF4B0 /* XGAllTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE0A322369DC300CAF4B0 /* XGAllTableViewController.swift */; };
 		8C4A2E9E223687F800108DE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4A2E9D223687F800108DE1 /* AppDelegate.swift */; };
 		8CB5F57222368C2C009D7A10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CB5F57122368C2C009D7A10 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -37,6 +42,11 @@
 		8C3FE08B223691DB00CAF4B0 /* XGEssenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGEssenceViewController.swift; sourceTree = "<group>"; };
 		8C3FE08D223691EA00CAF4B0 /* XGFocusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGFocusViewController.swift; sourceTree = "<group>"; };
 		8C3FE08F223691FE00CAF4B0 /* XGMineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGMineTableViewController.swift; sourceTree = "<group>"; };
+		8C3FE09B22369DA200CAF4B0 /* XGPictureTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGPictureTableViewController.swift; sourceTree = "<group>"; };
+		8C3FE09D22369DAB00CAF4B0 /* XGVideoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGVideoTableViewController.swift; sourceTree = "<group>"; };
+		8C3FE09F22369DB200CAF4B0 /* XGVoiceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGVoiceTableViewController.swift; sourceTree = "<group>"; };
+		8C3FE0A122369DBB00CAF4B0 /* XGWordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGWordTableViewController.swift; sourceTree = "<group>"; };
+		8C3FE0A322369DC300CAF4B0 /* XGAllTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGAllTableViewController.swift; sourceTree = "<group>"; };
 		8C4A2E9A223687F800108DE1 /* Funny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Funny.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C4A2E9D223687F800108DE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C4A2EA9223687F900108DE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,6 +107,11 @@
 		8C3FE06322368DF300CAF4B0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8C3FE09622369D3F00CAF4B0 /* Picture */,
+				8C3FE09322369D3F00CAF4B0 /* Video */,
+				8C3FE09722369D3F00CAF4B0 /* Voice */,
+				8C3FE09522369D3F00CAF4B0 /* Word */,
+				8C3FE09122369AD800CAF4B0 /* All */,
 				8C3FE08B223691DB00CAF4B0 /* XGEssenceViewController.swift */,
 			);
 			path = View;
@@ -290,6 +305,46 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		8C3FE09122369AD800CAF4B0 /* All */ = {
+			isa = PBXGroup;
+			children = (
+				8C3FE0A322369DC300CAF4B0 /* XGAllTableViewController.swift */,
+			);
+			path = All;
+			sourceTree = "<group>";
+		};
+		8C3FE09322369D3F00CAF4B0 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				8C3FE09D22369DAB00CAF4B0 /* XGVideoTableViewController.swift */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		8C3FE09522369D3F00CAF4B0 /* Word */ = {
+			isa = PBXGroup;
+			children = (
+				8C3FE0A122369DBB00CAF4B0 /* XGWordTableViewController.swift */,
+			);
+			path = Word;
+			sourceTree = "<group>";
+		};
+		8C3FE09622369D3F00CAF4B0 /* Picture */ = {
+			isa = PBXGroup;
+			children = (
+				8C3FE09B22369DA200CAF4B0 /* XGPictureTableViewController.swift */,
+			);
+			path = Picture;
+			sourceTree = "<group>";
+		};
+		8C3FE09722369D3F00CAF4B0 /* Voice */ = {
+			isa = PBXGroup;
+			children = (
+				8C3FE09F22369DB200CAF4B0 /* XGVoiceTableViewController.swift */,
+			);
+			path = Voice;
+			sourceTree = "<group>";
+		};
 		8C4A2E91223687F800108DE1 = {
 			isa = PBXGroup;
 			children = (
@@ -472,8 +527,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C3FE0A422369DC300CAF4B0 /* XGAllTableViewController.swift in Sources */,
 				8C3FE08822368DF300CAF4B0 /* XGMainViewController.swift in Sources */,
 				8C4A2E9E223687F800108DE1 /* AppDelegate.swift in Sources */,
+				8C3FE0A022369DB200CAF4B0 /* XGVoiceTableViewController.swift in Sources */,
+				8C3FE09E22369DAB00CAF4B0 /* XGVideoTableViewController.swift in Sources */,
 				8C3FE08422368DF300CAF4B0 /* UIButton+Extension.swift in Sources */,
 				8C3FE08722368DF300CAF4B0 /* XGCommon.swift in Sources */,
 				8C3FE08222368DF300CAF4B0 /* UIColor+Extension.swift in Sources */,
@@ -482,8 +540,10 @@
 				8C3FE08522368DF300CAF4B0 /* UIView+Extension.swift in Sources */,
 				8C3FE08E223691EA00CAF4B0 /* XGFocusViewController.swift in Sources */,
 				8C3FE08A223691BB00CAF4B0 /* XGNewTopicViewController.swift in Sources */,
+				8C3FE0A222369DBB00CAF4B0 /* XGWordTableViewController.swift in Sources */,
 				8C3FE08C223691DB00CAF4B0 /* XGEssenceViewController.swift in Sources */,
 				8C3FE08322368DF300CAF4B0 /* UILabel+Extension.swift in Sources */,
+				8C3FE09C22369DA200CAF4B0 /* XGPictureTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

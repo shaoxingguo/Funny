@@ -7,24 +7,171 @@
 //
 
 import UIKit
+import SnapKit
 
-class XGEssenceViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+class XGEssenceViewController: UIViewController
+{
+    // MARK: - 控制器生命周期方法
+    
+    override func loadView()
+    {
+        super.loadView()
+        // 设置界面
+        setUpUI()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        addChildViewControllers()
+        titleButtonClickAction(button: titleView.subviews.first as! UIButton)
     }
-    */
+    
+    override func viewDidLayoutSubviews()
+    {
+        super.viewDidLayoutSubviews()
+        
+        // title布局
+        let width = titleView.width / CGFloat(titleArray.count)
+        for (index,button) in titleView.subviews.enumerated() {
+            button.frame = CGRect(x: CGFloat(index) * width, y: 0, width: width, height: titleView.height)
+        }
+    }
+    
+    // MARK: - 事件监听
+    
+    @objc private func titleButtonClickAction(button:UIButton) -> Void
+    {
+        // 取消上一次选中的按钮
+        let selectedButton = titleView.subviews[selectedIndex] as! UIButton
+        selectedButton.isSelected = false
+        // 设置当前按钮为选中状态
+        button.isSelected = true
+        // 记录选中索引
+        selectedIndex = button.tag
+        
+        // scrollView滚动到对应的位置
+        let offsetX = CGFloat(selectedIndex) * contentView.width
+        UIView.animate(withDuration: 0.5, animations: {
+            self.contentView.contentOffset = CGPoint(x: offsetX, y: 0)
+        }) { (_) in
+            // 添加子视图
+            self.addChildView()
+        }
+    }
+    
+    // MARK: - 懒加载 && 私有属性
+    
+    /// 当前选中的索引
+    private var selectedIndex:Int = 0
+    
+    /// 标题数组
+    private var titleArray:[[String:Any]] = [
+        ["title":"全部","classType":XGAllTableViewController.self],
+        ["title":"视频","classType":XGVideoTableViewController.self],
+        ["title":"声音","classType":XGVoiceTableViewController.self],
+        ["title":"图片","classType":XGPictureTableViewController.self],
+        ["title":"段子","classType":XGWordTableViewController.self]]
+    /// 导航标题视图
+    private lazy var titleView:UIView = {
+       let view = UIView()
+        view.backgroundColor = UIColor.white
+        return view
+    }()
+    /// 内容视图
+    private lazy var contentView:UIScrollView = { [weak self] in
+        let scrollView = UIScrollView()
+        scrollView.backgroundColor = UIColor.green
+        return scrollView
+    }()
+}
 
+// MARK: - UIScrollViewDelegate
+
+extension XGEssenceViewController:UIScrollViewDelegate
+{
+    // 停止减速
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView)
+    {
+        let index = Int(scrollView.contentOffset.x / scrollView.width)
+        titleButtonClickAction(button: titleView.subviews[index] as! UIButton)
+    }
+}
+
+// MARK: - 设置界面
+
+private extension XGEssenceViewController
+{
+    func addChildView() -> Void
+    {
+        // 滚动结束后 如果当前视图未添加到scrollView 则进行添加
+        let view = children[selectedIndex].view!
+        if !contentView.subviews.contains(view) {
+            contentView.addSubview(view)
+            view.frame = CGRect(x: CGFloat(selectedIndex) * contentView.width , y: 0, width: contentView.width, height: contentView.height)
+        }
+    }
+    
+    /// 设置界面
+    func setUpUI() -> Void
+    {
+        // 添加子控件
+        view.addSubview(titleView)
+        view.addSubview(contentView)
+        
+        // 设置自动布局
+        titleView.snp.makeConstraints { (make) in
+            make.top.equalTo(view.snp_topMargin)
+            make.left.right.equalTo(view)
+            make.height.equalTo(kToolBarHeight)
+        }
+        
+        contentView.snp.makeConstraints { (make) in
+            make.top.equalTo(titleView.snp.bottom)
+            make.left.right.equalTo(view)
+            make.bottom.equalTo(view.snp_bottomMargin)
+        }
+        
+        // 设置标题视图
+        setUpTitleView()
+        // 设置容器视图
+        setUpContentView()
+    }
+    
+    /// 设置标题视图
+    func setUpTitleView() -> Void
+    {
+        for (index,dictionary) in titleArray.enumerated() {
+            let title = dictionary["title"] as? String
+            // 添加按钮
+            let button = UIButton(title:title, highlightedColor:UIColor.red,fontSize:17, target: self, action: #selector(titleButtonClickAction(button:)))
+            button.tag = index
+            button.setTitleColor(UIColor.red, for: .selected)
+            titleView.addSubview(button)
+        }
+    }
+    
+    /// 设置容器视图
+    func setUpContentView() -> Void
+    {
+        // 滚动范围
+        contentView.contentSize = CGSize(width: CGFloat(titleArray.count) * view.width, height: 0)
+        // 分页
+        contentView.isPagingEnabled = true
+        // 取消滚动指示器
+        contentView.showsHorizontalScrollIndicator = false
+        contentView.showsVerticalScrollIndicator = false
+        // 代理
+        contentView.delegate = self
+    }
+    
+    /// 添加子控制器
+    func addChildViewControllers() -> Void
+    {
+        for dictionary in titleArray {
+            if let viewControllerType = dictionary["classType"] as? UIViewController.Type {
+                addChild(viewControllerType.init())
+            }
+        }
+    }
 }
