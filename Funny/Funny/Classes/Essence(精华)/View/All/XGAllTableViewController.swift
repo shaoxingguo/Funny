@@ -13,12 +13,4 @@ class XGAllTableViewController: XGTopicTableViewController
     override var topicType: XGTopicType {
         return .Word
     }
-    
-    override var reuseIdentifier: String {
-        return NSStringFromClass(XGAllTableViewController.self)
-    }
-    
-    override func registerTableCell() {
-        tableView.register(XGAllTopicTableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
-    }
 }

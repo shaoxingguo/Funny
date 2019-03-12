@@ -62,6 +62,9 @@ class XGTopicViewModel: NSObject
     /// 行高
     private(set) open var rowHeight:CGFloat = 0
     
+    /// 帖子类型
+    private(set) open var type:XGTopicType
+    
     // MARK: - 构造方法
     
     /// 帖子模型
@@ -70,7 +73,8 @@ class XGTopicViewModel: NSObject
     init(model:XGTopicModel)
     {
         topicModel = model
-        
+        type = XGTopicType(rawValue: model.type)!
+
         super.init()
      
         // 设置属性值

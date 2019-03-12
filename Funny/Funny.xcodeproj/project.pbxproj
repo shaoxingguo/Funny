@@ -164,8 +164,8 @@
 				8C3FE09322369D3F00CAF4B0 /* Video */,
 				8C3FE09522369D3F00CAF4B0 /* Word */,
 				8C3FE09122369AD800CAF4B0 /* All */,
-				8C3FE08B223691DB00CAF4B0 /* XGEssenceViewController.swift */,
 				8CD5D3082237CA3F009A5BD7 /* XGTopicTableViewController.swift */,
+				8C3FE08B223691DB00CAF4B0 /* XGEssenceViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

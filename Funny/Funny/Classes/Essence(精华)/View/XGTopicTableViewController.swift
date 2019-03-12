@@ -8,6 +8,15 @@
 
 import UIKit
 
+/// 视频cell重用标识符
+public let kVideoTopicTableViewCellReuseIdentifier:String = "XGVideoTopicTableViewCell";
+/// 声音cell重用标识符
+public let kVoiceTopicTableViewCellReuseIdentifier:String = "XGVoiceTopicTableViewCell";
+/// 图片cell重用标识符
+public let kPictureTopicTableViewCellReuseIdentifier:String = "XGPictureTopicTableViewCell";
+/// 段子cell重用标识符
+public let kWordTopicTableViewCellReuseIdentifier:String = "XGWordTopicTableViewCell";
+
 class XGTopicTableViewController: UITableViewController
 {
     /// 帖子视图模型
@@ -18,17 +27,6 @@ class XGTopicTableViewController: UITableViewController
     /// 帖子类型
     open var topicType:XGTopicType {
         return .All
-    }
-    
-    /// cell重用标识符
-    open var reuseIdentifier:String {
-        return ""
-    }
-    
-    /// 注册cell
-    open func registerTableCell() -> Void
-    {
-        
     }
     
     // MARK: - 控制器生命周期方法
@@ -54,6 +52,36 @@ private extension XGTopicTableViewController
         
         // 注册cell
         registerTableCell()
+    }
+    
+    /// 注册cell
+    func registerTableCell() -> Void
+    {
+        tableView.register(XGPictureTopicTableViewCell.self, forCellReuseIdentifier: kPictureTopicTableViewCellReuseIdentifier)
+        tableView.register(XGVideoTopicTableViewCell.self, forCellReuseIdentifier: kVideoTopicTableViewCellReuseIdentifier)
+        tableView.register(XGVoiceTopicTableViewCell.self, forCellReuseIdentifier: kVoiceTopicTableViewCellReuseIdentifier)
+        tableView.register(XGWordTopicTableViewCell.self, forCellReuseIdentifier: kWordTopicTableViewCellReuseIdentifier)
+    }
+    
+    
+    /// 根据视图模型返回对应的cell重用标识符
+    ///
+    /// - Parameter topicViewModel: 视图模型
+    /// - Returns: cell重用标识符
+    func reuseIdentifierWithTopicModel(topicViewModel:XGTopicViewModel) -> String
+    {
+        switch topicViewModel.type {
+        case .Picture:
+            return kPictureTopicTableViewCellReuseIdentifier
+        case .Video:
+            return kVideoTopicTableViewCellReuseIdentifier
+        case .Voice:
+            return kVoiceTopicTableViewCellReuseIdentifier
+        case .Word:
+            return kWordTopicTableViewCellReuseIdentifier
+        case  .All:
+            return kWordTopicTableViewCellReuseIdentifier
+        }
     }
 }
 
@@ -92,8 +120,9 @@ extension XGTopicTableViewController
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as! XGBaseTopicTableViewCell
-        cell.topicViewModel = topicListViewModel.topicList[indexPath.row]
+        let topicViewModel = topicListViewModel.topicList[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierWithTopicModel(topicViewModel: topicViewModel)) as! XGBaseTopicTableViewCell
+        cell.topicViewModel = topicViewModel
         return cell
     }
     
