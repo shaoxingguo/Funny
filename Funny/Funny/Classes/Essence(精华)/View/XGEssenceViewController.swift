@@ -27,25 +27,6 @@ class XGEssenceViewController: UIViewController
         titleButtonClickAction(button: titleView.subviews.first as! UIButton)
     }
     
-    override func viewDidLayoutSubviews()
-    {
-        super.viewDidLayoutSubviews()
-        
-        // title布局
-        let width = titleView.width / CGFloat(titleArray.count)
-        for (index,view) in titleView.subviews.enumerated() {
-            if index < titleArray.count {
-                // 按钮布局
-                view.frame = CGRect(x: CGFloat(index) * width, y: 0, width: width, height: titleView.height)
-            } else {
-                // 分割线布局
-                let separatorWidth = width * 0.7
-                let separatorHeight:CGFloat = 3
-                view.frame = CGRect(x: (width - separatorWidth) / 2.0, y: titleView.height - separatorHeight, width: separatorWidth, height: separatorHeight)
-            }
-        }
-    }
-    
     // MARK: - 事件监听
     
     @objc private func titleButtonClickAction(button:UIButton) -> Void
@@ -153,17 +134,23 @@ private extension XGEssenceViewController
     func setUpTitleView() -> Void
     {
         // 约定前5个位按钮 最后一个分割线
+        let width = view.width / CGFloat(titleArray.count)
         for (index,dictionary) in titleArray.enumerated() {
             let title = dictionary["title"] as? String
             // 添加按钮
             let button = UIButton(title:title, highlightedColor:UIColor.red,fontSize:17, target: self, action: #selector(titleButtonClickAction(button:)))
             button.tag = index
             button.setTitleColor(UIColor.red, for: .selected)
+            button.frame = CGRect(x: CGFloat(index) * width, y: 0, width: width, height: kToolBarHeight)
             titleView.addSubview(button)
         }
         
         let separatorView = UIView()
         separatorView.backgroundColor = UIColor.red
+        // 分割线布局
+        let separatorWidth = width * 0.7
+        let separatorHeight:CGFloat = 3
+        separatorView.frame = CGRect(x: (width - separatorWidth) / 2.0, y: kToolBarHeight - separatorHeight, width: separatorWidth, height: separatorHeight)
         titleView.addSubview(separatorView)
     }
     

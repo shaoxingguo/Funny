@@ -11,6 +11,6 @@ import UIKit
 class XGAllTableViewController: XGTopicTableViewController
 {
     override var topicType: XGTopicType {
-        return .Word
+        return .All
     }
 }
