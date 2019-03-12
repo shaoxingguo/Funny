@@ -43,8 +43,9 @@ extension XGImageCacheManager
     ///   - size: 图片尺寸
     ///   - backgroundColor: 背景色 默认白色
     ///   - isUserIcon: 是否是用户头像(进行圆角处理) 默认false
+    ///   - isLongPicture: 是否是长图(进行裁剪处理) 默认false
     ///   - completion: 完成回调
-    open func imageForKey(key:String?,size:CGSize,backgroundColor:UIColor = UIColor.white,isUserIcon:Bool = false,completion:@escaping (UIImage?) -> Void) -> Void
+    open func imageForKey(key:String?,size:CGSize,backgroundColor:UIColor = UIColor.white,isUserIcon:Bool = false,isLongPicture:Bool = false, completion:@escaping (UIImage?) -> Void) -> Void
     {
         guard let key = key else {
             completion(nil)
@@ -64,8 +65,16 @@ extension XGImageCacheManager
                 return
             }
             
-            // 进行处理
-            let newImage = isUserIcon ? image?.circleIconImage(imageSize: size, backgroundColor: backgroundColor) : image?.scaleToSize(imageSize: size, backgroundColor: backgroundColor)
+            // 进行图片处理
+            var newImage:UIImage?
+            if isUserIcon {
+                newImage = image?.circleIconImage(imageSize: size, backgroundColor: backgroundColor)
+            } else if isLongPicture {
+                newImage = self.clipImage(sourceImage: image!, imageSize: size, backgroundColor: backgroundColor)
+            } else {
+                newImage = image?.scaleToSize(imageSize: size, backgroundColor: backgroundColor)
+            }
+            
             // 保存到内存中
             self.imageCacheDictioary[key] = newImage!
             
@@ -78,5 +87,35 @@ extension XGImageCacheManager
     @objc private func removeCache() -> Void
     {
         imageCacheDictioary.removeAll();
+    }
+    
+    /// 裁剪图片
+    ///
+    /// - Parameters:
+    ///   - sourceImage: 原始图片
+    ///   - imageSize: 目标尺寸
+    ///   - backgroundColor: 背景颜色
+    /// - Returns: UIImage
+    private func clipImage(sourceImage:UIImage, imageSize:CGSize,backgroundColor:UIColor = UIColor.white) -> UIImage?
+    {
+        // 1.开启图片上下文
+        UIGraphicsBeginImageContextWithOptions(imageSize, true, 0) // 不透明的上下文
+        let rect = CGRect(origin: CGPoint.zero, size: imageSize)
+        
+        // 2.绘制背景颜色
+        backgroundColor.setFill()
+        UIBezierPath(rect: rect).fill()
+        
+        // 4.绘制图片
+        sourceImage.draw(in: CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.width / sourceImage.size.width * sourceImage.size.height))
+        
+        // 5.取出图片
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        
+        // 6.关闭上下文
+        UIGraphicsEndImageContext()
+        
+        // 7.返回图片
+        return newImage
     }
 }

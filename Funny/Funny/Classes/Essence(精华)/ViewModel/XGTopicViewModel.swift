@@ -65,6 +65,9 @@ class XGTopicViewModel: NSObject
     /// 帖子类型
     private(set) open var type:XGTopicType
     
+    /// 图片高度
+    private(set) open var imageHeight:CGFloat = 0
+    
     // MARK: - 构造方法
     
     /// 帖子模型
@@ -82,6 +85,9 @@ class XGTopicViewModel: NSObject
         unlikeStr = numberToString(number: topicModel?.cai ?? 0)
         shareStr = numberToString(number: topicModel?.repost ?? 0)
         commentStr = numberToString(number: topicModel?.comment ?? 0)
+        
+        imageHeight = (kScreenWidth - 2 * kTopicCellMargin) / model.width * model.height
+        imageHeight = imageHeight > 200 ? 200 : imageHeight
         
         rowHeight = calcRowHeight()
     }
@@ -121,6 +127,7 @@ private extension XGTopicViewModel
         return str
     }
     
+    /// 计算行高
     func calcRowHeight() -> CGFloat
     {
         var height:CGFloat = 0
@@ -131,6 +138,11 @@ private extension XGTopicViewModel
         if let text = text {
             // 正文高度
              height += (kTopicCellMargin + ((text as NSString).boundingRect(with: CGSize(width: kScreenWidth - 2 * kTopicCellMargin, height: 200), options: [.usesFontLeading,.usesLineFragmentOrigin], attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: kContentTextFontSize)], context: nil).size.height))
+        }
+        
+        if let _ = topicModel?.imageURL {
+            // 图片高度
+            height += (kTopicCellMargin + imageHeight)
         }
        
         if let _ = hotCommentModel {

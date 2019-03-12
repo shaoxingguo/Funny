@@ -17,6 +17,7 @@ class XGBaseTopicTableViewCell: UITableViewCell
             topView.topicViewModel = topicViewModel
             contentLabel.text = topicViewModel?.text
             bottomView.topicViewModel = topicViewModel
+            
             if topicViewModel?.isHasHotComment == true {
                 hotCommentView.hotCommentModel = topicViewModel?.hotCommentModel
                 hotCommentView.isHidden = false
@@ -67,6 +68,7 @@ class XGBaseTopicTableViewCell: UITableViewCell
         hotCommentView.snp.makeConstraints { (make) in
             make.left.right.equalTo(contentView)
             make.bottom.equalTo(bottomView.snp.top).offset(-kTopicCellMargin)
+            make.height.equalTo(kTopicCellHotCommentViewHeight)
         }
         
         bottomView.snp.makeConstraints { (make) in
@@ -80,7 +82,7 @@ class XGBaseTopicTableViewCell: UITableViewCell
     /// 顶部视图
     private lazy var topView = XGTopicCellTopView.topicCellTopView()
     /// 正文
-    private lazy var contentLabel = UILabel(text: "正文", fontSize: kContentTextFontSize, textColor: UIColor.darkGray, textAlignment: .left)
+    private(set) open lazy var contentLabel = UILabel(text: "正文", fontSize: kContentTextFontSize, textColor: UIColor.darkGray, textAlignment: .left)
     /// 热评视图
     private lazy var hotCommentView = XGHotCommentView.hotCommentView()
     /// 底部视图

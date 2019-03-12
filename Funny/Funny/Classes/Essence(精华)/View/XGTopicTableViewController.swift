@@ -9,13 +9,13 @@
 import UIKit
 
 /// 视频cell重用标识符
-public let kVideoTopicTableViewCellReuseIdentifier:String = "XGVideoTopicTableViewCell";
+public let kVideoTopicTableViewCellReuseIdentifier:String = "XGVideoTopicTableViewCell"
 /// 声音cell重用标识符
-public let kVoiceTopicTableViewCellReuseIdentifier:String = "XGVoiceTopicTableViewCell";
+public let kVoiceTopicTableViewCellReuseIdentifier:String = "XGVoiceTopicTableViewCell"
 /// 图片cell重用标识符
-public let kPictureTopicTableViewCellReuseIdentifier:String = "XGPictureTopicTableViewCell";
+public let kPictureTopicTableViewCellReuseIdentifier:String = "XGPictureTopicTableViewCell"
 /// 段子cell重用标识符
-public let kWordTopicTableViewCellReuseIdentifier:String = "XGWordTopicTableViewCell";
+public let kWordTopicTableViewCellReuseIdentifier:String = "XGWordTopicTableViewCell"
 
 class XGTopicTableViewController: UITableViewController
 {

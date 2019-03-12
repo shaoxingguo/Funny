@@ -300,7 +300,6 @@
 		8C3FE07422368DF300CAF4B0 /* Other(其他) */ = {
 			isa = PBXGroup;
 			children = (
-				8CD5D2E3223776FA009A5BD7 /* XGImageCacheManager.swift */,
 				8C9CBD3D223733A90042BA21 /* Tools */,
 				8C3FE07522368DF300CAF4B0 /* Category */,
 				8C3FE07B22368DF300CAF4B0 /* Common */,
@@ -447,6 +446,7 @@
 		8C9CBD3D223733A90042BA21 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				8CD5D2E3223776FA009A5BD7 /* XGImageCacheManager.swift */,
 				8C9CBD40223735DE0042BA21 /* Network */,
 			);
 			path = Tools;

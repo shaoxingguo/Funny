@@ -92,7 +92,7 @@ class XGEssenceViewController: UIViewController
     /// 内容视图
     private lazy var contentView:UIScrollView = { [weak self] in
         let scrollView = UIScrollView()
-        scrollView.backgroundColor = UIColor.green
+        scrollView.backgroundColor = UIColor.white
         return scrollView
     }()
 }

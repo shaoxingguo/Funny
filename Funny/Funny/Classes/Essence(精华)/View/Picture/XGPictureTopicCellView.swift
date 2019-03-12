@@ -14,8 +14,8 @@ class XGPictureTopicCellView: UIView
     
     open var topicViewModel:XGTopicViewModel? {
         didSet {
-            gifImageView.isHidden = (topicViewModel?.isGIF == true)
-            XGImageCacheManager.shared.imageForKey(key: topicViewModel?.imageURL, size: backgroudImageView.size, backgroundColor: backgroundColor ?? UIColor.white) { (image) in
+            gifImageView.isHidden = (topicViewModel?.isGIF != true)
+            XGImageCacheManager.shared.imageForKey(key: topicViewModel?.imageURL, size: CGSize(width: kScreenWidth - 2 * kTopicCellMargin, height: topicViewModel?.imageHeight ?? 0), backgroundColor: backgroundColor ?? UIColor.white,isLongPicture:true) { (image) in
                 self.backgroudImageView.image = image
             }
         }
