@@ -43,7 +43,7 @@ extension XGDataManager
     {
         let parameters:[String:Any] = ["a" : "list",
                           "c" : "data",
-                          "type" : type]
+                          "type" : type.rawValue]
         XGNetworkManager.request(type: .Get, URLString: kTopicListAPI, parameters: parameters) { (responseObject, error) in
             if responseObject == nil || error != nil {
                 competion(nil,error)

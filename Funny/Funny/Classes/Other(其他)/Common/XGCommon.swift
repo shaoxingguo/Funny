@@ -38,6 +38,13 @@ public let kTopicCellMargin:CGFloat = 10
 public let kTopicCellTopViewHeight:CGFloat = 70
 /// cell底部视图高度
 public let kTopicCellBottomViewHeight:CGFloat = 49
+/// 热评视图高度
+public let kTopicCellHotCommentViewHeight:CGFloat = 60
+
+/// 正文字体大小
+public let kContentTextFontSize:CGFloat = 15
+/// 摘要字体大小
+public let kSummarizeTextFontSize:CGFloat = 12
 
 // MARK: - 网络接口相关
 /// 服务器地址

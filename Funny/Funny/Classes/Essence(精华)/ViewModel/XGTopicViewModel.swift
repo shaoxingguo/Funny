@@ -30,14 +30,27 @@ class XGTopicViewModel: NSObject
         return topicModel?.passtime
     }
     
+    /// 是否有热评
+    open var isHasHotComment:Bool {
+        return topicModel?.topCmt != nil
+    }
+    
+    /// 热评数据模型
+    open var hotCommentModel:XGHotCommentModel? {
+        return topicModel?.topCmt
+    }
+    
     /// 赞
-    open var likeStr:String?
+    private(set) open var likeStr:String?
     /// 踩
-    open var unlikeStr:String?
+    private(set) open var unlikeStr:String?
     /// 分享
-    open var shareStr:String?
+    private(set) open var shareStr:String?
     /// 评论
-    open var commentStr:String?
+    private(set) open var commentStr:String?
+    
+    /// 行高
+    private(set) open var rowHeight:CGFloat = 0
     
     // MARK: - 构造方法
     
@@ -49,12 +62,14 @@ class XGTopicViewModel: NSObject
         topicModel = model
         
         super.init()
-        
+     
         // 设置属性值
         likeStr = numberToString(number: topicModel?.ding ?? 0)
         unlikeStr = numberToString(number: topicModel?.cai ?? 0)
         shareStr = numberToString(number: topicModel?.repost ?? 0)
         commentStr = numberToString(number: topicModel?.comment ?? 0)
+        
+        rowHeight = calcRowHeight()
     }
 }
 
@@ -90,5 +105,28 @@ private extension XGTopicViewModel
         }
         
         return str
+    }
+    
+    func calcRowHeight() -> CGFloat
+    {
+        var height:CGFloat = 0
+        
+        // 顶部视图高度
+        height += kTopicCellTopViewHeight;
+        
+        if let text = text {
+            // 正文高度
+             height += (kTopicCellMargin + ((text as NSString).boundingRect(with: CGSize(width: kScreenWidth - 2 * kTopicCellMargin, height: 200), options: [.usesFontLeading,.usesLineFragmentOrigin], attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: kContentTextFontSize)], context: nil).size.height))
+        }
+       
+        if let _ = hotCommentModel {
+            // 热评高度
+            height += (kTopicCellMargin + kTopicCellHotCommentViewHeight)
+        }
+        
+        // 底部视图
+        height += (kTopicCellMargin + kTopicCellBottomViewHeight)
+        
+        return ceil(height)
     }
 }

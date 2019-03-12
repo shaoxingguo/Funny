@@ -8,7 +8,7 @@
 
 import UIKit
 
-@objcMembers class XGTopCommentModel: NSObject
+@objcMembers class XGHotCommentModel: NSObject
 {
     /// 热评内容
     var content:String?
@@ -20,7 +20,7 @@ import UIKit
     var user:XGUserModel?
 }
 
-extension XGTopCommentModel
+extension XGHotCommentModel
 {
     override class func mj_replacedKey(fromPropertyName121 propertyName: String!) -> Any! {
         if propertyName == "voiceUrl" {

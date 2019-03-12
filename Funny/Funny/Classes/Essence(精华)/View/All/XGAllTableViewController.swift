@@ -9,7 +9,7 @@
 import UIKit
 
 /// cell重用标识符
-private let kReuseIdentifier = "XGTopicTableViewCell"
+private let kReuseIdentifier = "XGBaseTopicTableViewCell"
 
 class XGAllTableViewController: UITableViewController
 {
@@ -35,9 +35,9 @@ private extension XGAllTableViewController
     /// 设置tableView
     func setUpTableView() -> Void
     {
-        tableView.register(XGTopicTableViewCell.self, forCellReuseIdentifier: kReuseIdentifier)
-        tableView.rowHeight = 150
+        tableView.register(XGBaseTopicTableViewCell.self, forCellReuseIdentifier: kReuseIdentifier)
         tableView.separatorStyle = .none
+        tableView.estimatedRowHeight = 400
     }
 }
 
@@ -48,7 +48,7 @@ private extension XGAllTableViewController
     /// 加载数据
     func loadData() -> Void
     {
-        topicListViewModel.loadTopicList(type: .All) { (isSuccess) in
+        topicListViewModel.loadTopicList(type: .Word) { (isSuccess) in
             if !isSuccess {
                 XGPrint("加载自定义帖子失败")
                 return
@@ -76,8 +76,13 @@ extension XGAllTableViewController
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCell(withIdentifier: kReuseIdentifier) as! XGTopicTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: kReuseIdentifier) as! XGBaseTopicTableViewCell
         cell.topicViewModel = topicListViewModel.topicList[indexPath.row]
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return topicListViewModel.topicList[indexPath.row].rowHeight
     }
 }

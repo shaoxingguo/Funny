@@ -32,7 +32,7 @@ import MJExtension
     /// 帖子时间id
     var timeId:Int = 0
     /// 热评
-    var topCmt:XGTopCommentModel?
+    var topCmt:XGHotCommentModel?
     /// 图片高度
     var height:CGFloat = 0
     /// 图片宽度
