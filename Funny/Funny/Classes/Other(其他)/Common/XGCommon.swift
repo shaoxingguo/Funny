@@ -35,8 +35,9 @@ public let kToolBarHeight:CGFloat = 44
 /// cell间距
 public let kTopicCellMargin:CGFloat = 10
 /// cell顶部视图高度
-public let kTopicCellTopViewHeight:CGFloat = 60
-
+public let kTopicCellTopViewHeight:CGFloat = 70
+/// cell底部视图高度
+public let kTopicCellBottomViewHeight:CGFloat = 49
 
 // MARK: - 网络接口相关
 /// 服务器地址

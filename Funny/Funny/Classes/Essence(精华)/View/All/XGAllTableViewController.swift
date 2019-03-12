@@ -36,7 +36,8 @@ private extension XGAllTableViewController
     func setUpTableView() -> Void
     {
         tableView.register(XGTopicTableViewCell.self, forCellReuseIdentifier: kReuseIdentifier)
-        tableView.rowHeight = 80
+        tableView.rowHeight = 150
+        tableView.separatorStyle = .none
     }
 }
 

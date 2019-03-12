@@ -11,6 +11,7 @@ import UIKit
 class XGTopicCellTopView: UIView
 {
     // MARK: - 视图模型
+    
     open var topicViewModel:XGTopicViewModel? {
         didSet {
             XGImageCacheManager.shared.imageForKey(key: topicViewModel?.profileImage, size: CGSize(width: 50, height: 50), backgroundColor: backgroundColor ?? UIColor.white, isUserIcon: true) { (image) in
@@ -22,12 +23,6 @@ class XGTopicCellTopView: UIView
         }
     }
     
-    /// xib创建对象方法
-    open class func topicCellTopView() -> XGTopicCellTopView
-    {
-        return Bundle.main.loadNibNamed("XGTopicCellTopView", owner: nil, options: nil)?.last as! XGTopicCellTopView
-    }
-    
     // MARK: - 私有属性
     
     /// 用户头像
@@ -37,3 +32,15 @@ class XGTopicCellTopView: UIView
     /// 发布时间
     @IBOutlet private weak var createTimeLabel: UILabel!
 }
+
+// MARK: - 其他方法
+
+extension XGTopicCellTopView
+{
+    /// xib创建对象方法
+    open class func topicCellTopView() -> XGTopicCellTopView
+    {
+        return Bundle.main.loadNibNamed("XGTopicCellTopView", owner: nil, options: nil)?.last as! XGTopicCellTopView
+    }
+}
+

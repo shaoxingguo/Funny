@@ -37,6 +37,8 @@
 		8CD5D2E022376BE0009A5BD7 /* XGTopicCellTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD5D2DF22376BE0009A5BD7 /* XGTopicCellTopView.swift */; };
 		8CD5D2E222376BEC009A5BD7 /* XGTopicCellTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CD5D2E122376BEC009A5BD7 /* XGTopicCellTopView.xib */; };
 		8CD5D2E4223776FA009A5BD7 /* XGImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD5D2E3223776FA009A5BD7 /* XGImageCacheManager.swift */; };
+		8CD5D2E622379BD5009A5BD7 /* XGTopicCellBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD5D2E522379BD5009A5BD7 /* XGTopicCellBottomView.swift */; };
+		8CD5D2E822379BF8009A5BD7 /* XGTopicCellBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CD5D2E722379BF8009A5BD7 /* XGTopicCellBottomView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +75,8 @@
 		8CD5D2DF22376BE0009A5BD7 /* XGTopicCellTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGTopicCellTopView.swift; sourceTree = "<group>"; };
 		8CD5D2E122376BEC009A5BD7 /* XGTopicCellTopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XGTopicCellTopView.xib; sourceTree = "<group>"; };
 		8CD5D2E3223776FA009A5BD7 /* XGImageCacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XGImageCacheManager.swift; sourceTree = "<group>"; };
+		8CD5D2E522379BD5009A5BD7 /* XGTopicCellBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGTopicCellBottomView.swift; sourceTree = "<group>"; };
+		8CD5D2E722379BF8009A5BD7 /* XGTopicCellBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XGTopicCellBottomView.xib; sourceTree = "<group>"; };
 		BF8B5809719FF8054333F056 /* Pods-Funny.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Funny.debug.xcconfig"; path = "Target Support Files/Pods-Funny/Pods-Funny.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -443,6 +447,8 @@
 			children = (
 				8CD5D2E122376BEC009A5BD7 /* XGTopicCellTopView.xib */,
 				8CD5D2DF22376BE0009A5BD7 /* XGTopicCellTopView.swift */,
+				8CD5D2E722379BF8009A5BD7 /* XGTopicCellBottomView.xib */,
+				8CD5D2E522379BD5009A5BD7 /* XGTopicCellBottomView.swift */,
 				8CD5D2DC22376AF9009A5BD7 /* XGTopicTableViewCell.swift */,
 			);
 			path = Cell;
@@ -518,6 +524,7 @@
 			files = (
 				8CB5F57222368C2C009D7A10 /* Assets.xcassets in Resources */,
 				8CD5D2E222376BEC009A5BD7 /* XGTopicCellTopView.xib in Resources */,
+				8CD5D2E822379BF8009A5BD7 /* XGTopicCellBottomView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,6 +602,7 @@
 				8CD5D2E022376BE0009A5BD7 /* XGTopicCellTopView.swift in Sources */,
 				8C4A2E9E223687F800108DE1 /* AppDelegate.swift in Sources */,
 				8C3FE0A022369DB200CAF4B0 /* XGVoiceTableViewController.swift in Sources */,
+				8CD5D2E622379BD5009A5BD7 /* XGTopicCellBottomView.swift in Sources */,
 				8C3FE09E22369DAB00CAF4B0 /* XGVideoTableViewController.swift in Sources */,
 				8C3FE08422368DF300CAF4B0 /* UIButton+Extension.swift in Sources */,
 				8C3FE08722368DF300CAF4B0 /* XGCommon.swift in Sources */,

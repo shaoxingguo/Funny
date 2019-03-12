@@ -11,9 +11,11 @@ import UIKit
 class XGTopicTableViewCell: UITableViewCell
 {
     // MARK: - 视图模型
+    
     open var topicViewModel:XGTopicViewModel? {
         didSet {
             topView.topicViewModel = topicViewModel
+            bottomView.topicViewModel = topicViewModel
         }
     }
     
@@ -33,6 +35,8 @@ class XGTopicTableViewCell: UITableViewCell
     
     /// 顶部视图
     private lazy var topView = XGTopicCellTopView.topicCellTopView()
+    /// 底部视图
+    private lazy var bottomView = XGTopicCellBottomView.topicCellBottomView()
 }
 
 // MARK: - 设置界面
@@ -42,14 +46,21 @@ private extension XGTopicTableViewCell
     func setUpUI() -> Void
     {
         backgroundColor = UIColor.white
-        
+
         // 添加子控件
         contentView.addSubview(topView)
+        contentView.addSubview(bottomView)
         
         // 设置自动布局
+        
         topView.snp.makeConstraints { (make) in
             make.top.left.right.equalTo(contentView)
             make.height.equalTo(kTopicCellTopViewHeight)
+        }
+        
+        bottomView.snp.makeConstraints { (make) in
+            make.left.right.bottom.equalTo(contentView)
+            make.height.equalTo(kTopicCellBottomViewHeight)
         }
     }
 }
