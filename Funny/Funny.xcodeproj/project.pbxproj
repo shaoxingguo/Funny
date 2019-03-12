@@ -48,7 +48,9 @@
 		8CD5D30B2237CBE2009A5BD7 /* XGVideoTopicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD5D30A2237CBE2009A5BD7 /* XGVideoTopicTableViewCell.swift */; };
 		8CD5D30D2237CBF6009A5BD7 /* XGVoiceTopicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD5D30C2237CBF6009A5BD7 /* XGVoiceTopicTableViewCell.swift */; };
 		8CD5D30F2237CC05009A5BD7 /* XGWordTopicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD5D30E2237CC05009A5BD7 /* XGWordTopicTableViewCell.swift */; };
-		8CD5D3112237CC11009A5BD7 /* XGAllTopicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD5D3102237CC11009A5BD7 /* XGAllTopicTableViewCell.swift */; };
+		8CD5D3132237EBB6009A5BD7 /* XGVideoTopicCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD5D3122237EBB6009A5BD7 /* XGVideoTopicCellView.swift */; };
+		8CD5D3152237EBC3009A5BD7 /* XGVoiceTopicCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD5D3142237EBC3009A5BD7 /* XGVoiceTopicCellView.swift */; };
+		8CD5D3172237EBD4009A5BD7 /* XGVideoTopicCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CD5D3162237EBD4009A5BD7 /* XGVideoTopicCellView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,7 +98,9 @@
 		8CD5D30A2237CBE2009A5BD7 /* XGVideoTopicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGVideoTopicTableViewCell.swift; sourceTree = "<group>"; };
 		8CD5D30C2237CBF6009A5BD7 /* XGVoiceTopicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGVoiceTopicTableViewCell.swift; sourceTree = "<group>"; };
 		8CD5D30E2237CC05009A5BD7 /* XGWordTopicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGWordTopicTableViewCell.swift; sourceTree = "<group>"; };
-		8CD5D3102237CC11009A5BD7 /* XGAllTopicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGAllTopicTableViewCell.swift; sourceTree = "<group>"; };
+		8CD5D3122237EBB6009A5BD7 /* XGVideoTopicCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGVideoTopicCellView.swift; sourceTree = "<group>"; };
+		8CD5D3142237EBC3009A5BD7 /* XGVoiceTopicCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGVoiceTopicCellView.swift; sourceTree = "<group>"; };
+		8CD5D3162237EBD4009A5BD7 /* XGVideoTopicCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XGVideoTopicCellView.xib; sourceTree = "<group>"; };
 		BF8B5809719FF8054333F056 /* Pods-Funny.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Funny.debug.xcconfig"; path = "Target Support Files/Pods-Funny/Pods-Funny.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -362,7 +366,6 @@
 		8C3FE09122369AD800CAF4B0 /* All */ = {
 			isa = PBXGroup;
 			children = (
-				8CD5D3102237CC11009A5BD7 /* XGAllTopicTableViewCell.swift */,
 				8C3FE0A322369DC300CAF4B0 /* XGAllTableViewController.swift */,
 			);
 			path = All;
@@ -371,6 +374,8 @@
 		8C3FE09322369D3F00CAF4B0 /* Video */ = {
 			isa = PBXGroup;
 			children = (
+				8CD5D3162237EBD4009A5BD7 /* XGVideoTopicCellView.xib */,
+				8CD5D3122237EBB6009A5BD7 /* XGVideoTopicCellView.swift */,
 				8CD5D30A2237CBE2009A5BD7 /* XGVideoTopicTableViewCell.swift */,
 				8C3FE09D22369DAB00CAF4B0 /* XGVideoTableViewController.swift */,
 			);
@@ -402,6 +407,7 @@
 			children = (
 				8CD5D30C2237CBF6009A5BD7 /* XGVoiceTopicTableViewCell.swift */,
 				8C3FE09F22369DB200CAF4B0 /* XGVoiceTableViewController.swift */,
+				8CD5D3142237EBC3009A5BD7 /* XGVoiceTopicCellView.swift */,
 			);
 			path = Voice;
 			sourceTree = "<group>";
@@ -557,6 +563,7 @@
 				8CD5D2E222376BEC009A5BD7 /* XGTopicCellTopView.xib in Resources */,
 				8CD5D3052237C483009A5BD7 /* XGPictureTopicCellView.xib in Resources */,
 				8CD5D2E822379BF8009A5BD7 /* XGTopicCellBottomView.xib in Resources */,
+				8CD5D3172237EBD4009A5BD7 /* XGVideoTopicCellView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,10 +636,10 @@
 				8CD5D3092237CA3F009A5BD7 /* XGTopicTableViewController.swift in Sources */,
 				8C9CBD422237361A0042BA21 /* XGDataManager.swift in Sources */,
 				8C3FE0A422369DC300CAF4B0 /* XGAllTableViewController.swift in Sources */,
+				8CD5D3132237EBB6009A5BD7 /* XGVideoTopicCellView.swift in Sources */,
 				8CD5D2DD22376AF9009A5BD7 /* XGBaseTopicTableViewCell.swift in Sources */,
 				8C3FE08822368DF300CAF4B0 /* XGMainViewController.swift in Sources */,
 				8C9CBD4A22373E150042BA21 /* XGTopicListViewModel.swift in Sources */,
-				8CD5D3112237CC11009A5BD7 /* XGAllTopicTableViewCell.swift in Sources */,
 				8CD5D2E022376BE0009A5BD7 /* XGTopicCellTopView.swift in Sources */,
 				8C4A2E9E223687F800108DE1 /* AppDelegate.swift in Sources */,
 				8C3FE0A022369DB200CAF4B0 /* XGVoiceTableViewController.swift in Sources */,
@@ -653,6 +660,7 @@
 				8C3FE0A222369DBB00CAF4B0 /* XGWordTableViewController.swift in Sources */,
 				8C9CBD4622373C140042BA21 /* XGUserModel.swift in Sources */,
 				8C3FE08C223691DB00CAF4B0 /* XGEssenceViewController.swift in Sources */,
+				8CD5D3152237EBC3009A5BD7 /* XGVoiceTopicCellView.swift in Sources */,
 				8C9CBD4C22373EC80042BA21 /* XGTopicViewModel.swift in Sources */,
 				8C9CBD44223738890042BA21 /* XGTopicModel.swift in Sources */,
 				8C3FE08322368DF300CAF4B0 /* UILabel+Extension.swift in Sources */,

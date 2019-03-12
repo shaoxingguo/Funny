@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="liq-mY-C0G" customClass="XGVideoTopicCellView" customModule="Funny" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q3O-2e-ORE">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="73f-kz-dnP">
+                    <rect key="frame" x="152" y="152" width="71" height="71"/>
+                    <state key="normal" image="video-play" backgroundImage="playButton"/>
+                    <state key="highlighted" image="video-play" backgroundImage="playButtonClick"/>
+                    <connections>
+                        <action selector="playVidoAction:" destination="liq-mY-C0G" eventType="touchUpInside" id="PTA-kz-4fh"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhY-ZB-EQO">
+                    <rect key="frame" x="337.5" y="0.0" width="37.5" height="18"/>
+                    <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YKG-hD-WmT">
+                    <rect key="frame" x="337.5" y="357" width="37.5" height="18"/>
+                    <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="A5r-yf-G2X" firstAttribute="trailing" secondItem="Q3O-2e-ORE" secondAttribute="trailing" id="6hM-LF-gcD"/>
+                <constraint firstItem="73f-kz-dnP" firstAttribute="centerY" secondItem="liq-mY-C0G" secondAttribute="centerY" id="9jR-U6-fJu"/>
+                <constraint firstItem="Q3O-2e-ORE" firstAttribute="top" secondItem="A5r-yf-G2X" secondAttribute="top" id="RZl-va-ggu"/>
+                <constraint firstItem="73f-kz-dnP" firstAttribute="centerX" secondItem="liq-mY-C0G" secondAttribute="centerX" id="Uqo-7Z-pS6"/>
+                <constraint firstItem="A5r-yf-G2X" firstAttribute="bottom" secondItem="YKG-hD-WmT" secondAttribute="bottom" id="WR1-73-i0h"/>
+                <constraint firstItem="A5r-yf-G2X" firstAttribute="trailing" secondItem="YKG-hD-WmT" secondAttribute="trailing" id="Z3x-K5-dqY"/>
+                <constraint firstItem="A5r-yf-G2X" firstAttribute="bottom" secondItem="Q3O-2e-ORE" secondAttribute="bottom" id="dDS-XP-Nui"/>
+                <constraint firstItem="A5r-yf-G2X" firstAttribute="trailing" secondItem="vhY-ZB-EQO" secondAttribute="trailing" id="glF-mj-WoF"/>
+                <constraint firstItem="vhY-ZB-EQO" firstAttribute="top" secondItem="A5r-yf-G2X" secondAttribute="top" id="qR2-dK-BbM"/>
+                <constraint firstItem="Q3O-2e-ORE" firstAttribute="leading" secondItem="A5r-yf-G2X" secondAttribute="leading" id="umu-4x-k2y"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="A5r-yf-G2X"/>
+            <connections>
+                <outlet property="backgroundImageView" destination="Q3O-2e-ORE" id="A6N-Be-0Tw"/>
+                <outlet property="playCountLabel" destination="vhY-ZB-EQO" id="MAB-xf-pO0"/>
+                <outlet property="playDurationLabel" destination="YKG-hD-WmT" id="vTj-9w-k1N"/>
+            </connections>
+            <point key="canvasLocation" x="1514" y="-138"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="playButton" width="63" height="63"/>
+        <image name="playButtonClick" width="63" height="63"/>
+        <image name="video-play" width="71" height="71"/>
+    </resources>
+</document>

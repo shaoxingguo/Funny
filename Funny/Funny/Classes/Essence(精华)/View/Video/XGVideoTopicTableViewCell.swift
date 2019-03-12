@@ -8,17 +8,41 @@
 
 import UIKit
 
-class XGVideoTopicTableViewCell: XGBaseTopicTableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+class XGVideoTopicTableViewCell: XGBaseTopicTableViewCell
+{
+    // MARK: - 视图模型
+    override var topicViewModel: XGTopicViewModel? {
+        didSet {
+            // 更新图片高度
+            let height = topicViewModel?.imageHeight ?? 200
+            videoView.snp.updateConstraints { (make) in
+                make.height.equalTo(height).priority(.high)
+            }
+            
+            // 设置图片
+            videoView.topicViewModel = topicViewModel
+        }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    // MARK: - 设置界面
+    
+    override func setUpUI()
+    {
+        super.setUpUI()
+        
+        // 添加子控件
+        addSubview(videoView)
+        
+        // 设置自动布局
+        videoView.snp.makeConstraints { (make) in
+            make.top.equalTo(contentLabel.snp.bottom).offset(kTopicCellMargin)
+            make.left.right.equalTo(contentLabel)
+            make.height.equalTo(200).priority(.high)
+        }
     }
-
+    
+    // MARK: - 懒加载
+    
+    /// 图片视图
+    private lazy var videoView = XGVideoTopicCellView.videoTopicCellView()
 }

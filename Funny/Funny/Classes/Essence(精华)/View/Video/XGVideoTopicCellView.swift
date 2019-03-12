@@ -1,5 +1,5 @@
 //
-//  XGPictureTopicCellView.swift
+//  XGVidoTopicCellView.swift
 //  Funny
 //
 //  Created by monkey on 2019/3/12.
@@ -8,13 +8,14 @@
 
 import UIKit
 
-class XGPictureTopicCellView: UIView
+class XGVideoTopicCellView: UIView
 {
     // MARK: - 视图模型
     
     open var topicViewModel:XGTopicViewModel? {
         didSet {
-            gifImageView.isHidden = (topicViewModel?.isGIF != true)
+            playCountLabel.text = topicViewModel?.playCountStr
+            playDurationLabel.text = topicViewModel?.videoTimeStr
             XGImageCacheManager.shared.imageForKey(key: topicViewModel?.imageURL, size: CGSize(width: kScreenWidth - 2 * kTopicCellMargin, height: topicViewModel?.imageHeight ?? 0), backgroundColor: backgroundColor ?? UIColor.white,isLongPicture:true) { (image) in
                 self.backgroundImageView.image = image
             }
@@ -22,29 +23,29 @@ class XGPictureTopicCellView: UIView
     }
     
     // MARK: - 事件监听
-    
-    /// 查看大图事件
-    @IBAction func seeBigPictureAction(_ sender: UIButton)
+
+    @IBAction func playVidoAction(_ sender: UIButton)
     {
-        // TODO:查看大图
-        XGPrint("查看大图")
+        XGPrint("播放视频")
     }
     
     // MARK: - 私有属性
     
+    /// 播放时长
+    @IBOutlet private weak var playDurationLabel: UILabel!
+    /// 播放次数
+    @IBOutlet private weak var playCountLabel: UILabel!
     /// 背景图片
     @IBOutlet private weak var backgroundImageView: UIImageView!
-    /// gif标记
-    @IBOutlet private weak var gifImageView: UIImageView!
 }
 
 // MARK: - 其他方法
 
-extension XGPictureTopicCellView
+extension XGVideoTopicCellView
 {
     /// xib创建对象方法
-    open class func pictureTopicCellView() -> XGPictureTopicCellView
+    open class func videoTopicCellView() -> XGVideoTopicCellView
     {
-        return Bundle.main.loadNibNamed("XGPictureTopicCellView", owner: nil, options: nil)?.last as! XGPictureTopicCellView
+        return Bundle.main.loadNibNamed("XGVideoTopicCellView", owner: nil, options: nil)?.last as! XGVideoTopicCellView
     }
 }

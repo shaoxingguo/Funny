@@ -68,6 +68,13 @@ class XGTopicViewModel: NSObject
     /// 图片高度
     private(set) open var imageHeight:CGFloat = 0
     
+    /// 播放次数
+    private(set) open var playCountStr:String?
+    /// 视频时长
+    private(set) open var videoTimeStr:String?
+    /// 声音时长
+    private(set) open var voiceTimeStr:String?
+    
     // MARK: - 构造方法
     
     /// 帖子模型
@@ -87,7 +94,11 @@ class XGTopicViewModel: NSObject
         commentStr = numberToString(number: topicModel?.comment ?? 0)
         
         imageHeight = (kScreenWidth - 2 * kTopicCellMargin) / model.width * model.height
-        imageHeight = imageHeight > 200 ? 200 : imageHeight
+        imageHeight = imageHeight > 200 ? 200 : ceil(imageHeight)
+        
+        playCountStr = numberToString(number: topicModel?.playcount ?? 0)! + "次播放"
+        videoTimeStr = timeDurationToString(duration: topicModel?.videotime ?? 0)
+        voiceTimeStr = timeDurationToString(duration: topicModel?.voicetime ?? 0)
         
         rowHeight = calcRowHeight()
     }
@@ -104,7 +115,6 @@ private extension XGTopicViewModel
     /// - Returns: 字符串
     func numberToString(number:Int) -> String?
     {
-        
         var str:String
         if number < 10000 {
             str = "\(number)" // 小于1万
@@ -154,5 +164,17 @@ private extension XGTopicViewModel
         height += (kTopicCellMargin + kTopicCellBottomViewHeight)
         
         return ceil(height)
+    }
+    
+    
+    /// 将播放时长转换为字符串
+    ///
+    /// - Parameter duration: 播放时长
+    /// - Returns: String
+    func timeDurationToString(duration:Int) -> String
+    {
+        let minutes = duration / 60
+        let seconds = duration % 60
+        return String(format: "%02d:%02d", minutes,seconds)
     }
 }

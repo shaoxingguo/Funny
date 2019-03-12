@@ -49,7 +49,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="aup-Qb-kKv"/>
             <connections>
-                <outlet property="backgroudImageView" destination="t7A-gq-mtZ" id="jwz-5V-Gbr"/>
+                <outlet property="backgroundImageView" destination="t7A-gq-mtZ" id="jwz-5V-Gbr"/>
                 <outlet property="gifImageView" destination="bMf-SV-pb6" id="HOJ-2S-27n"/>
             </connections>
             <point key="canvasLocation" x="140" y="42"/>
