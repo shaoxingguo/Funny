@@ -33,8 +33,16 @@ class XGEssenceViewController: UIViewController
         
         // title布局
         let width = titleView.width / CGFloat(titleArray.count)
-        for (index,button) in titleView.subviews.enumerated() {
-            button.frame = CGRect(x: CGFloat(index) * width, y: 0, width: width, height: titleView.height)
+        for (index,view) in titleView.subviews.enumerated() {
+            if index < titleArray.count {
+                // 按钮布局
+                view.frame = CGRect(x: CGFloat(index) * width, y: 0, width: width, height: titleView.height)
+            } else {
+                // 分割线布局
+                let separatorWidth = width * 0.7
+                let separatorHeight:CGFloat = 3
+                view.frame = CGRect(x: (width - separatorWidth) / 2.0, y: titleView.height - separatorHeight, width: separatorWidth, height: separatorHeight)
+            }
         }
     }
     
@@ -53,6 +61,9 @@ class XGEssenceViewController: UIViewController
         // scrollView滚动到对应的位置
         let offsetX = CGFloat(selectedIndex) * contentView.width
         UIView.animate(withDuration: 0.5, animations: {
+            // 分割线滚动到相应的标题
+            let separatorView = self.titleView.subviews.last
+            separatorView?.centerX = button.centerX
             self.contentView.contentOffset = CGPoint(x: offsetX, y: 0)
         }) { (_) in
             // 添加子视图
@@ -141,6 +152,7 @@ private extension XGEssenceViewController
     /// 设置标题视图
     func setUpTitleView() -> Void
     {
+        // 约定前5个位按钮 最后一个分割线
         for (index,dictionary) in titleArray.enumerated() {
             let title = dictionary["title"] as? String
             // 添加按钮
@@ -149,6 +161,10 @@ private extension XGEssenceViewController
             button.setTitleColor(UIColor.red, for: .selected)
             titleView.addSubview(button)
         }
+        
+        let separatorView = UIView()
+        separatorView.backgroundColor = UIColor.red
+        titleView.addSubview(separatorView)
     }
     
     /// 设置容器视图

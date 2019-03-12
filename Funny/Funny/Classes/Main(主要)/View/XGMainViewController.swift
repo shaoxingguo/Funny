@@ -98,6 +98,6 @@ private extension XGMainViewController
         // 宽度减1 这样缩进时发布按钮就会大一点 防止容错点 点击后进入中间的占位控制器
         let width = (tabBar.width / CGFloat(viewControllers?.count ?? 1)) - 1
         tabBar.addSubview(composeButton)
-        composeButton.frame = tabBar.bounds.insetBy(dx: width, dy: 0)
+        composeButton.frame = tabBar.bounds.insetBy(dx: width * 2, dy: 0)
     }
 }
