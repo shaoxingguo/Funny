@@ -39,26 +39,11 @@ class XGBaseTopicTableViewCell: UITableViewCell
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - 懒加载
-    
-    /// 顶部视图
-    private lazy var topView = XGTopicCellTopView.topicCellTopView()
-    /// 正文
-    private lazy var contentLabel = UILabel(text: "正文", fontSize: kContentTextFontSize, textColor: UIColor.darkGray, textAlignment: .left)
-    /// 热评视图
-    private lazy var hotCommentView = XGHotCommentView.hotCommentView()
-    /// 底部视图
-    private lazy var bottomView = XGTopicCellBottomView.topicCellBottomView()
-}
-
-// MARK: - 设置界面
-
-private extension XGBaseTopicTableViewCell
-{
-    func setUpUI() -> Void
+    // MARK: - 设置界面
+    open func setUpUI() -> Void
     {
         backgroundColor = UIColor.white
-
+        
         // 添加子控件
         contentView.addSubview(topView)
         contentView.addSubview(contentLabel)
@@ -89,4 +74,15 @@ private extension XGBaseTopicTableViewCell
             make.height.equalTo(kTopicCellBottomViewHeight)
         }
     }
+    
+    // MARK: - 懒加载
+    
+    /// 顶部视图
+    private lazy var topView = XGTopicCellTopView.topicCellTopView()
+    /// 正文
+    private lazy var contentLabel = UILabel(text: "正文", fontSize: kContentTextFontSize, textColor: UIColor.darkGray, textAlignment: .left)
+    /// 热评视图
+    private lazy var hotCommentView = XGHotCommentView.hotCommentView()
+    /// 底部视图
+    private lazy var bottomView = XGTopicCellBottomView.topicCellBottomView()
 }

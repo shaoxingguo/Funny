@@ -51,21 +51,6 @@ import MJExtension
     var voicetime:Int = 0
 }
 
-/*
- [self mj_setupReplacedKeyFromPropertyName121:^id(NSString *propertyName) {
- if ([propertyName isEqualToString:@"timeId"]) {
- return @"t";
- } else if ([propertyName isEqualToString:@"topCmt"]) {
- return @"top_cmt[0]";
- } else if ([propertyName isEqualToString:@"imageURL"]) {
- return @"image0";
- }
- else {
- return [propertyName mj_underlineFromCamel];
- }
- }];
- */
-
 // MARK: - MJExtension
 
 extension XGTopicModel

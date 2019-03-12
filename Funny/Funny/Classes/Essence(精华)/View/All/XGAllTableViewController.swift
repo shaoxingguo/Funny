@@ -8,81 +8,17 @@
 
 import UIKit
 
-/// cell重用标识符
-private let kReuseIdentifier = "XGBaseTopicTableViewCell"
-
-class XGAllTableViewController: UITableViewController
+class XGAllTableViewController: XGTopicTableViewController
 {
-
-    /// 帖子视图模型
-    private lazy var topicListViewModel = XGTopicListViewModel()
-    
-    // MARK: - 控制器生命周期方法
-    
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-
-        setUpTableView()
-        loadData()
-    }
-}
-
-// MARK: - 其他方法
-
-private extension XGAllTableViewController
-{
-    /// 设置tableView
-    func setUpTableView() -> Void
-    {
-        tableView.register(XGBaseTopicTableViewCell.self, forCellReuseIdentifier: kReuseIdentifier)
-        tableView.separatorStyle = .none
-        tableView.estimatedRowHeight = 400
-    }
-}
-
-// MARK: - 加载数据相关
-
-private extension XGAllTableViewController
-{
-    /// 加载数据
-    func loadData() -> Void
-    {
-        topicListViewModel.loadTopicList(type: .Word) { (isSuccess) in
-            if !isSuccess {
-                XGPrint("加载自定义帖子失败")
-                return
-            }
-            
-            // 刷新表格
-            self.tableView.reloadData()
-        }
-    }
-}
-
-// MARK: - UITableViewDataSource
-
-extension XGAllTableViewController
-{
-    override func numberOfSections(in tableView: UITableView) -> Int
-    {
-        return 1
+    override var topicType: XGTopicType {
+        return .Word
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
-        return topicListViewModel.topicList.count
+    override var reuseIdentifier: String {
+        return NSStringFromClass(XGAllTableViewController.self)
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
-        let cell = tableView.dequeueReusableCell(withIdentifier: kReuseIdentifier) as! XGBaseTopicTableViewCell
-        cell.topicViewModel = topicListViewModel.topicList[indexPath.row]
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
-    {
-        return topicListViewModel.topicList[indexPath.row].rowHeight
+    override func registerTableCell() {
+        tableView.register(XGAllTopicTableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
     }
 }

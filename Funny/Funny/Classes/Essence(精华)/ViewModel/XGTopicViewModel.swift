@@ -40,6 +40,16 @@ class XGTopicViewModel: NSObject
         return topicModel?.topCmt
     }
     
+    /// 是否是GIF
+    open var isGIF:Bool {
+        return topicModel?.isGif == true
+    }
+    
+    /// 图片URL地址
+    open var imageURL:String? {
+        return topicModel?.imageURL
+    }
+    
     /// 赞
     private(set) open var likeStr:String?
     /// 踩
