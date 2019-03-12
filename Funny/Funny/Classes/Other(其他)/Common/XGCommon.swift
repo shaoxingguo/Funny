@@ -18,7 +18,7 @@ func XGPrint(_ item : Any, file : String = #file, lineNum : Int = #line)
     #endif
 }
 
-// MARK: - 应用程序相关
+// MARK: - 界面布局相关
 
 /// 屏幕宽度
 public let kScreenWidth:CGFloat = UIScreen.main.bounds.width
@@ -31,3 +31,15 @@ public let kNavigationBarHeight:CGFloat = 64
 public let kTabBarHeight:CGFloat = 49
 /// 工具栏高度
 public let kToolBarHeight:CGFloat = 44
+
+/// cell间距
+public let kTopicCellMargin:CGFloat = 10
+/// cell顶部视图高度
+public let kTopicCellTopViewHeight:CGFloat = 60
+
+
+// MARK: - 网络接口相关
+/// 服务器地址
+public let kBaseURLString:String = "https://api.budejie.com/"
+/// 获取帖子信息接口
+public let kTopicListAPI:String = "api/api_open.php"
