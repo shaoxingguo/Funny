@@ -50,6 +50,12 @@ private extension XGTopicTableViewController
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = 400
         
+        // 取消默认64偏移
+        tableView.contentInsetAdjustmentBehavior = .never
+
+        // 设置边距
+        tableView.contentInset = UIEdgeInsets(top: kNavigationBarHeight + kToolBarHeight, left: 0, bottom: kTopicCellBottomViewHeight, right: 0)
+        tableView.scrollIndicatorInsets = tableView.contentInset
         // 注册cell
         registerTableCell()
     }

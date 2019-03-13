@@ -23,12 +23,15 @@ class XGEssenceViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        setUpNavigationItem()
         addChildViewControllers()
         titleButtonClickAction(button: titleView.subviews.first as! UIButton)
     }
     
     // MARK: - 事件监听
     
+    /// 标题按钮点击
     @objc private func titleButtonClickAction(button:UIButton) -> Void
     {
         // 取消上一次选中的按钮
@@ -67,13 +70,14 @@ class XGEssenceViewController: UIViewController
     /// 导航标题视图
     private lazy var titleView:UIView = {
        let view = UIView()
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = UIColor.white.withAlphaComponent(0.3)
         return view
     }()
     /// 内容视图
     private lazy var contentView:UIScrollView = { [weak self] in
         let scrollView = UIScrollView()
         scrollView.backgroundColor = UIColor.white
+        scrollView.contentInsetAdjustmentBehavior = .never
         return scrollView
     }()
 }
@@ -94,6 +98,14 @@ extension XGEssenceViewController:UIScrollViewDelegate
 
 private extension XGEssenceViewController
 {
+    /// 设置导航栏
+    func setUpNavigationItem() -> Void
+    {
+        let imageView = UIImageView(image: UIImage(named: "MainTitle"))
+        navigationItem.titleView = imageView
+    }
+    
+    /// 添加子视图
     func addChildView() -> Void
     {
         // 滚动结束后 如果当前视图未添加到scrollView 则进行添加
@@ -108,8 +120,8 @@ private extension XGEssenceViewController
     func setUpUI() -> Void
     {
         // 添加子控件
-        view.addSubview(titleView)
         view.addSubview(contentView)
+        view.addSubview(titleView)
         
         // 设置自动布局
         titleView.snp.makeConstraints { (make) in
@@ -119,9 +131,7 @@ private extension XGEssenceViewController
         }
         
         contentView.snp.makeConstraints { (make) in
-            make.top.equalTo(titleView.snp.bottom)
-            make.left.right.equalTo(view)
-            make.bottom.equalTo(view.snp_bottomMargin)
+            make.edges.equalTo(view)
         }
         
         // 设置标题视图
