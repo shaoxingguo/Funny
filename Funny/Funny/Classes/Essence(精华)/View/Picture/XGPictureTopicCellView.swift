@@ -8,6 +8,9 @@
 
 import UIKit
 
+/// 图片点击通知
+public let kPictureTopicCellImageTapNotification:String = "kPictureTopicCellImageTopNotification"
+
 class XGPictureTopicCellView: UIView
 {
     // MARK: - 视图模型
@@ -27,9 +30,8 @@ class XGPictureTopicCellView: UIView
     /// 查看大图事件
     @IBAction func seeBigPictureAction()
     {
-    
-        let viewController = XGSeeBigPictureViewController(topicViewModel: topicViewModel)
-        UIApplication.shared.keyWindow?.rootViewController?.present(viewController, animated: true, completion: nil)
+        // 发布通知
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: kPictureTopicCellImageTapNotification), object: topicViewModel, userInfo: nil)
     }
     
     // MARK: - 私有属性

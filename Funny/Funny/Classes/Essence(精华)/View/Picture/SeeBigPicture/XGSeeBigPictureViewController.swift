@@ -73,6 +73,24 @@ extension XGSeeBigPictureViewController:UIScrollViewDelegate
         return bigImageView
     }
     
+    func scrollViewDidZoom(_ scrollView: UIScrollView)
+    {
+        var scale = (bigImageView.transform.a - scrollView.minimumZoomScale) / scrollView.minimumZoomScale
+        
+        // 小于最小缩放比例一半 继续 缩小就退出当前控制器
+        if scale < scrollView.minimumZoomScale / 2 {
+            dismiss(animated: true, completion: nil)
+            return
+        }
+        
+        // 处理负数和超过1
+        scale = scale < 0 ? 0 : scale
+        scale = scale > 1 ? 1 : scale
+        scrollView.backgroundColor = UIColor.black.withAlphaComponent(scale)
+        // 当前比例 >= 原始尺寸 背景黑色 缩小则是透明色
+        view.backgroundColor = scale >= 1 ? UIColor.black : UIColor.clear
+    }
+    
     // 停止缩放
     func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat)
     {
@@ -145,6 +163,7 @@ private extension XGSeeBigPictureViewController
      func setUpUI() -> Void
     {
         view.backgroundColor = UIColor.black
+        scrollView.backgroundColor = UIColor.black
         
         // 添加子控件
         view.addSubview(scrollView)
@@ -159,6 +178,7 @@ private extension XGSeeBigPictureViewController
         // 设置scrollView
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.bounces = false
+        scrollView.contentInsetAdjustmentBehavior = .never
         
         // 设置缩放
         scrollView.minimumZoomScale = 0.5

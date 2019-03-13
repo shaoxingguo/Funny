@@ -17,6 +17,7 @@
 		8C0F74FC2238D89E0050715D /* XGNewTopicRecommendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C0F74FA2238D89E0050715D /* XGNewTopicRecommendTableViewCell.xib */; };
 		8C0F74FE2238DEA50050715D /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F74FD2238DEA50050715D /* Int+Extension.swift */; };
 		8C0F75002238F2FF0050715D /* XGSeeBigPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F74FF2238F2FF0050715D /* XGSeeBigPictureViewController.swift */; };
+		8C1883E022390AE800FB7614 /* XGTransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1883DF22390AE800FB7614 /* XGTransitionAnimation.swift */; };
 		8C3FE08222368DF300CAF4B0 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE07622368DF300CAF4B0 /* UIColor+Extension.swift */; };
 		8C3FE08322368DF300CAF4B0 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE07722368DF300CAF4B0 /* UILabel+Extension.swift */; };
 		8C3FE08422368DF300CAF4B0 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE07822368DF300CAF4B0 /* UIButton+Extension.swift */; };
@@ -74,6 +75,7 @@
 		8C0F74FA2238D89E0050715D /* XGNewTopicRecommendTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XGNewTopicRecommendTableViewCell.xib; sourceTree = "<group>"; };
 		8C0F74FD2238DEA50050715D /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		8C0F74FF2238F2FF0050715D /* XGSeeBigPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGSeeBigPictureViewController.swift; sourceTree = "<group>"; };
+		8C1883DF22390AE800FB7614 /* XGTransitionAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGTransitionAnimation.swift; sourceTree = "<group>"; };
 		8C3FE07622368DF300CAF4B0 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		8C3FE07722368DF300CAF4B0 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		8C3FE07822368DF300CAF4B0 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
@@ -134,6 +136,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C1883E12239154B00FB7614 /* SeeBigPicture */ = {
+			isa = PBXGroup;
+			children = (
+				8C1883DF22390AE800FB7614 /* XGTransitionAnimation.swift */,
+				8C0F74FF2238F2FF0050715D /* XGSeeBigPictureViewController.swift */,
+			);
+			path = SeeBigPicture;
+			sourceTree = "<group>";
+		};
 		8C3FE05F22368DF300CAF4B0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -419,11 +430,11 @@
 		8C3FE09622369D3F00CAF4B0 /* Picture */ = {
 			isa = PBXGroup;
 			children = (
+				8C1883E12239154B00FB7614 /* SeeBigPicture */,
 				8CD5D3042237C483009A5BD7 /* XGPictureTopicCellView.xib */,
 				8CD5D3022237C478009A5BD7 /* XGPictureTopicCellView.swift */,
 				8CD5D3062237C90C009A5BD7 /* XGPictureTopicTableViewCell.swift */,
 				8C3FE09B22369DA200CAF4B0 /* XGPictureTableViewController.swift */,
-				8C0F74FF2238F2FF0050715D /* XGSeeBigPictureViewController.swift */,
 			);
 			path = Picture;
 			sourceTree = "<group>";
@@ -709,6 +720,7 @@
 				8C9CBD3F223733CF0042BA21 /* XGNetworkManager.swift in Sources */,
 				8CD5D3072237C90C009A5BD7 /* XGPictureTopicTableViewCell.swift in Sources */,
 				8CD5D30B2237CBE2009A5BD7 /* XGVideoTopicTableViewCell.swift in Sources */,
+				8C1883E022390AE800FB7614 /* XGTransitionAnimation.swift in Sources */,
 				8CD5D30D2237CBF6009A5BD7 /* XGVoiceTopicTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
