@@ -145,6 +145,7 @@ private extension XGEssenceViewController
             titleView.addSubview(button)
         }
         
+        // 分割线视图布局
         let separatorView = UIView()
         separatorView.backgroundColor = UIColor.red
         // 分割线布局

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6A1D5AC25020DC3B30150EBE /* Pods_Funny.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6169A5BE55DA4D17666F389D /* Pods_Funny.framework */; };
+		8C0F74F02238BCEC0050715D /* XGVoiceTopicCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C0F74EF2238BCEC0050715D /* XGVoiceTopicCellView.xib */; };
 		8C3FE08222368DF300CAF4B0 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE07622368DF300CAF4B0 /* UIColor+Extension.swift */; };
 		8C3FE08322368DF300CAF4B0 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE07722368DF300CAF4B0 /* UILabel+Extension.swift */; };
 		8C3FE08422368DF300CAF4B0 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE07822368DF300CAF4B0 /* UIButton+Extension.swift */; };
@@ -56,6 +57,7 @@
 /* Begin PBXFileReference section */
 		1E3FC2A792F29E37B5F15D78 /* Pods-Funny.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Funny.release.xcconfig"; path = "Target Support Files/Pods-Funny/Pods-Funny.release.xcconfig"; sourceTree = "<group>"; };
 		6169A5BE55DA4D17666F389D /* Pods_Funny.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Funny.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C0F74EF2238BCEC0050715D /* XGVoiceTopicCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XGVoiceTopicCellView.xib; sourceTree = "<group>"; };
 		8C3FE07622368DF300CAF4B0 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		8C3FE07722368DF300CAF4B0 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		8C3FE07822368DF300CAF4B0 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
@@ -405,9 +407,10 @@
 		8C3FE09722369D3F00CAF4B0 /* Voice */ = {
 			isa = PBXGroup;
 			children = (
+				8C0F74EF2238BCEC0050715D /* XGVoiceTopicCellView.xib */,
+				8CD5D3142237EBC3009A5BD7 /* XGVoiceTopicCellView.swift */,
 				8CD5D30C2237CBF6009A5BD7 /* XGVoiceTopicTableViewCell.swift */,
 				8C3FE09F22369DB200CAF4B0 /* XGVoiceTableViewController.swift */,
-				8CD5D3142237EBC3009A5BD7 /* XGVoiceTopicCellView.swift */,
 			);
 			path = Voice;
 			sourceTree = "<group>";
@@ -558,6 +561,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C0F74F02238BCEC0050715D /* XGVoiceTopicCellView.xib in Resources */,
 				8CB5F57222368C2C009D7A10 /* Assets.xcassets in Resources */,
 				8CD5D3012237B0F0009A5BD7 /* XGHotCommentView.xib in Resources */,
 				8CD5D2E222376BEC009A5BD7 /* XGTopicCellTopView.xib in Resources */,

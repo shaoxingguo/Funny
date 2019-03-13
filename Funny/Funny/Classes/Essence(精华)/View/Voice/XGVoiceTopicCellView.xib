@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="ZwE-N9-STo" customClass="XGVoiceTopicCellView" customModule="Funny" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jps-ZX-aJX">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zmD-Wi-tVV">
+                    <rect key="frame" x="337.5" y="0.0" width="37.5" height="18"/>
+                    <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agw-J3-mQb">
+                    <rect key="frame" x="156" y="156" width="63" height="63"/>
+                    <state key="normal" image="playButtonPlay" backgroundImage="playButton"/>
+                    <state key="highlighted" backgroundImage="playButtonClick"/>
+                    <connections>
+                        <action selector="playVoiceAction:" destination="ZwE-N9-STo" eventType="touchUpInside" id="joG-Gn-D38"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NpX-tJ-khV">
+                    <rect key="frame" x="337" y="357" width="38" height="18"/>
+                    <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="agw-J3-mQb" firstAttribute="centerY" secondItem="ZwE-N9-STo" secondAttribute="centerY" id="04N-Ml-YVk"/>
+                <constraint firstItem="0eh-55-f0C" firstAttribute="trailing" secondItem="NpX-tJ-khV" secondAttribute="trailing" id="2IY-f7-KAw"/>
+                <constraint firstItem="agw-J3-mQb" firstAttribute="centerX" secondItem="ZwE-N9-STo" secondAttribute="centerX" id="8nr-do-4NL"/>
+                <constraint firstItem="Jps-ZX-aJX" firstAttribute="top" secondItem="0eh-55-f0C" secondAttribute="top" id="CPS-nP-5nQ"/>
+                <constraint firstItem="0eh-55-f0C" firstAttribute="trailing" secondItem="Jps-ZX-aJX" secondAttribute="trailing" id="RAo-sl-HIe"/>
+                <constraint firstItem="0eh-55-f0C" firstAttribute="trailing" secondItem="zmD-Wi-tVV" secondAttribute="trailing" id="aab-Ri-Jd9"/>
+                <constraint firstItem="0eh-55-f0C" firstAttribute="bottom" secondItem="NpX-tJ-khV" secondAttribute="bottom" id="ak7-Ek-vth"/>
+                <constraint firstItem="zmD-Wi-tVV" firstAttribute="top" secondItem="0eh-55-f0C" secondAttribute="top" id="jEN-rl-svT"/>
+                <constraint firstItem="Jps-ZX-aJX" firstAttribute="leading" secondItem="0eh-55-f0C" secondAttribute="leading" id="ks6-RX-4z6"/>
+                <constraint firstItem="0eh-55-f0C" firstAttribute="bottom" secondItem="Jps-ZX-aJX" secondAttribute="bottom" id="vNQ-nL-V9h"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="0eh-55-f0C"/>
+            <connections>
+                <outlet property="backgroundImageView" destination="Jps-ZX-aJX" id="TLl-4D-Wiy"/>
+                <outlet property="playCountLabel" destination="zmD-Wi-tVV" id="Neu-hS-gqT"/>
+                <outlet property="playDurationLabel" destination="NpX-tJ-khV" id="w2w-p8-U3N"/>
+            </connections>
+            <point key="canvasLocation" x="-34.399999999999999" y="-47.226386806596707"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="playButton" width="63" height="63"/>
+        <image name="playButtonClick" width="63" height="63"/>
+        <image name="playButtonPlay" width="30" height="30"/>
+    </resources>
+</document>

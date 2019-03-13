@@ -24,7 +24,7 @@
                     <state key="normal" image="video-play" backgroundImage="playButton"/>
                     <state key="highlighted" image="video-play" backgroundImage="playButtonClick"/>
                     <connections>
-                        <action selector="playVidoAction:" destination="liq-mY-C0G" eventType="touchUpInside" id="PTA-kz-4fh"/>
+                        <action selector="playVideoAction:" destination="liq-mY-C0G" eventType="touchUpInside" id="PTA-kz-4fh"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhY-ZB-EQO">
