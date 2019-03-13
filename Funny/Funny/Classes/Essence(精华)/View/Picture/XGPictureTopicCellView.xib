@@ -51,6 +51,7 @@
             <connections>
                 <outlet property="backgroundImageView" destination="t7A-gq-mtZ" id="jwz-5V-Gbr"/>
                 <outlet property="gifImageView" destination="bMf-SV-pb6" id="HOJ-2S-27n"/>
+                <outlet property="seeBigPictureButton" destination="uvV-R5-lXo" id="mtY-1k-v0M"/>
             </connections>
             <point key="canvasLocation" x="140" y="42"/>
         </view>

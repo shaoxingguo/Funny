@@ -40,6 +40,8 @@ public let kTopicCellTopViewHeight:CGFloat = 70
 public let kTopicCellBottomViewHeight:CGFloat = 49
 /// 热评视图高度
 public let kTopicCellHotCommentViewHeight:CGFloat = 60
+/// 用户头像大小
+public let kTopicCellUserIconWidth:CGFloat = 50
 
 /// 正文字体大小
 public let kContentTextFontSize:CGFloat = 15

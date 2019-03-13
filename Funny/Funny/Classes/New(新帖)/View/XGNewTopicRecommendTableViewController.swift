@@ -9,6 +9,9 @@
 import UIKit
 import SVProgressHUD
 
+/// cell重用标识符
+private let kReuseIdentifier = "XGNewTopicRecommendTableViewCell"
+
 class XGNewTopicRecommendTableViewController: UITableViewController
 {
     /// 推荐列表模型
@@ -20,20 +23,31 @@ class XGNewTopicRecommendTableViewController: UITableViewController
     {
         super.viewDidLoad()
         
+        setUpTableView()
         navigationItem.title = "热门推荐"
         loadData()
     }
+}
 
-    // MARK: - Table view data source
+// MARK: - UITableViewDataSource
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+extension XGNewTopicRecommendTableViewController
+{
+    override func numberOfSections(in tableView: UITableView) -> Int
+    {
+        return 1
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return newTopicRecommendListViewModel.recommendList.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCell(withIdentifier: kReuseIdentifier) as! XGNewTopicRecommendTableViewCell
+        cell.newTopicRecommendModel = newTopicRecommendListViewModel.recommendList[indexPath.row]
+        return cell
     }
 }
 
@@ -41,6 +55,14 @@ class XGNewTopicRecommendTableViewController: UITableViewController
 
 private extension XGNewTopicRecommendTableViewController
 {
+    /// 设置tableView
+    func setUpTableView() -> Void
+    {
+        tableView.rowHeight = 60
+        // 注册cell
+        tableView.register(UINib(nibName: "XGNewTopicRecommendTableViewCell", bundle: nil), forCellReuseIdentifier: kReuseIdentifier)
+    }
+    
     /// 加载数据
     func loadData() -> Void
     {

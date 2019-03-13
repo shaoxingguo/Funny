@@ -91,6 +91,9 @@ private extension XGMainViewController
         item.setTitleTextAttributes(
             [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 15),
              NSAttributedString.Key.foregroundColor:UIColor.lightGray], for: .normal)
+        item.setTitleTextAttributes(
+            [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 15),
+             NSAttributedString.Key.foregroundColor:UIColor.darkGray], for: .selected)
     }
     
     func addComposeButton() -> Void

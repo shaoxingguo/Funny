@@ -14,6 +14,7 @@ class XGPictureTopicCellView: UIView
     
     open var topicViewModel:XGTopicViewModel? {
         didSet {
+            seeBigPictureButton.isHidden = (topicViewModel?.isLongPicture == false)
             gifImageView.isHidden = (topicViewModel?.isGIF != true)
             XGImageCacheManager.shared.imageForKey(key: topicViewModel?.imageURL, size: CGSize(width: kScreenWidth - 2 * kTopicCellMargin, height: topicViewModel?.imageHeight ?? 0), backgroundColor: backgroundColor ?? UIColor.white,isLongPicture:true) { (image) in
                 self.backgroundImageView.image = image
@@ -32,6 +33,8 @@ class XGPictureTopicCellView: UIView
     
     // MARK: - 私有属性
     
+    /// 查看大图按钮
+    @IBOutlet weak var seeBigPictureButton: UIButton!
     /// 背景图片
     @IBOutlet private weak var backgroundImageView: UIImageView!
     /// gif标记

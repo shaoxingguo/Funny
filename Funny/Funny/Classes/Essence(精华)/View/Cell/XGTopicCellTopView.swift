@@ -14,7 +14,7 @@ class XGTopicCellTopView: UIView
     
     open var topicViewModel:XGTopicViewModel? {
         didSet {
-            XGImageCacheManager.shared.imageForKey(key: topicViewModel?.profileImage, size: CGSize(width: 50, height: 50), backgroundColor: backgroundColor ?? UIColor.white, isUserIcon: true) { (image) in
+            XGImageCacheManager.shared.imageForKey(key: topicViewModel?.profileImage, size: CGSize(width: kTopicCellUserIconWidth, height: kTopicCellUserIconWidth), backgroundColor: backgroundColor ?? UIColor.white, isUserIcon: true) { (image) in
                 self.userIconImageView.image = image
             }
             

@@ -13,6 +13,9 @@
 		8C0F74F42238CFB20050715D /* XGNewTopicRecommendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F74F32238CFB20050715D /* XGNewTopicRecommendTableViewController.swift */; };
 		8C0F74F62238D0FF0050715D /* XGNewTopicRecommendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F74F52238D0FF0050715D /* XGNewTopicRecommendModel.swift */; };
 		8C0F74F82238D3570050715D /* XGNewTopicRecommendListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F74F72238D3570050715D /* XGNewTopicRecommendListViewModel.swift */; };
+		8C0F74FB2238D89E0050715D /* XGNewTopicRecommendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F74F92238D89E0050715D /* XGNewTopicRecommendTableViewCell.swift */; };
+		8C0F74FC2238D89E0050715D /* XGNewTopicRecommendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C0F74FA2238D89E0050715D /* XGNewTopicRecommendTableViewCell.xib */; };
+		8C0F74FE2238DEA50050715D /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F74FD2238DEA50050715D /* Int+Extension.swift */; };
 		8C3FE08222368DF300CAF4B0 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE07622368DF300CAF4B0 /* UIColor+Extension.swift */; };
 		8C3FE08322368DF300CAF4B0 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE07722368DF300CAF4B0 /* UILabel+Extension.swift */; };
 		8C3FE08422368DF300CAF4B0 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE07822368DF300CAF4B0 /* UIButton+Extension.swift */; };
@@ -66,6 +69,9 @@
 		8C0F74F32238CFB20050715D /* XGNewTopicRecommendTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGNewTopicRecommendTableViewController.swift; sourceTree = "<group>"; };
 		8C0F74F52238D0FF0050715D /* XGNewTopicRecommendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGNewTopicRecommendModel.swift; sourceTree = "<group>"; };
 		8C0F74F72238D3570050715D /* XGNewTopicRecommendListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGNewTopicRecommendListViewModel.swift; sourceTree = "<group>"; };
+		8C0F74F92238D89E0050715D /* XGNewTopicRecommendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGNewTopicRecommendTableViewCell.swift; sourceTree = "<group>"; };
+		8C0F74FA2238D89E0050715D /* XGNewTopicRecommendTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XGNewTopicRecommendTableViewCell.xib; sourceTree = "<group>"; };
+		8C0F74FD2238DEA50050715D /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		8C3FE07622368DF300CAF4B0 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		8C3FE07722368DF300CAF4B0 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		8C3FE07822368DF300CAF4B0 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
@@ -308,8 +314,10 @@
 		8C3FE07322368DF300CAF4B0 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8C3FE089223691BB00CAF4B0 /* XGNewTopicViewController.swift */,
+				8C0F74FA2238D89E0050715D /* XGNewTopicRecommendTableViewCell.xib */,
+				8C0F74F92238D89E0050715D /* XGNewTopicRecommendTableViewCell.swift */,
 				8C0F74F32238CFB20050715D /* XGNewTopicRecommendTableViewController.swift */,
+				8C3FE089223691BB00CAF4B0 /* XGNewTopicViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -332,6 +340,7 @@
 				8C3FE07822368DF300CAF4B0 /* UIButton+Extension.swift */,
 				8C3FE07922368DF300CAF4B0 /* UIView+Extension.swift */,
 				8C3FE07A22368DF300CAF4B0 /* UIImage+Extension.swift */,
+				8C0F74FD2238DEA50050715D /* Int+Extension.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -575,6 +584,7 @@
 			files = (
 				8C0F74F02238BCEC0050715D /* XGVoiceTopicCellView.xib in Resources */,
 				8CB5F57222368C2C009D7A10 /* Assets.xcassets in Resources */,
+				8C0F74FC2238D89E0050715D /* XGNewTopicRecommendTableViewCell.xib in Resources */,
 				8CD5D3012237B0F0009A5BD7 /* XGHotCommentView.xib in Resources */,
 				8CD5D2E222376BEC009A5BD7 /* XGTopicCellTopView.xib in Resources */,
 				8CD5D3052237C483009A5BD7 /* XGPictureTopicCellView.xib in Resources */,
@@ -651,6 +661,7 @@
 			files = (
 				8CD5D3092237CA3F009A5BD7 /* XGTopicTableViewController.swift in Sources */,
 				8C9CBD422237361A0042BA21 /* XGDataManager.swift in Sources */,
+				8C0F74FE2238DEA50050715D /* Int+Extension.swift in Sources */,
 				8C3FE0A422369DC300CAF4B0 /* XGAllTableViewController.swift in Sources */,
 				8CD5D3132237EBB6009A5BD7 /* XGVideoTopicCellView.swift in Sources */,
 				8CD5D2DD22376AF9009A5BD7 /* XGBaseTopicTableViewCell.swift in Sources */,
@@ -665,6 +676,7 @@
 				8C3FE09E22369DAB00CAF4B0 /* XGVideoTableViewController.swift in Sources */,
 				8C3FE08422368DF300CAF4B0 /* UIButton+Extension.swift in Sources */,
 				8C3FE08722368DF300CAF4B0 /* XGCommon.swift in Sources */,
+				8C0F74FB2238D89E0050715D /* XGNewTopicRecommendTableViewCell.swift in Sources */,
 				8CD5D2E4223776FA009A5BD7 /* XGImageCacheManager.swift in Sources */,
 				8C9CBD4822373C7F0042BA21 /* XGHotCommentModel.swift in Sources */,
 				8C3FE08222368DF300CAF4B0 /* UIColor+Extension.swift in Sources */,

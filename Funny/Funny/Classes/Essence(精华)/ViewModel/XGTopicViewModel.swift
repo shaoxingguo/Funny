@@ -50,6 +50,11 @@ class XGTopicViewModel
         return topicModel?.imageURL
     }
     
+    /// 是否是长图
+    open var isLongPicture:Bool {
+        return topicModel!.height > kScreenHeight
+    }
+    
     /// 赞
     private(set) open var likeStr:String?
     /// 踩
@@ -86,19 +91,19 @@ class XGTopicViewModel
         type = XGTopicType(rawValue: model.type)!
      
         // 设置属性值
-        likeStr = numberToString(number: topicModel?.ding ?? 0)
-        unlikeStr = numberToString(number: topicModel?.cai ?? 0)
-        shareStr = numberToString(number: topicModel?.repost ?? 0)
-        commentStr = numberToString(number: topicModel?.comment ?? 0)
+        likeStr = topicModel?.ding.toThousandString()
+        unlikeStr = topicModel?.cai.toThousandString()
+        shareStr = topicModel?.repost.toThousandString()
+        commentStr = topicModel?.comment.toThousandString()
         
         imageHeight = (kScreenWidth - 2 * kTopicCellMargin) / model.width * model.height
         imageHeight = imageHeight > 200 ? 200 : ceil(imageHeight)
         
-        playCountStr = numberToString(number: topicModel?.playcount ?? 0)! + "次播放"
+        playCountStr = topicModel?.playcount.toThousandString().appending("次播放")
         videoTimeStr = timeDurationToString(duration: topicModel?.videotime ?? 0)
         voiceTimeStr = timeDurationToString(duration: topicModel?.voicetime ?? 0)
         
-        rowHeight = calcRowHeight()
+        rowHeight = calculateRowHeight()
     }
 }
 
@@ -106,37 +111,9 @@ class XGTopicViewModel
 
 private extension XGTopicViewModel
 {
-    
-    /// 数字转换成字符串
-    ///
-    /// - Parameter number: 数字
-    /// - Returns: 字符串
-    func numberToString(number:Int) -> String?
-    {
-        var str:String
-        if number < 10000 {
-            str = "\(number)" // 小于1万
-        } else {
-            // 大于1万
-            str = String(format: "%.2f", CGFloat(number) / CGFloat(10000))
-            // 处理 2.00
-            if str.hasSuffix(".00") {
-                let location = (str as NSString).range(of: ".00").location
-                str = (str as NSString).substring(to: location)
-            } else if str.hasSuffix("0") {
-                // 处理 2.20
-                let index = str.index(str.endIndex, offsetBy: -1)
-                str = String(str[..<index])
-            }
-            
-            str += "万"
-        }
-        
-        return str
-    }
-    
+
     /// 计算行高
-    func calcRowHeight() -> CGFloat
+    func calculateRowHeight() -> CGFloat
     {
         var height:CGFloat = 0
         

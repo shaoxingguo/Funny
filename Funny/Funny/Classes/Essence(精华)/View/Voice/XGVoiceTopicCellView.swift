@@ -25,11 +25,11 @@ class XGVoiceTopicCellView: UIView
     // MARK: - 私有属性
     
     /// 背景图片
-    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet private weak var backgroundImageView: UIImageView!
     /// 播放次数
-    @IBOutlet weak var playCountLabel: UILabel!
+    @IBOutlet private weak var playCountLabel: UILabel!
     /// 播放时长
-    @IBOutlet weak var playDurationLabel: UILabel!
+    @IBOutlet private weak var playDurationLabel: UILabel!
     
     // MARK: - 事件监听
     
