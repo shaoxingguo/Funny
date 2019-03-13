@@ -8,6 +8,8 @@
 
 import UIKit
 import SDWebImage
+import Photos
+import SVProgressHUD
 
 class XGSeeBigPictureViewController: UIViewController
 {
@@ -47,6 +49,32 @@ class XGSeeBigPictureViewController: UIViewController
         dismiss(animated: true, completion: nil)
     }
     
+    @objc private func saveImageToPhotoLibrary() -> Void
+    {
+        guard let appName = Bundle.main.appName else {
+            return
+        }
+        
+        // 检查图片是否已经下载完成
+        if SDWebImageManager.shared().imageCache?.diskImageDataExists(withKey: topicViewModel?.imageURL) == false {
+            return
+        }
+        
+        guard let filePath = SDWebImageManager.shared().imageCache?.defaultCachePath(forKey: topicViewModel?.imageURL) else {
+            return
+        }
+        
+        let fileURL = URL(fileURLWithPath: filePath)
+        PHPhotoLibrary.saveImage(imageFielURL: fileURL,collectionName: appName) { (error) in
+            if error != nil {
+                SVProgressHUD.showSuccess(withStatus: "保存失败")
+                return
+            }
+            
+            SVProgressHUD.showSuccess(withStatus: "保存成功")
+        }
+    }
+    
     // MARK: - 私有属性 && 懒加载
     
     /// 数据模型
@@ -61,6 +89,8 @@ class XGSeeBigPictureViewController: UIViewController
     }()
     /// scrollView
     private lazy var scrollView:UIScrollView = UIScrollView()
+    /// 保存按钮
+    private lazy var saveButton:UIButton = UIButton(title: "保存", normalColor: UIColor.white, highlightedColor: UIColor.white, fontSize: 15, backgroundColor: UIColor.darkGray, target: self, action: #selector(saveImageToPhotoLibrary))
 }
 
 // MARK: - UIScrollViewDelegate
@@ -89,6 +119,8 @@ extension XGSeeBigPictureViewController:UIScrollViewDelegate
         scrollView.backgroundColor = UIColor.black.withAlphaComponent(scale)
         // 当前比例 >= 原始尺寸 背景黑色 缩小则是透明色
         view.backgroundColor = scale >= 1 ? UIColor.black : UIColor.clear
+        // 缩小时隐藏保存按钮
+        saveButton.isHidden = scale < 1
     }
     
     // 停止缩放
@@ -167,8 +199,13 @@ private extension XGSeeBigPictureViewController
         
         // 添加子控件
         view.addSubview(scrollView)
-        scrollView.frame = view.bounds
+        view.addSubview(saveButton)
         
+        // 布局
+        scrollView.frame = view.bounds
+        let buttonSize = CGSize(width: 70, height: 36)
+        saveButton.frame = CGRect(x: view.width - buttonSize.width - 30, y: view.height - buttonSize.height - 30, width: buttonSize.width, height: buttonSize.height)
+        // 设置scrollView
         setUpScrollView()
     }
     

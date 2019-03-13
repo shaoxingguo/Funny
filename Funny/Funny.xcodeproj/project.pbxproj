@@ -18,6 +18,8 @@
 		8C0F74FE2238DEA50050715D /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F74FD2238DEA50050715D /* Int+Extension.swift */; };
 		8C0F75002238F2FF0050715D /* XGSeeBigPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F74FF2238F2FF0050715D /* XGSeeBigPictureViewController.swift */; };
 		8C1883E022390AE800FB7614 /* XGTransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1883DF22390AE800FB7614 /* XGTransitionAnimation.swift */; };
+		8C1883E322391E6A00FB7614 /* PHPhotoLibrary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1883E222391E6A00FB7614 /* PHPhotoLibrary+Extension.swift */; };
+		8C1883E522391E7700FB7614 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1883E422391E7700FB7614 /* Bundle+Extension.swift */; };
 		8C3FE08222368DF300CAF4B0 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE07622368DF300CAF4B0 /* UIColor+Extension.swift */; };
 		8C3FE08322368DF300CAF4B0 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE07722368DF300CAF4B0 /* UILabel+Extension.swift */; };
 		8C3FE08422368DF300CAF4B0 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE07822368DF300CAF4B0 /* UIButton+Extension.swift */; };
@@ -76,6 +78,8 @@
 		8C0F74FD2238DEA50050715D /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		8C0F74FF2238F2FF0050715D /* XGSeeBigPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGSeeBigPictureViewController.swift; sourceTree = "<group>"; };
 		8C1883DF22390AE800FB7614 /* XGTransitionAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGTransitionAnimation.swift; sourceTree = "<group>"; };
+		8C1883E222391E6A00FB7614 /* PHPhotoLibrary+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PHPhotoLibrary+Extension.swift"; sourceTree = "<group>"; };
+		8C1883E422391E7700FB7614 /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		8C3FE07622368DF300CAF4B0 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		8C3FE07722368DF300CAF4B0 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		8C3FE07822368DF300CAF4B0 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
@@ -348,6 +352,8 @@
 		8C3FE07522368DF300CAF4B0 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				8C1883E422391E7700FB7614 /* Bundle+Extension.swift */,
+				8C1883E222391E6A00FB7614 /* PHPhotoLibrary+Extension.swift */,
 				8C3FE07622368DF300CAF4B0 /* UIColor+Extension.swift */,
 				8C3FE07722368DF300CAF4B0 /* UILabel+Extension.swift */,
 				8C3FE07822368DF300CAF4B0 /* UIButton+Extension.swift */,
@@ -684,6 +690,7 @@
 				8CD5D3132237EBB6009A5BD7 /* XGVideoTopicCellView.swift in Sources */,
 				8CD5D2DD22376AF9009A5BD7 /* XGBaseTopicTableViewCell.swift in Sources */,
 				8C0F74F42238CFB20050715D /* XGNewTopicRecommendTableViewController.swift in Sources */,
+				8C1883E522391E7700FB7614 /* Bundle+Extension.swift in Sources */,
 				8C3FE08822368DF300CAF4B0 /* XGMainViewController.swift in Sources */,
 				8C9CBD4A22373E150042BA21 /* XGTopicListViewModel.swift in Sources */,
 				8CD5D2E022376BE0009A5BD7 /* XGTopicCellTopView.swift in Sources */,
@@ -713,6 +720,7 @@
 				8CD5D3152237EBC3009A5BD7 /* XGVoiceTopicCellView.swift in Sources */,
 				8C9CBD4C22373EC80042BA21 /* XGTopicViewModel.swift in Sources */,
 				8C9CBD44223738890042BA21 /* XGTopicModel.swift in Sources */,
+				8C1883E322391E6A00FB7614 /* PHPhotoLibrary+Extension.swift in Sources */,
 				8C3FE08322368DF300CAF4B0 /* UILabel+Extension.swift in Sources */,
 				8C3FE09C22369DA200CAF4B0 /* XGPictureTableViewController.swift in Sources */,
 				8CD5D30F2237CC05009A5BD7 /* XGWordTopicTableViewCell.swift in Sources */,
