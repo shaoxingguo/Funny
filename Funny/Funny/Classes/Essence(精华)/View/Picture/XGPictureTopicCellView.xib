@@ -30,7 +30,7 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
-                        <action selector="seeBigPictureAction:" destination="7v6-Z0-eGs" eventType="touchUpInside" id="o19-RC-BwH"/>
+                        <action selector="seeBigPictureAction" destination="7v6-Z0-eGs" eventType="touchUpInside" id="k77-8T-Hez"/>
                     </connections>
                 </button>
             </subviews>

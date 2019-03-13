@@ -11,6 +11,7 @@ import UIKit
 class XGPictureTopicTableViewCell: XGBaseTopicTableViewCell
 {
     // MARK: - 视图模型
+    
     override var topicViewModel: XGTopicViewModel? {
         didSet {
             // 更新图片高度

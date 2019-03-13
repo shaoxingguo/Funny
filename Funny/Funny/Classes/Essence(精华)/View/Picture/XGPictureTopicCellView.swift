@@ -25,10 +25,11 @@ class XGPictureTopicCellView: UIView
     // MARK: - 事件监听
     
     /// 查看大图事件
-    @IBAction func seeBigPictureAction(_ sender: UIButton)
+    @IBAction func seeBigPictureAction()
     {
-        // TODO:查看大图
-        XGPrint("查看大图")
+    
+        let viewController = XGSeeBigPictureViewController(topicViewModel: topicViewModel)
+        UIApplication.shared.keyWindow?.rootViewController?.present(viewController, animated: true, completion: nil)
     }
     
     // MARK: - 私有属性
@@ -45,6 +46,13 @@ class XGPictureTopicCellView: UIView
 
 extension XGPictureTopicCellView
 {
+    override func awakeFromNib()
+    {
+        super.awakeFromNib()
+        backgroundImageView.isUserInteractionEnabled = true
+        backgroundImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(seeBigPictureAction)))
+    }
+    
     /// xib创建对象方法
     open class func pictureTopicCellView() -> XGPictureTopicCellView
     {

@@ -16,6 +16,7 @@
 		8C0F74FB2238D89E0050715D /* XGNewTopicRecommendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F74F92238D89E0050715D /* XGNewTopicRecommendTableViewCell.swift */; };
 		8C0F74FC2238D89E0050715D /* XGNewTopicRecommendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C0F74FA2238D89E0050715D /* XGNewTopicRecommendTableViewCell.xib */; };
 		8C0F74FE2238DEA50050715D /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F74FD2238DEA50050715D /* Int+Extension.swift */; };
+		8C0F75002238F2FF0050715D /* XGSeeBigPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F74FF2238F2FF0050715D /* XGSeeBigPictureViewController.swift */; };
 		8C3FE08222368DF300CAF4B0 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE07622368DF300CAF4B0 /* UIColor+Extension.swift */; };
 		8C3FE08322368DF300CAF4B0 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE07722368DF300CAF4B0 /* UILabel+Extension.swift */; };
 		8C3FE08422368DF300CAF4B0 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE07822368DF300CAF4B0 /* UIButton+Extension.swift */; };
@@ -72,6 +73,7 @@
 		8C0F74F92238D89E0050715D /* XGNewTopicRecommendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGNewTopicRecommendTableViewCell.swift; sourceTree = "<group>"; };
 		8C0F74FA2238D89E0050715D /* XGNewTopicRecommendTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XGNewTopicRecommendTableViewCell.xib; sourceTree = "<group>"; };
 		8C0F74FD2238DEA50050715D /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
+		8C0F74FF2238F2FF0050715D /* XGSeeBigPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGSeeBigPictureViewController.swift; sourceTree = "<group>"; };
 		8C3FE07622368DF300CAF4B0 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		8C3FE07722368DF300CAF4B0 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		8C3FE07822368DF300CAF4B0 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
@@ -421,6 +423,7 @@
 				8CD5D3022237C478009A5BD7 /* XGPictureTopicCellView.swift */,
 				8CD5D3062237C90C009A5BD7 /* XGPictureTopicTableViewCell.swift */,
 				8C3FE09B22369DA200CAF4B0 /* XGPictureTableViewController.swift */,
+				8C0F74FF2238F2FF0050715D /* XGSeeBigPictureViewController.swift */,
 			);
 			path = Picture;
 			sourceTree = "<group>";
@@ -607,7 +610,9 @@
 				"${PODS_ROOT}/Target Support Files/Pods-Funny/Pods-Funny-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/FBRetainCycleDetector/FBRetainCycleDetector.framework",
+				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/MLeaksFinder/MLeaksFinder.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
@@ -619,7 +624,9 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBRetainCycleDetector.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MLeaksFinder.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
@@ -670,6 +677,7 @@
 				8C9CBD4A22373E150042BA21 /* XGTopicListViewModel.swift in Sources */,
 				8CD5D2E022376BE0009A5BD7 /* XGTopicCellTopView.swift in Sources */,
 				8C4A2E9E223687F800108DE1 /* AppDelegate.swift in Sources */,
+				8C0F75002238F2FF0050715D /* XGSeeBigPictureViewController.swift in Sources */,
 				8C3FE0A022369DB200CAF4B0 /* XGVoiceTableViewController.swift in Sources */,
 				8CD5D3032237C478009A5BD7 /* XGPictureTopicCellView.swift in Sources */,
 				8CD5D2E622379BD5009A5BD7 /* XGTopicCellBottomView.swift in Sources */,
