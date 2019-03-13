@@ -26,11 +26,13 @@ extension UIButton
     {
         self.init()
         
-        setTitle(title, for: .normal)
-        setTitleColor(normalColor, for: .normal)
-        setTitleColor(highlightedColor, for: .highlighted)
-        titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
-        self.backgroundColor = backgroundColor
+        if title != nil {
+            setTitle(title, for: .normal)
+            setTitleColor(normalColor, for: .normal)
+            setTitleColor(highlightedColor, for: .highlighted)
+            titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
+            self.backgroundColor = backgroundColor
+        }
         
         if let imageName = imageName {
             setImage(UIImage(named: imageName), for: .normal)

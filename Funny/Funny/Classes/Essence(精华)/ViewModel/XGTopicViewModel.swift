@@ -8,7 +8,7 @@
 
 import UIKit
 
-class XGTopicViewModel: NSObject
+class XGTopicViewModel
 {
     /// 用户的名字
     open var name:String? {
@@ -84,8 +84,6 @@ class XGTopicViewModel: NSObject
     {
         topicModel = model
         type = XGTopicType(rawValue: model.type)!
-
-        super.init()
      
         // 设置属性值
         likeStr = numberToString(number: topicModel?.ding ?? 0)

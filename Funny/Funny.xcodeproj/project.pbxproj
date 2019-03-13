@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		6A1D5AC25020DC3B30150EBE /* Pods_Funny.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6169A5BE55DA4D17666F389D /* Pods_Funny.framework */; };
 		8C0F74F02238BCEC0050715D /* XGVoiceTopicCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C0F74EF2238BCEC0050715D /* XGVoiceTopicCellView.xib */; };
+		8C0F74F22238CB8D0050715D /* XGNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F74F12238CB8D0050715D /* XGNavigationController.swift */; };
+		8C0F74F42238CFB20050715D /* XGNewTopicRecommendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F74F32238CFB20050715D /* XGNewTopicRecommendTableViewController.swift */; };
+		8C0F74F62238D0FF0050715D /* XGNewTopicRecommendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F74F52238D0FF0050715D /* XGNewTopicRecommendModel.swift */; };
+		8C0F74F82238D3570050715D /* XGNewTopicRecommendListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F74F72238D3570050715D /* XGNewTopicRecommendListViewModel.swift */; };
 		8C3FE08222368DF300CAF4B0 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE07622368DF300CAF4B0 /* UIColor+Extension.swift */; };
 		8C3FE08322368DF300CAF4B0 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE07722368DF300CAF4B0 /* UILabel+Extension.swift */; };
 		8C3FE08422368DF300CAF4B0 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE07822368DF300CAF4B0 /* UIButton+Extension.swift */; };
@@ -58,6 +62,10 @@
 		1E3FC2A792F29E37B5F15D78 /* Pods-Funny.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Funny.release.xcconfig"; path = "Target Support Files/Pods-Funny/Pods-Funny.release.xcconfig"; sourceTree = "<group>"; };
 		6169A5BE55DA4D17666F389D /* Pods_Funny.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Funny.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C0F74EF2238BCEC0050715D /* XGVoiceTopicCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XGVoiceTopicCellView.xib; sourceTree = "<group>"; };
+		8C0F74F12238CB8D0050715D /* XGNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XGNavigationController.swift; sourceTree = "<group>"; };
+		8C0F74F32238CFB20050715D /* XGNewTopicRecommendTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGNewTopicRecommendTableViewController.swift; sourceTree = "<group>"; };
+		8C0F74F52238D0FF0050715D /* XGNewTopicRecommendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGNewTopicRecommendModel.swift; sourceTree = "<group>"; };
+		8C0F74F72238D3570050715D /* XGNewTopicRecommendListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGNewTopicRecommendListViewModel.swift; sourceTree = "<group>"; };
 		8C3FE07622368DF300CAF4B0 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		8C3FE07722368DF300CAF4B0 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		8C3FE07822368DF300CAF4B0 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
@@ -284,6 +292,7 @@
 		8C3FE07122368DF300CAF4B0 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				8C0F74F72238D3570050715D /* XGNewTopicRecommendListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -291,6 +300,7 @@
 		8C3FE07222368DF300CAF4B0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8C0F74F52238D0FF0050715D /* XGNewTopicRecommendModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -299,6 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				8C3FE089223691BB00CAF4B0 /* XGNewTopicViewController.swift */,
+				8C0F74F32238CFB20050715D /* XGNewTopicRecommendTableViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -360,6 +371,7 @@
 		8C3FE08022368DF300CAF4B0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8C0F74F12238CB8D0050715D /* XGNavigationController.swift */,
 				8C3FE08122368DF300CAF4B0 /* XGMainViewController.swift */,
 			);
 			path = View;
@@ -642,6 +654,7 @@
 				8C3FE0A422369DC300CAF4B0 /* XGAllTableViewController.swift in Sources */,
 				8CD5D3132237EBB6009A5BD7 /* XGVideoTopicCellView.swift in Sources */,
 				8CD5D2DD22376AF9009A5BD7 /* XGBaseTopicTableViewCell.swift in Sources */,
+				8C0F74F42238CFB20050715D /* XGNewTopicRecommendTableViewController.swift in Sources */,
 				8C3FE08822368DF300CAF4B0 /* XGMainViewController.swift in Sources */,
 				8C9CBD4A22373E150042BA21 /* XGTopicListViewModel.swift in Sources */,
 				8CD5D2E022376BE0009A5BD7 /* XGTopicCellTopView.swift in Sources */,
@@ -657,12 +670,14 @@
 				8C3FE08222368DF300CAF4B0 /* UIColor+Extension.swift in Sources */,
 				8C3FE090223691FE00CAF4B0 /* XGMineTableViewController.swift in Sources */,
 				8C3FE08622368DF300CAF4B0 /* UIImage+Extension.swift in Sources */,
+				8C0F74F22238CB8D0050715D /* XGNavigationController.swift in Sources */,
 				8CD5D2FF2237B0E3009A5BD7 /* XGHotCommentView.swift in Sources */,
 				8C3FE08522368DF300CAF4B0 /* UIView+Extension.swift in Sources */,
 				8C3FE08E223691EA00CAF4B0 /* XGFocusViewController.swift in Sources */,
 				8C3FE08A223691BB00CAF4B0 /* XGNewTopicViewController.swift in Sources */,
 				8C3FE0A222369DBB00CAF4B0 /* XGWordTableViewController.swift in Sources */,
 				8C9CBD4622373C140042BA21 /* XGUserModel.swift in Sources */,
+				8C0F74F62238D0FF0050715D /* XGNewTopicRecommendModel.swift in Sources */,
 				8C3FE08C223691DB00CAF4B0 /* XGEssenceViewController.swift in Sources */,
 				8CD5D3152237EBC3009A5BD7 /* XGVoiceTopicCellView.swift in Sources */,
 				8C9CBD4C22373EC80042BA21 /* XGTopicViewModel.swift in Sources */,
@@ -670,6 +685,7 @@
 				8C3FE08322368DF300CAF4B0 /* UILabel+Extension.swift in Sources */,
 				8C3FE09C22369DA200CAF4B0 /* XGPictureTableViewController.swift in Sources */,
 				8CD5D30F2237CC05009A5BD7 /* XGWordTopicTableViewCell.swift in Sources */,
+				8C0F74F82238D3570050715D /* XGNewTopicRecommendListViewModel.swift in Sources */,
 				8C9CBD3F223733CF0042BA21 /* XGNetworkManager.swift in Sources */,
 				8CD5D3072237C90C009A5BD7 /* XGPictureTopicTableViewCell.swift in Sources */,
 				8CD5D30B2237CBE2009A5BD7 /* XGVideoTopicTableViewCell.swift in Sources */,

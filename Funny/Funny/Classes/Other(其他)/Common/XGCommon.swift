@@ -51,3 +51,5 @@ public let kSummarizeTextFontSize:CGFloat = 12
 public let kBaseURLString:String = "https://api.budejie.com/"
 /// 获取帖子信息接口
 public let kTopicListAPI:String = "api/api_open.php"
+/// 获取推荐关注列表接口
+public let kNewTopicRecommendAPI:String = "api/api_open.php"

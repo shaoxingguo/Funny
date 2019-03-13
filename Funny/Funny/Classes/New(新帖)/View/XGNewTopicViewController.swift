@@ -8,23 +8,33 @@
 
 import UIKit
 
-class XGNewTopicViewController: UIViewController {
-
-    override func viewDidLoad() {
+class XGNewTopicViewController: UIViewController
+{
+    // MARK: - 控制器生命周期方法
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        setUpNavigationItem()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - 事件监听
+    
+    @objc private func pushToNewTopicRecommendTableViewControllerAction() -> Void
+    {
+        navigationController?.pushViewController(XGNewTopicRecommendTableViewController(), animated: true)
     }
-    */
+}
 
+// MARK: - 其他方法
+
+private extension XGNewTopicViewController
+{
+    /// 设置导航栏
+    func setUpNavigationItem()  -> Void
+    {
+        let button = UIButton(imageName: "MainTagSubIcon", target: self, action: #selector(pushToNewTopicRecommendTableViewControllerAction))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: button)
+    }
 }

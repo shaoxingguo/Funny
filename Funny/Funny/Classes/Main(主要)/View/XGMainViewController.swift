@@ -80,7 +80,7 @@ private extension XGMainViewController
         viewController.tabBarItem.title = title
         viewController.tabBarItem.image = UIImage(named: imageName)
         viewController.tabBarItem.selectedImage = UIImage.originalImage(imageName: selectedImageName)
-        let nav = UINavigationController(rootViewController: viewController)
+        let nav = XGNavigationController(rootViewController: viewController)
         addChild(nav)
     }
     

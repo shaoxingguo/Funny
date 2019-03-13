@@ -38,19 +38,37 @@ extension XGDataManager
     ///
     /// - Parameters:
     ///   - type: 帖子类型
-    ///   - competion: 完成回调
-    open class func loadTopicList(type:XGTopicType,competion:@escaping ([String:Any]?,Error?) -> Void) -> Void
+    ///   - completion: 完成回调
+    open class func loadTopicList(type:XGTopicType,completion:@escaping ([String:Any]?,Error?) -> Void) -> Void
     {
         let parameters:[String:Any] = ["a" : "list",
                           "c" : "data",
                           "type" : type.rawValue]
         XGNetworkManager.request(type: .Get, URLString: kTopicListAPI, parameters: parameters) { (responseObject, error) in
             if responseObject == nil || error != nil {
-                competion(nil,error)
+                completion(nil,error)
                 return
             }
             
-            competion(responseObject as? [String:Any],nil)
+            completion(responseObject as? [String:Any],nil)
+        }
+    }
+    
+    /// 获取标签订阅页面中推荐标签中的内容
+    ///
+    /// - Parameter completion: 完成回调
+    open class func loadNewTopicRecommendList(completion:@escaping ([[String:Any]]?,Error?) -> Void) -> Void
+    {
+        let parameters:[String:Any] = ["a" : "tag_recommend",
+                                       "c" : "topic",
+                                       "action" : "sub"]
+        XGNetworkManager.request(type: .Get, URLString: kNewTopicRecommendAPI, parameters: parameters) { (responseObject, error) in
+            if responseObject == nil || error != nil {
+                completion(nil,error)
+                return
+            }
+            
+            completion(responseObject as? [[String:Any]],nil)
         }
     }
 }

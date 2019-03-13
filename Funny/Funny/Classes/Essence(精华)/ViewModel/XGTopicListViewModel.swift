@@ -8,10 +8,10 @@
 
 import UIKit
 
-class XGTopicListViewModel: NSObject
+class XGTopicListViewModel
 {
     /// 数据模型数组
-    private(set) public var topicList = [XGTopicViewModel]()
+    private(set) open var topicList = [XGTopicViewModel]()
 }
 
 // MARK: - 网络请求数据
