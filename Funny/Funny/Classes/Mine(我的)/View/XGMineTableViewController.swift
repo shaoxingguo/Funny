@@ -8,23 +8,124 @@
 
 import UIKit
 
-class XGMineTableViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+class XGMineTableViewController: UITableViewController
+{
+    /// 我的功能列表视图模型
+    private lazy var squareListViewModel = XGSquareListViewModel()
+    
+    // MARK: - 构造方法
+    
+    override init(style: UITableView.Style)
+    {
+        super.init(style: .grouped)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-    */
+    
+    // MARK: - 控制器生命周期方法
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        
+        setUpTableView()
+        loadData()
+    }
+    
+    
+    // MARK: - 懒加载
+    
+    /// 设置模型数组
+    private lazy var settingGroupModeList = {
+         return XGSettingGroupModel.mj_objectArray(withFilename: "SettingInfo.plist") as? [XGSettingGroupModel]
+    }()
+    /// collectionView
+    private lazy var collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
+}
 
+// MARK: - UITableViewDataSource
+
+extension XGMineTableViewController
+{
+    override func numberOfSections(in tableView: UITableView) -> Int
+    {
+        return settingGroupModeList?.count ?? 0
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return settingGroupModeList?[section].items?.count ?? 0
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        var cell = tableView.dequeueReusableCell(withIdentifier: "ID")
+        if cell == nil {
+            cell = UITableViewCell(style: .default, reuseIdentifier: "ID")
+        }
+        
+        let itemModel = settingGroupModeList?[indexPath.section].items?[indexPath.row]
+        cell?.textLabel?.text = itemModel?.title
+        if let icon = itemModel?.icon,
+           let image = UIImage(named: icon) {
+            cell?.imageView?.image = image
+        } else {
+            cell?.imageView?.image = nil
+        }
+        
+        return cell!
+    }
+}
+
+// MARK: - UICollectionViewDataSource
+
+//extension XGMineTableViewController:UICollectionViewDataSource
+//{
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+//    {
+//        return squareListViewModel.squareList.count
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+//    {
+//
+//    }
+//}
+
+// MARK: - 其他方法
+
+private extension XGMineTableViewController
+{
+    /// 设置tableView
+    func setUpTableView() -> Void
+    {
+        // 设置组头和组尾高度
+        tableView.sectionHeaderHeight = 10
+        tableView.sectionFooterHeight = 0
+        
+        // 设置tableView尾部视图
+        collectionView.backgroundColor = UIColor.white
+        collectionView.height = 200
+//        collectionView.dataSource = self
+        tableView.tableFooterView = collectionView
+        
+        // 设置内容边距
+        tableView.contentInset = UIEdgeInsets(top: -25, left: 0, bottom: kTabBarHeight, right: 0)
+    }
+    
+    /// 加载数据
+    func loadData() -> Void
+    {
+        squareListViewModel.loadSquareList { (isSuccess) in
+            if !isSuccess {
+                XGPrint("加载我的功能列表失败")
+                return
+            }
+            
+            // 刷新表格
+            self.collectionView.reloadData()
+        }
+    }
 }

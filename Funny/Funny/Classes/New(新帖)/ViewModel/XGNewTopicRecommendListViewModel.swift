@@ -30,8 +30,8 @@ extension XGNewTopicRecommendListViewModel
             }
             
             // 字典转模型
-            let recommendListArray = XGNewTopicRecommendModel.mj_objectArray(withKeyValuesArray: responseObject!) as! [XGNewTopicRecommendModel]
-            self.recommendList += recommendListArray
+            let recommendListArray = XGNewTopicRecommendModel.mj_objectArray(withKeyValuesArray: responseObject!) as? [XGNewTopicRecommendModel]
+            self.recommendList += (recommendListArray ?? [])
             // 完成回调
             completion(true)
         }

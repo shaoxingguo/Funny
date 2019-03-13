@@ -71,4 +71,22 @@ extension XGDataManager
             completion(responseObject as? [[String:Any]],nil)
         }
     }
+    
+    
+    /// 获取“我”板块功能列表
+    ///
+    /// - Parameter completion: 完成回调
+    open class func loadSquareList(completion:@escaping ([String:Any]?,Error?) -> Void) -> Void
+    {
+        let parameters:[String:Any] = ["a" : "square",
+                                       "c" : "topic"]
+        XGNetworkManager.request(type: .Get, URLString: kSquareListAPI, parameters: parameters) { (responseObject, error) in
+            if responseObject == nil || error != nil {
+                completion(nil,error)
+                return
+            }
+            
+            completion(responseObject as? [String:Any],nil)
+        }
+    }
 }

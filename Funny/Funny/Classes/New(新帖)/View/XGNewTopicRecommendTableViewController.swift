@@ -14,7 +14,7 @@ private let kReuseIdentifier = "XGNewTopicRecommendTableViewCell"
 
 class XGNewTopicRecommendTableViewController: UITableViewController
 {
-    /// 推荐列表模型
+    /// 推荐列表视图模型
     private lazy var newTopicRecommendListViewModel = XGNewTopicRecommendListViewModel()
     
     // MARK: - 控制器生命周期方法

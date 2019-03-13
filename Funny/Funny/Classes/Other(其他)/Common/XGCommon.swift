@@ -55,3 +55,5 @@ public let kBaseURLString:String = "https://api.budejie.com/"
 public let kTopicListAPI:String = "api/api_open.php"
 /// 获取推荐关注列表接口
 public let kNewTopicRecommendAPI:String = "api/api_open.php"
+/// 我的模块功能列表接口
+public let kSquareListAPI:String = "api/api_open.php"

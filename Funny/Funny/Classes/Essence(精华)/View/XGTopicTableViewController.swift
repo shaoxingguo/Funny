@@ -19,7 +19,7 @@ public let kWordTopicTableViewCellReuseIdentifier:String = "XGWordTopicTableView
 
 class XGTopicTableViewController: UITableViewController
 {
-    /// 帖子列表模型
+    /// 帖子列表视图模型
     private lazy var topicListViewModel = XGTopicListViewModel()
     
     // MARK: - 公开方法

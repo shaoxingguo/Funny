@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>items</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>登录/注册</string>
+				<key>icon</key>
+				<string>setup-head-default</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>items</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>离线下载</string>
+				<key>icon</key>
+				<string>mine-setting-icon</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>items</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>评分支持</string>
+				<key>functionName</key>
+				<string>gotoAppStore</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>打电话到</string>
+				<key>functionName</key>
+				<string>callTelephone</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>发短信到</string>
+				<key>functionName</key>
+				<string>sendMessage</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>清除缓存</string>
+				<key>functionName</key>
+				<string>clearCache</string>
+			</dict>
+		</array>
+	</dict>
+</array>
+</plist>
