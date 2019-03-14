@@ -68,6 +68,8 @@
 		8CD5D3132237EBB6009A5BD7 /* XGVideoTopicCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD5D3122237EBB6009A5BD7 /* XGVideoTopicCellView.swift */; };
 		8CD5D3152237EBC3009A5BD7 /* XGVoiceTopicCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD5D3142237EBC3009A5BD7 /* XGVoiceTopicCellView.swift */; };
 		8CD5D3172237EBD4009A5BD7 /* XGVideoTopicCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CD5D3162237EBD4009A5BD7 /* XGVideoTopicCellView.xib */; };
+		8CFB11102239D6FE0018A0A3 /* XGSquareCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFB110E2239D6FE0018A0A3 /* XGSquareCollectionViewCell.swift */; };
+		8CFB11112239D6FE0018A0A3 /* XGSquareCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CFB110F2239D6FE0018A0A3 /* XGSquareCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -135,6 +137,8 @@
 		8CD5D3122237EBB6009A5BD7 /* XGVideoTopicCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGVideoTopicCellView.swift; sourceTree = "<group>"; };
 		8CD5D3142237EBC3009A5BD7 /* XGVoiceTopicCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGVoiceTopicCellView.swift; sourceTree = "<group>"; };
 		8CD5D3162237EBD4009A5BD7 /* XGVideoTopicCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XGVideoTopicCellView.xib; sourceTree = "<group>"; };
+		8CFB110E2239D6FE0018A0A3 /* XGSquareCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGSquareCollectionViewCell.swift; sourceTree = "<group>"; };
+		8CFB110F2239D6FE0018A0A3 /* XGSquareCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XGSquareCollectionViewCell.xib; sourceTree = "<group>"; };
 		BF8B5809719FF8054333F056 /* Pods-Funny.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Funny.debug.xcconfig"; path = "Target Support Files/Pods-Funny/Pods-Funny.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -321,6 +325,8 @@
 			isa = PBXGroup;
 			children = (
 				8C3FE08F223691FE00CAF4B0 /* XGMineTableViewController.swift */,
+				8CFB110F2239D6FE0018A0A3 /* XGSquareCollectionViewCell.xib */,
+				8CFB110E2239D6FE0018A0A3 /* XGSquareCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -627,6 +633,7 @@
 			files = (
 				8C0F74F02238BCEC0050715D /* XGVoiceTopicCellView.xib in Resources */,
 				8C1883EE2239456700FB7614 /* SettingInfo.plist in Resources */,
+				8CFB11112239D6FE0018A0A3 /* XGSquareCollectionViewCell.xib in Resources */,
 				8CB5F57222368C2C009D7A10 /* Assets.xcassets in Resources */,
 				8C0F74FC2238D89E0050715D /* XGNewTopicRecommendTableViewCell.xib in Resources */,
 				8CD5D3012237B0F0009A5BD7 /* XGHotCommentView.xib in Resources */,
@@ -707,6 +714,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CFB11102239D6FE0018A0A3 /* XGSquareCollectionViewCell.swift in Sources */,
 				8CD5D3092237CA3F009A5BD7 /* XGTopicTableViewController.swift in Sources */,
 				8C9CBD422237361A0042BA21 /* XGDataManager.swift in Sources */,
 				8C1883F322394A3000FB7614 /* XGSettingGroupModel.swift in Sources */,

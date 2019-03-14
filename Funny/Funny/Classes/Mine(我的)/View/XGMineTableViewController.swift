@@ -8,6 +8,11 @@
 
 import UIKit
 
+/// XGSquareCollectionViewCell重用标识符
+private let kSquareCollectionViewCellReuseIdentifier = "XGSquareCollectionViewCell"
+/// 功能模块分几列
+private let kColumns:Int = 4
+
 class XGMineTableViewController: UITableViewController
 {
     /// 我的功能列表视图模型
@@ -33,7 +38,6 @@ class XGMineTableViewController: UITableViewController
         setUpTableView()
         loadData()
     }
-    
     
     // MARK: - 懒加载
     
@@ -81,40 +85,25 @@ extension XGMineTableViewController
 
 // MARK: - UICollectionViewDataSource
 
-//extension XGMineTableViewController:UICollectionViewDataSource
-//{
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
-//    {
-//        return squareListViewModel.squareList.count
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
-//    {
-//
-//    }
-//}
+extension XGMineTableViewController:UICollectionViewDataSource
+{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    {
+        return squareListViewModel.squareList.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kSquareCollectionViewCellReuseIdentifier, for: indexPath) as! XGSquareCollectionViewCell
+        cell.squareModel = squareListViewModel.squareList[indexPath.item]
+        return cell
+    }
+}
 
 // MARK: - 其他方法
 
 private extension XGMineTableViewController
 {
-    /// 设置tableView
-    func setUpTableView() -> Void
-    {
-        // 设置组头和组尾高度
-        tableView.sectionHeaderHeight = 10
-        tableView.sectionFooterHeight = 0
-        
-        // 设置tableView尾部视图
-        collectionView.backgroundColor = UIColor.white
-        collectionView.height = 200
-//        collectionView.dataSource = self
-        tableView.tableFooterView = collectionView
-        
-        // 设置内容边距
-        tableView.contentInset = UIEdgeInsets(top: -25, left: 0, bottom: kTabBarHeight, right: 0)
-    }
-    
     /// 加载数据
     func loadData() -> Void
     {
@@ -126,6 +115,58 @@ private extension XGMineTableViewController
             
             // 刷新表格
             self.collectionView.reloadData()
+            // 计算有多少行 固定格式 (count - 1) / 列数 + 1
+            let rows = (self.squareListViewModel.squareList.count - 1) / kColumns + 1
+            let itemWidth = (self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout).itemSize.width
+            // 计算squareCollectionView的高度
+            let height = CGFloat(rows) * itemWidth + CGFloat(rows - 1) * kScreenScale
+            self.collectionView.height = height
+            // 重新给tableView赋值 让tableView自动计算contentSize
+            self.tableView.tableFooterView = self.collectionView
         }
+    }
+}
+
+// MARK: - 设置界面
+
+private extension XGMineTableViewController
+{
+    /// 设置tableView
+    func setUpTableView() -> Void
+    {
+        // 设置组头和组尾高度
+        tableView.sectionHeaderHeight = 0
+        tableView.sectionFooterHeight = 10
+        
+        // 设置tableView尾部视图
+        collectionView.backgroundColor = UIColor.white
+        collectionView.height = 200
+        collectionView.dataSource = self
+        tableView.tableFooterView = collectionView
+        
+        // 设置内容边距
+        tableView.contentInset = UIEdgeInsets(top: -25, left: 0, bottom: 0, right: 0)
+        
+        // 设置collectionView 作为tableFooterView
+        setUpCollectionView()
+    }
+    
+    /// 设置collectionView
+    private func setUpCollectionView() -> Void
+    {
+        collectionView.backgroundColor = UIColor(white: 0.94, alpha: 1)
+        
+        // 布局cell
+        let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        let margin:CGFloat = kScreenScale  // 间距
+        let columns:CGFloat = 4 // 4列
+        var itemWidth = (kScreenWidth - CGFloat(columns - 1) * margin) / CGFloat(columns)
+        itemWidth = floor(itemWidth)
+        flowLayout.itemSize = CGSize(width: itemWidth, height: itemWidth)
+        flowLayout.minimumLineSpacing = margin
+        flowLayout.minimumInteritemSpacing = margin
+        
+        // 注册cell
+        collectionView.register(UINib(nibName: "XGSquareCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: kSquareCollectionViewCellReuseIdentifier)
     }
 }
