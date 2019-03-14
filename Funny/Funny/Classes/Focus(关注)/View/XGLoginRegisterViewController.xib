@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XGLoginRegisterViewController" customModule="Funny" customModuleProvider="target">
+            <connections>
+                <outlet property="scrollView" destination="LZ4-Mm-5Dp" id="Ssb-QS-IkA"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_register_background" translatesAutoresizingMaskIntoConstraints="NO" id="PEC-rX-iSr">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3im-lP-Ngu">
+                    <rect key="frame" x="30" y="50" width="74" height="34"/>
+                    <state key="normal" title="注册账号"/>
+                    <state key="selected" title="已有账号?"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EyC-bv-DvD">
+                    <rect key="frame" x="329" y="56" width="16" height="22"/>
+                    <state key="normal" image="login_close_icon"/>
+                    <connections>
+                        <action selector="closeAction:" destination="-1" eventType="touchUpInside" id="XUE-v5-5WV"/>
+                    </connections>
+                </button>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LZ4-Mm-5Dp">
+                    <rect key="frame" x="0.0" y="114" width="375" height="200"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="yrN-v5-9Wq"/>
+                    </constraints>
+                </scrollView>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="R62-YT-eW2">
+                    <rect key="frame" x="0.0" y="537" width="375" height="70"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jqq-iw-fgY">
+                            <rect key="frame" x="0.0" y="0.0" width="105" height="70"/>
+                            <state key="normal" image="login_QQ_icon"/>
+                            <state key="highlighted" image="login_QQ_icon_click"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STm-k0-6rn">
+                            <rect key="frame" x="135" y="0.0" width="105" height="70"/>
+                            <state key="normal" image="login_sina_icon"/>
+                            <state key="highlighted" image="login_sina_icon_click"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XyF-u8-2ax">
+                            <rect key="frame" x="270" y="0.0" width="105" height="70"/>
+                            <state key="normal" image="login_tecent_icon"/>
+                            <state key="highlighted" image="login_tecent_icon_click"/>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="O3i-SW-Jxr"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="R62-YT-eW2" secondAttribute="trailing" id="3wi-6c-UxW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="R62-YT-eW2" secondAttribute="bottom" constant="60" id="6uN-lt-Hts"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EyC-bv-DvD" secondAttribute="trailing" constant="30" id="H2K-eK-E9z"/>
+                <constraint firstItem="3im-lP-Ngu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="KOe-px-n9y"/>
+                <constraint firstItem="PEC-rX-iSr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SJO-hy-QJu"/>
+                <constraint firstItem="3im-lP-Ngu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="Udp-Tp-Dz2"/>
+                <constraint firstAttribute="bottom" secondItem="PEC-rX-iSr" secondAttribute="bottom" id="X86-tv-yMX"/>
+                <constraint firstItem="R62-YT-eW2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="e05-qB-2uH"/>
+                <constraint firstItem="LZ4-Mm-5Dp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="eD2-uX-buc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LZ4-Mm-5Dp" secondAttribute="trailing" id="qih-pt-RPU"/>
+                <constraint firstItem="LZ4-Mm-5Dp" firstAttribute="top" secondItem="3im-lP-Ngu" secondAttribute="bottom" constant="30" id="sad-po-Wef"/>
+                <constraint firstItem="EyC-bv-DvD" firstAttribute="centerY" secondItem="3im-lP-Ngu" secondAttribute="centerY" id="tot-G9-Ku7"/>
+                <constraint firstAttribute="trailing" secondItem="PEC-rX-iSr" secondAttribute="trailing" id="u1t-FY-syQ"/>
+                <constraint firstItem="PEC-rX-iSr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ydS-aH-0OA"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="-270" y="-278"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="login_QQ_icon" width="70" height="70"/>
+        <image name="login_QQ_icon_click" width="70" height="70"/>
+        <image name="login_close_icon" width="16" height="16"/>
+        <image name="login_register_background" width="320" height="568"/>
+        <image name="login_sina_icon" width="70" height="70"/>
+        <image name="login_sina_icon_click" width="70" height="70"/>
+        <image name="login_tecent_icon" width="70" height="70"/>
+        <image name="login_tecent_icon_click" width="70" height="70"/>
+    </resources>
+</document>

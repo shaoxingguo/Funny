@@ -8,23 +8,13 @@
 
 import UIKit
 
-class XGFocusViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+class XGFocusViewController: UIViewController
+{
+    // MARK: - 事件监听
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func loginAction(_ sender: UIButton)
+    {
+        let loginRegisterViewController = XGLoginRegisterViewController()
+        present(loginRegisterViewController, animated: true, completion: nil)
     }
-    */
-
 }

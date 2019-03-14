@@ -128,7 +128,9 @@ private extension XGMineTableViewController
     /// 加载数据
     func loadData() -> Void
     {
+        SVProgressHUD.show()
         squareListViewModel.loadSquareList { (isSuccess) in
+            SVProgressHUD.dismiss()
             if !isSuccess {
                 XGPrint("加载我的功能列表失败")
                 return

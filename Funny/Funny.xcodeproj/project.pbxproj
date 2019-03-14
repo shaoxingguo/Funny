@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		6A1D5AC25020DC3B30150EBE /* Pods_Funny.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6169A5BE55DA4D17666F389D /* Pods_Funny.framework */; };
 		8C0611F0223A25FD00B19A9A /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0611EF223A25FD00B19A9A /* FileManager+Extension.swift */; };
+		8C0611F2223A2A3800B19A9A /* XGFocusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C0611F1223A2A3800B19A9A /* XGFocusViewController.xib */; };
+		8C0611F5223A2C8400B19A9A /* XGLoginRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0611F3223A2C8400B19A9A /* XGLoginRegisterViewController.swift */; };
+		8C0611F6223A2C8400B19A9A /* XGLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C0611F4223A2C8400B19A9A /* XGLoginRegisterViewController.xib */; };
+		8C0611F8223A360100B19A9A /* XGLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0611F7223A360100B19A9A /* XGLoginView.swift */; };
+		8C0611FA223A360B00B19A9A /* XGLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C0611F9223A360B00B19A9A /* XGLoginView.xib */; };
 		8C0F74F02238BCEC0050715D /* XGVoiceTopicCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C0F74EF2238BCEC0050715D /* XGVoiceTopicCellView.xib */; };
 		8C0F74F22238CB8D0050715D /* XGNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F74F12238CB8D0050715D /* XGNavigationController.swift */; };
 		8C0F74F42238CFB20050715D /* XGNewTopicRecommendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F74F32238CFB20050715D /* XGNewTopicRecommendTableViewController.swift */; };
@@ -77,6 +82,11 @@
 		1E3FC2A792F29E37B5F15D78 /* Pods-Funny.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Funny.release.xcconfig"; path = "Target Support Files/Pods-Funny/Pods-Funny.release.xcconfig"; sourceTree = "<group>"; };
 		6169A5BE55DA4D17666F389D /* Pods_Funny.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Funny.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C0611EF223A25FD00B19A9A /* FileManager+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
+		8C0611F1223A2A3800B19A9A /* XGFocusViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XGFocusViewController.xib; sourceTree = "<group>"; };
+		8C0611F3223A2C8400B19A9A /* XGLoginRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGLoginRegisterViewController.swift; sourceTree = "<group>"; };
+		8C0611F4223A2C8400B19A9A /* XGLoginRegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XGLoginRegisterViewController.xib; sourceTree = "<group>"; };
+		8C0611F7223A360100B19A9A /* XGLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGLoginView.swift; sourceTree = "<group>"; };
+		8C0611F9223A360B00B19A9A /* XGLoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XGLoginView.xib; sourceTree = "<group>"; };
 		8C0F74EF2238BCEC0050715D /* XGVoiceTopicCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XGVoiceTopicCellView.xib; sourceTree = "<group>"; };
 		8C0F74F12238CB8D0050715D /* XGNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XGNavigationController.swift; sourceTree = "<group>"; };
 		8C0F74F32238CFB20050715D /* XGNewTopicRecommendTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGNewTopicRecommendTableViewController.swift; sourceTree = "<group>"; };
@@ -289,6 +299,11 @@
 		8C3FE06B22368DF300CAF4B0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8C0611F9223A360B00B19A9A /* XGLoginView.xib */,
+				8C0611F7223A360100B19A9A /* XGLoginView.swift */,
+				8C0611F4223A2C8400B19A9A /* XGLoginRegisterViewController.xib */,
+				8C0611F3223A2C8400B19A9A /* XGLoginRegisterViewController.swift */,
+				8C0611F1223A2A3800B19A9A /* XGFocusViewController.xib */,
 				8C3FE08D223691EA00CAF4B0 /* XGFocusViewController.swift */,
 			);
 			path = View;
@@ -635,10 +650,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C0F74F02238BCEC0050715D /* XGVoiceTopicCellView.xib in Resources */,
+				8C0611FA223A360B00B19A9A /* XGLoginView.xib in Resources */,
 				8C1883EE2239456700FB7614 /* SettingInfo.plist in Resources */,
+				8C0611F6223A2C8400B19A9A /* XGLoginRegisterViewController.xib in Resources */,
 				8CFB11112239D6FE0018A0A3 /* XGSquareCollectionViewCell.xib in Resources */,
 				8CB5F57222368C2C009D7A10 /* Assets.xcassets in Resources */,
 				8C0F74FC2238D89E0050715D /* XGNewTopicRecommendTableViewCell.xib in Resources */,
+				8C0611F2223A2A3800B19A9A /* XGFocusViewController.xib in Resources */,
 				8CD5D3012237B0F0009A5BD7 /* XGHotCommentView.xib in Resources */,
 				8CD5D2E222376BEC009A5BD7 /* XGTopicCellTopView.xib in Resources */,
 				8CD5D3052237C483009A5BD7 /* XGPictureTopicCellView.xib in Resources */,
@@ -747,6 +765,7 @@
 				8C3FE08622368DF300CAF4B0 /* UIImage+Extension.swift in Sources */,
 				8C0F74F22238CB8D0050715D /* XGNavigationController.swift in Sources */,
 				8CD5D2FF2237B0E3009A5BD7 /* XGHotCommentView.swift in Sources */,
+				8C0611F5223A2C8400B19A9A /* XGLoginRegisterViewController.swift in Sources */,
 				8C3FE08522368DF300CAF4B0 /* UIView+Extension.swift in Sources */,
 				8C3FE08E223691EA00CAF4B0 /* XGFocusViewController.swift in Sources */,
 				8C3FE08A223691BB00CAF4B0 /* XGNewTopicViewController.swift in Sources */,
@@ -769,6 +788,7 @@
 				8CD5D3072237C90C009A5BD7 /* XGPictureTopicTableViewCell.swift in Sources */,
 				8CD5D30B2237CBE2009A5BD7 /* XGVideoTopicTableViewCell.swift in Sources */,
 				8C1883E022390AE800FB7614 /* XGTransitionAnimation.swift in Sources */,
+				8C0611F8223A360100B19A9A /* XGLoginView.swift in Sources */,
 				8CD5D30D2237CBF6009A5BD7 /* XGVoiceTopicTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
