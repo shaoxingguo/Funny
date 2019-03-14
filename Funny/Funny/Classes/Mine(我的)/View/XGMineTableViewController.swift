@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 /// XGSquareCollectionViewCell重用标识符
 private let kSquareCollectionViewCellReuseIdentifier = "XGSquareCollectionViewCell"
@@ -83,9 +84,9 @@ extension XGMineTableViewController
     }
 }
 
-// MARK: - UICollectionViewDataSource
+// MARK: - UICollectionViewDataSource & UICollectionViewDelegate
 
-extension XGMineTableViewController:UICollectionViewDataSource
+extension XGMineTableViewController:UICollectionViewDataSource,UICollectionViewDelegate
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
@@ -97,6 +98,15 @@ extension XGMineTableViewController:UICollectionViewDataSource
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kSquareCollectionViewCellReuseIdentifier, for: indexPath) as! XGSquareCollectionViewCell
         cell.squareModel = squareListViewModel.squareList[indexPath.item]
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    {
+        let squareModel = squareListViewModel.squareList[indexPath.item]
+        if squareModel.url?.hasPrefix("http://") == true || squareModel.url?.hasPrefix("https://") == true {
+            let webViewcontroller = SFSafariViewController(url: URL(string: squareModel.url!)!)
+            present(webViewcontroller, animated: true, completion: nil)
+        }
     }
 }
 
@@ -142,6 +152,7 @@ private extension XGMineTableViewController
         collectionView.backgroundColor = UIColor.white
         collectionView.height = 200
         collectionView.dataSource = self
+        collectionView.delegate = self
         tableView.tableFooterView = collectionView
         
         // 设置内容边距

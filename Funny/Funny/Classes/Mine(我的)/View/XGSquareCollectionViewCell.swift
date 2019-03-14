@@ -23,6 +23,8 @@ class XGSquareCollectionViewCell: UICollectionViewCell
 
     // MARK: - 私有属性
     
+    /// 图标
     @IBOutlet private weak var iconImageView: UIImageView!
+    /// 标题
     @IBOutlet private weak var titleLabel: UILabel!
 }

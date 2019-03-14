@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 /// 视频cell重用标识符
 public let kVideoTopicTableViewCellReuseIdentifier:String = "XGVideoTopicTableViewCell"
@@ -101,6 +102,7 @@ private extension XGTopicTableViewController
         topicListViewModel.loadTopicList(type: topicType) { (isSuccess) in
             if !isSuccess {
                 XGPrint("加载自定义帖子失败")
+                SVProgressHUD.showError(withStatus: "数据加载失败,请检查网络连接~")
                 return
             }
             
