@@ -49,6 +49,7 @@ public let kContentTextFontSize:CGFloat = 15
 public let kSummarizeTextFontSize:CGFloat = 12
 
 // MARK: - 网络接口相关
+
 /// 服务器地址
 public let kBaseURLString:String = "https://api.budejie.com/"
 /// 获取帖子信息接口
@@ -57,3 +58,13 @@ public let kTopicListAPI:String = "api/api_open.php"
 public let kNewTopicRecommendAPI:String = "api/api_open.php"
 /// 我的模块功能列表接口
 public let kSquareListAPI:String = "api/api_open.php"
+
+// MARK: - 通知相关
+
+/// 帖子cell点击通知
+public let kTopicCellDidTapNotification:String = "kTopicCellDidTapNotification"
+/// 帖子类型key
+public let kTopicTypeKey:String = "kTopicTypeKey"
+/// 帖子视图模型key
+public let kTopicViewModelKey:String = "kTopicViewModelKey"
+
