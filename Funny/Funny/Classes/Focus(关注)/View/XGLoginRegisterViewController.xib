@@ -28,6 +28,9 @@
                     <rect key="frame" x="30" y="50" width="74" height="34"/>
                     <state key="normal" title="注册账号"/>
                     <state key="selected" title="已有账号?"/>
+                    <connections>
+                        <action selector="loginRegisterAction:" destination="-1" eventType="touchUpInside" id="S4Z-TN-O5A"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EyC-bv-DvD">
                     <rect key="frame" x="329" y="56" width="16" height="22"/>

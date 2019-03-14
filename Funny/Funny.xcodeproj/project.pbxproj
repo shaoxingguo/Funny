@@ -48,6 +48,8 @@
 		8C3FE0A222369DBB00CAF4B0 /* XGWordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE0A122369DBB00CAF4B0 /* XGWordTableViewController.swift */; };
 		8C3FE0A422369DC300CAF4B0 /* XGAllTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE0A322369DC300CAF4B0 /* XGAllTableViewController.swift */; };
 		8C4A2E9E223687F800108DE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4A2E9D223687F800108DE1 /* AppDelegate.swift */; };
+		8C6A6C1C223A773900739B11 /* XGRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A6C1B223A773900739B11 /* XGRegisterView.swift */; };
+		8C6A6C1E223A774400739B11 /* XGRegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C6A6C1D223A774400739B11 /* XGRegisterView.xib */; };
 		8C9CBD3F223733CF0042BA21 /* XGNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CBD3E223733CF0042BA21 /* XGNetworkManager.swift */; };
 		8C9CBD422237361A0042BA21 /* XGDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CBD412237361A0042BA21 /* XGDataManager.swift */; };
 		8C9CBD44223738890042BA21 /* XGTopicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CBD43223738890042BA21 /* XGTopicModel.swift */; };
@@ -123,6 +125,8 @@
 		8C4A2E9A223687F800108DE1 /* Funny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Funny.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C4A2E9D223687F800108DE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C4A2EA9223687F900108DE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C6A6C1B223A773900739B11 /* XGRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGRegisterView.swift; sourceTree = "<group>"; };
+		8C6A6C1D223A774400739B11 /* XGRegisterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XGRegisterView.xib; sourceTree = "<group>"; };
 		8C9CBD3E223733CF0042BA21 /* XGNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XGNetworkManager.swift; sourceTree = "<group>"; };
 		8C9CBD412237361A0042BA21 /* XGDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGDataManager.swift; sourceTree = "<group>"; };
 		8C9CBD43223738890042BA21 /* XGTopicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGTopicModel.swift; sourceTree = "<group>"; };
@@ -301,6 +305,8 @@
 			children = (
 				8C0611F9223A360B00B19A9A /* XGLoginView.xib */,
 				8C0611F7223A360100B19A9A /* XGLoginView.swift */,
+				8C6A6C1D223A774400739B11 /* XGRegisterView.xib */,
+				8C6A6C1B223A773900739B11 /* XGRegisterView.swift */,
 				8C0611F4223A2C8400B19A9A /* XGLoginRegisterViewController.xib */,
 				8C0611F3223A2C8400B19A9A /* XGLoginRegisterViewController.swift */,
 				8C0611F1223A2A3800B19A9A /* XGFocusViewController.xib */,
@@ -657,6 +663,7 @@
 				8CB5F57222368C2C009D7A10 /* Assets.xcassets in Resources */,
 				8C0F74FC2238D89E0050715D /* XGNewTopicRecommendTableViewCell.xib in Resources */,
 				8C0611F2223A2A3800B19A9A /* XGFocusViewController.xib in Resources */,
+				8C6A6C1E223A774400739B11 /* XGRegisterView.xib in Resources */,
 				8CD5D3012237B0F0009A5BD7 /* XGHotCommentView.xib in Resources */,
 				8CD5D2E222376BEC009A5BD7 /* XGTopicCellTopView.xib in Resources */,
 				8CD5D3052237C483009A5BD7 /* XGPictureTopicCellView.xib in Resources */,
@@ -773,6 +780,7 @@
 				8C9CBD4622373C140042BA21 /* XGUserModel.swift in Sources */,
 				8C0F74F62238D0FF0050715D /* XGNewTopicRecommendModel.swift in Sources */,
 				8C3FE08C223691DB00CAF4B0 /* XGEssenceViewController.swift in Sources */,
+				8C6A6C1C223A773900739B11 /* XGRegisterView.swift in Sources */,
 				8CD5D3152237EBC3009A5BD7 /* XGVoiceTopicCellView.swift in Sources */,
 				8C9CBD4C22373EC80042BA21 /* XGTopicViewModel.swift in Sources */,
 				8C9CBD44223738890042BA21 /* XGTopicModel.swift in Sources */,

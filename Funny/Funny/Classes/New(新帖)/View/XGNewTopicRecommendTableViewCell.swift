@@ -22,6 +22,14 @@ class XGNewTopicRecommendTableViewCell: UITableViewCell
         }
     }
     
+    // MARK: - 其他方法
+    
+    override func awakeFromNib()
+    {
+        super.awakeFromNib()
+        separatorInset = UIEdgeInsets.zero
+    }
+    
     // MARK: - 私有属性
     
     /// 用户头像

@@ -21,9 +21,19 @@ class XGLoginRegisterViewController: UIViewController
 
     // MARK: - 事件监听
     
-    @IBAction func closeAction(_ sender: UIButton)
+    /// 关闭
+    @IBAction func closeAction(_ button: UIButton)
     {
+        view.endEditing(true)
         dismiss(animated: true, completion: nil)
+    }
+    
+    /// 登录注册
+    @IBAction func loginRegisterAction(_ button: UIButton)
+    {
+        button.isSelected = !button.isSelected
+        let offset = button.isSelected ? scrollView.width : 0
+        scrollView.setContentOffset(CGPoint(x: offset, y: 0), animated: true)
     }
     
     // MARK: - 私有属性
@@ -46,8 +56,16 @@ extension XGLoginRegisterViewController
         view.layoutIfNeeded()
         
         let loginView = XGLoginView.loginView()
-        
         scrollView.addSubview(loginView)
         loginView.frame = CGRect(x: 0, y: 0, width: scrollView.width, height: scrollView.height)
+        
+        let registerView = XGRegisterView.registerView()
+        scrollView.addSubview(registerView)
+        registerView.frame = CGRect(x: scrollView.width, y: 0, width: scrollView.width, height: scrollView.height)
+        
+        scrollView.isScrollEnabled = false
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.isPagingEnabled = true
+        scrollView.contentSize = CGSize(width: 2 * scrollView.width, height: 0)
     }
 }
