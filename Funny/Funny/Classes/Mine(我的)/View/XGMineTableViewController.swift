@@ -8,6 +8,7 @@
 
 import UIKit
 import SafariServices
+import SVProgressHUD
 
 /// XGSquareCollectionViewCell重用标识符
 private let kSquareCollectionViewCellReuseIdentifier = "XGSquareCollectionViewCell"
@@ -82,6 +83,16 @@ extension XGMineTableViewController
         
         return cell!
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        guard let functionName = settingGroupModeList?[indexPath.section].items?[indexPath.item].functionName else {
+            return
+        }
+        
+        let selector = NSSelectorFromString(functionName)
+        perform(selector)
+    }
 }
 
 // MARK: - UICollectionViewDataSource & UICollectionViewDelegate
@@ -133,6 +144,52 @@ private extension XGMineTableViewController
             self.collectionView.height = height
             // 重新给tableView赋值 让tableView自动计算contentSize
             self.tableView.tableFooterView = self.collectionView
+        }
+    }
+    
+    /// 跳转到appStore
+    @objc func gotoAppStore() -> Void
+    {
+        guard let appStoreURL = URL(string: "https://itunes.apple.com/cn/app/id1095178677") else {
+            return
+        }
+        
+        if UIApplication.shared.canOpenURL(appStoreURL) {
+            UIApplication.shared.open(appStoreURL, options: [:], completionHandler: nil)
+        }
+    }
+    
+    @objc func callTelephone() -> Void
+    {
+        guard let telephoneURL = URL(string: "tel://17300520041") else {
+            return
+        }
+        
+        if UIApplication.shared.canOpenURL(telephoneURL) {
+            UIApplication.shared.open(telephoneURL, options: [:], completionHandler: nil)
+        }
+    }
+    
+    @objc func sendMessage() -> Void
+    {
+        guard let messageURL = URL(string: "sms://17300520041") else {
+            return
+        }
+        
+        if UIApplication.shared.canOpenURL(messageURL) {
+            UIApplication.shared.open(messageURL, options: [:], completionHandler: nil)
+        }
+    }
+    
+    /// 清除缓存
+    @objc func clearCache() -> Void
+    {
+        // 清空cachePath目录
+        let cachePath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0]
+        FileManager.default.removeFilePath(filePath: cachePath) { (error) in
+            if error == nil {
+                SVProgressHUD.showSuccess(withStatus: "清除成功")
+            }
         }
     }
 }

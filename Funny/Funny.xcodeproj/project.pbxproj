@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6A1D5AC25020DC3B30150EBE /* Pods_Funny.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6169A5BE55DA4D17666F389D /* Pods_Funny.framework */; };
+		8C0611F0223A25FD00B19A9A /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0611EF223A25FD00B19A9A /* FileManager+Extension.swift */; };
 		8C0F74F02238BCEC0050715D /* XGVoiceTopicCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C0F74EF2238BCEC0050715D /* XGVoiceTopicCellView.xib */; };
 		8C0F74F22238CB8D0050715D /* XGNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F74F12238CB8D0050715D /* XGNavigationController.swift */; };
 		8C0F74F42238CFB20050715D /* XGNewTopicRecommendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F74F32238CFB20050715D /* XGNewTopicRecommendTableViewController.swift */; };
@@ -75,6 +76,7 @@
 /* Begin PBXFileReference section */
 		1E3FC2A792F29E37B5F15D78 /* Pods-Funny.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Funny.release.xcconfig"; path = "Target Support Files/Pods-Funny/Pods-Funny.release.xcconfig"; sourceTree = "<group>"; };
 		6169A5BE55DA4D17666F389D /* Pods_Funny.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Funny.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C0611EF223A25FD00B19A9A /* FileManager+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		8C0F74EF2238BCEC0050715D /* XGVoiceTopicCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XGVoiceTopicCellView.xib; sourceTree = "<group>"; };
 		8C0F74F12238CB8D0050715D /* XGNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XGNavigationController.swift; sourceTree = "<group>"; };
 		8C0F74F32238CFB20050715D /* XGNewTopicRecommendTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGNewTopicRecommendTableViewController.swift; sourceTree = "<group>"; };
@@ -381,6 +383,7 @@
 		8C3FE07522368DF300CAF4B0 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				8C0611EF223A25FD00B19A9A /* FileManager+Extension.swift */,
 				8C1883E422391E7700FB7614 /* Bundle+Extension.swift */,
 				8C1883E222391E6A00FB7614 /* PHPhotoLibrary+Extension.swift */,
 				8C3FE07622368DF300CAF4B0 /* UIColor+Extension.swift */,
@@ -760,6 +763,7 @@
 				8CD5D30F2237CC05009A5BD7 /* XGWordTopicTableViewCell.swift in Sources */,
 				8C1883F02239488500FB7614 /* XGSettingItemModel.swift in Sources */,
 				8C0F74F82238D3570050715D /* XGNewTopicRecommendListViewModel.swift in Sources */,
+				8C0611F0223A25FD00B19A9A /* FileManager+Extension.swift in Sources */,
 				8C1883E922393F9600FB7614 /* XGSquareListViewModel.swift in Sources */,
 				8C9CBD3F223733CF0042BA21 /* XGNetworkManager.swift in Sources */,
 				8CD5D3072237C90C009A5BD7 /* XGPictureTopicTableViewCell.swift in Sources */,
