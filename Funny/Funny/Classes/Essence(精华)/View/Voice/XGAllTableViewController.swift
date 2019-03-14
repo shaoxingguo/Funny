@@ -44,6 +44,8 @@ class XGAllTableViewController: XGTopicTableViewController
         case .Video:
             break
         case .Voice:
+            viewController = XGVoicePlayerViewController()
+            (viewController as! XGVoicePlayerViewController).topicViewModel = topicViewModel
             break
         case .Word:
             break

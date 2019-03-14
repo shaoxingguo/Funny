@@ -65,21 +65,25 @@ extension XGImageCacheManager
                 return
             }
             
-            // 进行图片处理
-            var newImage:UIImage?
-            if isUserIcon {
-                newImage = image?.circleIconImage(imageSize: size, backgroundColor: backgroundColor)
-            } else if isLongPicture {
-                newImage = self.clipImage(sourceImage: image!, imageSize: size, backgroundColor: backgroundColor)
-            } else {
-                newImage = image?.scaleToSize(imageSize: size, backgroundColor: backgroundColor)
+            DispatchQueue.global().async {
+                // 进行图片处理
+                var newImage:UIImage?
+                if isUserIcon {
+                    newImage = image?.circleIconImage(imageSize: size, backgroundColor: backgroundColor)
+                } else if isLongPicture {
+                    newImage = self.clipImage(sourceImage: image!, imageSize: size, backgroundColor: backgroundColor)
+                } else {
+                    newImage = image?.scaleToSize(imageSize: size, backgroundColor: backgroundColor)
+                }
+                
+                DispatchQueue.main.sync {
+                    // 保存到内存中
+                    self.imageCacheDictioary[key] = newImage!
+                    
+                    // 完成回调
+                    completion(newImage)
+                }
             }
-            
-            // 保存到内存中
-            self.imageCacheDictioary[key] = newImage!
-            
-            // 完成回调
-            completion(newImage)
         }
     }
     

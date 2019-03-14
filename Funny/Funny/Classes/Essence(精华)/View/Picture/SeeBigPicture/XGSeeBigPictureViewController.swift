@@ -20,6 +20,7 @@ class XGSeeBigPictureViewController: UIViewController
         super.init(nibName: nil, bundle: nil)
         
         self.topicViewModel = topicViewModel
+        modalPresentationCapturesStatusBarAppearance = true
     }
     
     required init?(coder aDecoder: NSCoder) {

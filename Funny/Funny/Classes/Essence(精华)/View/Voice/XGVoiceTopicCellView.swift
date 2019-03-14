@@ -35,7 +35,13 @@ class XGVoiceTopicCellView: UIView
     
     @IBAction func playVoiceAction(_ sender: UIButton)
     {
+        guard let topicViewModel = topicViewModel else {
+            return
+        }
         
+        // 发布通知
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: kTopicCellDidTapNotification), object: nil, userInfo: [kTopicTypeKey:XGTopicType.Voice,
+                                    kTopicViewModelKey: topicViewModel])
     }
 }
 

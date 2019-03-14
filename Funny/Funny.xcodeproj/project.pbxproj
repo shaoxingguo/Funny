@@ -50,6 +50,7 @@
 		8C4A2E9E223687F800108DE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4A2E9D223687F800108DE1 /* AppDelegate.swift */; };
 		8C6A6C1C223A773900739B11 /* XGRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A6C1B223A773900739B11 /* XGRegisterView.swift */; };
 		8C6A6C1E223A774400739B11 /* XGRegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C6A6C1D223A774400739B11 /* XGRegisterView.xib */; };
+		8C6A6C28223A922000739B11 /* XGVoicePlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C6A6C27223A922000739B11 /* XGVoicePlayerViewController.xib */; };
 		8C9CBD3F223733CF0042BA21 /* XGNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CBD3E223733CF0042BA21 /* XGNetworkManager.swift */; };
 		8C9CBD422237361A0042BA21 /* XGDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CBD412237361A0042BA21 /* XGDataManager.swift */; };
 		8C9CBD44223738890042BA21 /* XGTopicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CBD43223738890042BA21 /* XGTopicModel.swift */; };
@@ -58,6 +59,7 @@
 		8C9CBD4A22373E150042BA21 /* XGTopicListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CBD4922373E150042BA21 /* XGTopicListViewModel.swift */; };
 		8C9CBD4C22373EC80042BA21 /* XGTopicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CBD4B22373EC80042BA21 /* XGTopicViewModel.swift */; };
 		8CB5F57222368C2C009D7A10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CB5F57122368C2C009D7A10 /* Assets.xcassets */; };
+		8CC7DB3E223A95630052DBB6 /* XGVoicePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC7DB3C223A95630052DBB6 /* XGVoicePlayerViewController.swift */; };
 		8CD5D2DD22376AF9009A5BD7 /* XGBaseTopicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD5D2DC22376AF9009A5BD7 /* XGBaseTopicTableViewCell.swift */; };
 		8CD5D2E022376BE0009A5BD7 /* XGTopicCellTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD5D2DF22376BE0009A5BD7 /* XGTopicCellTopView.swift */; };
 		8CD5D2E222376BEC009A5BD7 /* XGTopicCellTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CD5D2E122376BEC009A5BD7 /* XGTopicCellTopView.xib */; };
@@ -127,6 +129,7 @@
 		8C4A2EA9223687F900108DE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C6A6C1B223A773900739B11 /* XGRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGRegisterView.swift; sourceTree = "<group>"; };
 		8C6A6C1D223A774400739B11 /* XGRegisterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XGRegisterView.xib; sourceTree = "<group>"; };
+		8C6A6C27223A922000739B11 /* XGVoicePlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XGVoicePlayerViewController.xib; sourceTree = "<group>"; };
 		8C9CBD3E223733CF0042BA21 /* XGNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XGNetworkManager.swift; sourceTree = "<group>"; };
 		8C9CBD412237361A0042BA21 /* XGDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGDataManager.swift; sourceTree = "<group>"; };
 		8C9CBD43223738890042BA21 /* XGTopicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGTopicModel.swift; sourceTree = "<group>"; };
@@ -135,6 +138,7 @@
 		8C9CBD4922373E150042BA21 /* XGTopicListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGTopicListViewModel.swift; sourceTree = "<group>"; };
 		8C9CBD4B22373EC80042BA21 /* XGTopicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGTopicViewModel.swift; sourceTree = "<group>"; };
 		8CB5F57122368C2C009D7A10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8CC7DB3C223A95630052DBB6 /* XGVoicePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGVoicePlayerViewController.swift; sourceTree = "<group>"; };
 		8CD5D2DC22376AF9009A5BD7 /* XGBaseTopicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGBaseTopicTableViewCell.swift; sourceTree = "<group>"; };
 		8CD5D2DF22376BE0009A5BD7 /* XGTopicCellTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGTopicCellTopView.swift; sourceTree = "<group>"; };
 		8CD5D2E122376BEC009A5BD7 /* XGTopicCellTopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XGTopicCellTopView.xib; sourceTree = "<group>"; };
@@ -461,7 +465,6 @@
 		8C3FE09122369AD800CAF4B0 /* All */ = {
 			isa = PBXGroup;
 			children = (
-				8C3FE0A322369DC300CAF4B0 /* XGAllTableViewController.swift */,
 			);
 			path = All;
 			sourceTree = "<group>";
@@ -505,6 +508,9 @@
 				8CD5D3142237EBC3009A5BD7 /* XGVoiceTopicCellView.swift */,
 				8CD5D30C2237CBF6009A5BD7 /* XGVoiceTopicTableViewCell.swift */,
 				8C3FE09F22369DB200CAF4B0 /* XGVoiceTableViewController.swift */,
+				8C6A6C27223A922000739B11 /* XGVoicePlayerViewController.xib */,
+				8C3FE0A322369DC300CAF4B0 /* XGAllTableViewController.swift */,
+				8CC7DB3C223A95630052DBB6 /* XGVoicePlayerViewController.swift */,
 			);
 			path = Voice;
 			sourceTree = "<group>";
@@ -656,6 +662,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C0F74F02238BCEC0050715D /* XGVoiceTopicCellView.xib in Resources */,
+				8C6A6C28223A922000739B11 /* XGVoicePlayerViewController.xib in Resources */,
 				8C0611FA223A360B00B19A9A /* XGLoginView.xib in Resources */,
 				8C1883EE2239456700FB7614 /* SettingInfo.plist in Resources */,
 				8C0611F6223A2C8400B19A9A /* XGLoginRegisterViewController.xib in Resources */,
@@ -792,6 +799,7 @@
 				8C3FE08322368DF300CAF4B0 /* UILabel+Extension.swift in Sources */,
 				8C3FE09C22369DA200CAF4B0 /* XGPictureTableViewController.swift in Sources */,
 				8CD5D30F2237CC05009A5BD7 /* XGWordTopicTableViewCell.swift in Sources */,
+				8CC7DB3E223A95630052DBB6 /* XGVoicePlayerViewController.swift in Sources */,
 				8C1883F02239488500FB7614 /* XGSettingItemModel.swift in Sources */,
 				8C0F74F82238D3570050715D /* XGNewTopicRecommendListViewModel.swift in Sources */,
 				8C0611F0223A25FD00B19A9A /* FileManager+Extension.swift in Sources */,
