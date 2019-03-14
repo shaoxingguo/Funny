@@ -15,5 +15,5 @@ pod 'MLeaksFinder'
 pod 'MJRefresh'
 pod 'SDWebImage'
 pod 'SDWebImage/GIF'
-
+pod 'FreeStreamer'
 end

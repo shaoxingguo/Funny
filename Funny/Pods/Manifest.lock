@@ -16,10 +16,13 @@ PODS:
     - AFNetworking/NSURLSession
   - FBRetainCycleDetector (0.1.4)
   - FLAnimatedImage (1.0.12)
+  - FreeStreamer (3.9.3):
+    - Reachability (~> 3.0)
   - MJExtension (3.0.15.1)
   - MJRefresh (3.1.15.7)
   - MLeaksFinder (1.0.0):
     - FBRetainCycleDetector
+  - Reachability (3.2)
   - SDWebImage (4.4.6):
     - SDWebImage/Core (= 4.4.6)
   - SDWebImage/Core (4.4.6)
@@ -31,6 +34,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - FreeStreamer
   - MJExtension
   - MJRefresh
   - MLeaksFinder
@@ -44,9 +48,11 @@ SPEC REPOS:
     - AFNetworking
     - FBRetainCycleDetector
     - FLAnimatedImage
+    - FreeStreamer
     - MJExtension
     - MJRefresh
     - MLeaksFinder
+    - Reachability
     - SDWebImage
     - SnapKit
     - SVProgressHUD
@@ -55,13 +61,15 @@ SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  FreeStreamer: 8d52b299dc97e557ff156480bf86a666165bd1e5
   MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: b40f051928f754319807c055a34fe6bf996b511a
+PODFILE CHECKSUM: a935bdbb532836bf96a3e2910062cded21633bb1
 
 COCOAPODS: 1.6.0

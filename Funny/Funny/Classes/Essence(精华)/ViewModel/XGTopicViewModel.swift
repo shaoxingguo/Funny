@@ -55,6 +55,11 @@ class XGTopicViewModel
         return topicModel!.height > kScreenHeight
     }
     
+    /// 音频资源
+    open var voiceURL:String? {
+        return topicModel?.voiceuri
+    }
+    
     /// 赞
     private(set) open var likeStr:String?
     /// 踩
