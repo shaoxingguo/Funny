@@ -11,7 +11,7 @@ import UIKit
 class XGFocusViewController: UIViewController
 {
     // MARK: - 控制器生命周期方法
-    
+
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -32,11 +32,14 @@ class XGFocusViewController: UIViewController
         let viewController = XGRecommendFocusTableViewController()
         navigationController?.pushViewController(viewController, animated: true)
     }
-    
-    // MARK: - 其他方法
-    
+}
+
+// MARK: - 设置界面
+
+private extension XGFocusViewController
+{
     /// 设置导航栏
-    private func setUpNavigationItem() -> Void
+    func setUpNavigationItem() -> Void
     {
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "tabBar_friendTrends_icon"), style: .plain, target: self, action: #selector(pushToRecommendFocusTableViewController))
     }

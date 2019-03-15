@@ -19,8 +19,8 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Ga-WY-WvT">
                     <rect key="frame" x="10" y="5" width="30" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="30" id="Ce3-eq-IWd"/>
-                        <constraint firstAttribute="height" constant="30" id="D8X-Sw-cjx"/>
+                        <constraint firstAttribute="height" constant="30" id="bUu-uu-7Kz"/>
+                        <constraint firstAttribute="width" constant="30" id="h6F-LD-YRL"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3m-LL-OTi">
@@ -30,7 +30,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0Y-0y-uTF">
-                    <rect key="frame" x="10" y="40" width="355" height="20"/>
+                    <rect key="frame" x="10" y="40" width="31" height="14.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -38,14 +38,13 @@
             </subviews>
             <color key="backgroundColor" red="0.92156862745098034" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="f49-Qc-bcF" firstAttribute="trailing" secondItem="Y0Y-0y-uTF" secondAttribute="trailing" constant="10" id="GQE-Nd-Q24"/>
-                <constraint firstItem="J3m-LL-OTi" firstAttribute="centerY" secondItem="4Ga-WY-WvT" secondAttribute="centerY" id="Lgo-8W-3yc"/>
-                <constraint firstItem="Y0Y-0y-uTF" firstAttribute="leading" secondItem="f49-Qc-bcF" secondAttribute="leading" constant="10" id="Ssc-0t-Eaf"/>
-                <constraint firstItem="J3m-LL-OTi" firstAttribute="leading" secondItem="4Ga-WY-WvT" secondAttribute="trailing" constant="10" id="UWe-A9-GTr"/>
-                <constraint firstItem="Y0Y-0y-uTF" firstAttribute="top" secondItem="4Ga-WY-WvT" secondAttribute="bottom" constant="5" id="f7C-KX-sDx"/>
-                <constraint firstItem="4Ga-WY-WvT" firstAttribute="top" secondItem="f49-Qc-bcF" secondAttribute="top" constant="5" id="hP5-bN-sYY"/>
-                <constraint firstItem="f49-Qc-bcF" firstAttribute="bottom" secondItem="Y0Y-0y-uTF" secondAttribute="bottom" id="hjp-Az-cY9"/>
-                <constraint firstItem="4Ga-WY-WvT" firstAttribute="leading" secondItem="f49-Qc-bcF" secondAttribute="leading" constant="10" id="kSG-fg-ze4"/>
+                <constraint firstItem="J3m-LL-OTi" firstAttribute="centerY" secondItem="4Ga-WY-WvT" secondAttribute="centerY" id="3Sy-Zv-It0"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Y0Y-0y-uTF" secondAttribute="trailing" constant="10" id="ReR-db-ucj"/>
+                <constraint firstItem="J3m-LL-OTi" firstAttribute="leading" secondItem="4Ga-WY-WvT" secondAttribute="trailing" constant="10" id="Tih-ne-ztb"/>
+                <constraint firstItem="Y0Y-0y-uTF" firstAttribute="leading" secondItem="fBQ-ZX-VbZ" secondAttribute="leading" constant="10" id="V5j-DB-64I"/>
+                <constraint firstItem="Y0Y-0y-uTF" firstAttribute="top" secondItem="4Ga-WY-WvT" secondAttribute="bottom" constant="5" id="Xwa-7L-Dcy"/>
+                <constraint firstItem="4Ga-WY-WvT" firstAttribute="leading" secondItem="fBQ-ZX-VbZ" secondAttribute="leading" constant="10" id="nE3-Qp-SMF"/>
+                <constraint firstItem="4Ga-WY-WvT" firstAttribute="top" secondItem="fBQ-ZX-VbZ" secondAttribute="top" constant="5" id="xaN-Ba-zMI"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="f49-Qc-bcF"/>

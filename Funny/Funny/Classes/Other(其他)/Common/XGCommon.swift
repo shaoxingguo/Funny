@@ -26,11 +26,15 @@ public let kScreenWidth:CGFloat = UIScreen.main.bounds.width
 public let kScreenHeight:CGFloat = UIScreen.main.bounds.height
 public let kScreenScale:CGFloat = UIScreen.main.scale
 /// 导航栏高度
-public let kNavigationBarHeight:CGFloat = 64
+public let kNavigationBarHeight:CGFloat = kStatusBarHeight + 44
 /// tabBar高度
 public let kTabBarHeight:CGFloat = 49
 /// 工具栏高度
 public let kToolBarHeight:CGFloat = 44
+/// 状态栏高度
+public let kStatusBarHeight:CGFloat = UIApplication.shared.statusBarFrame.size.height
+/// 是否是IPhoneX
+public let isIPhoneX:Bool = (UIApplication.shared.statusBarFrame.size.height > 20)
 
 /// cell间距
 public let kTopicCellMargin:CGFloat = 10

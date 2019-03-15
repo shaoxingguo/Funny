@@ -20,6 +20,7 @@ class XGVoicePlayerViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
         // 设置界面
         setUpUI()
         // 注册通知
@@ -36,7 +37,7 @@ class XGVoicePlayerViewController: UIViewController
         /// 停止定时器
         stopTimer()
     }
-    
+
     deinit {
         XGPrint("我去了")
     }

@@ -51,6 +51,7 @@ extension XGTransitionAnimation:UIViewControllerAnimatedTransitioning
         }
         
         containerView.addSubview(toView)
+        toView.frame = UIScreen.main.bounds
         containerView.alpha = 0
         UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
             containerView.alpha = 1

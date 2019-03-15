@@ -184,9 +184,10 @@ private extension XGSeeBigPictureViewController
         bigImageView.frame = CGRect(x: 0, y: 0, width: width, height: height)
         
         // 设置内容边距
-        var margin = (scrollView.height - height) / 2
-        margin = margin < 0 ? 0 : margin
-        scrollView.contentInset = UIEdgeInsets(top: margin, left: 0, bottom: margin, right: 0)
+        let margin = (scrollView.height - height) / 2
+        let topMargin = margin < 0 ? (isIPhoneX ? kStatusBarHeight : 0) : margin
+        let bottomMargin = margin < 0 ? 0 : margin
+        scrollView.contentInset = UIEdgeInsets(top: topMargin, left: 0, bottom: bottomMargin, right: 0)
         
         // 设置滚动范围
         scrollView.contentSize = CGSize(width: 0, height: height)
@@ -195,6 +196,8 @@ private extension XGSeeBigPictureViewController
     /// 设置界面
      func setUpUI() -> Void
     {
+        modalPresentationCapturesStatusBarAppearance = true
+        
         view.backgroundColor = UIColor.black
         scrollView.backgroundColor = UIColor.black
         
