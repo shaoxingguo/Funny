@@ -58,6 +58,8 @@ public let kTopicListAPI:String = "api/api_open.php"
 public let kNewTopicRecommendAPI:String = "api/api_open.php"
 /// 我的模块功能列表接口
 public let kSquareListAPI:String = "api/api_open.php"
+/// 获取“推荐关注”中左侧标签的列表接口
+public let kFocusCategoryAPI:String = "api/api_open.php"
 
 // MARK: - 通知相关
 

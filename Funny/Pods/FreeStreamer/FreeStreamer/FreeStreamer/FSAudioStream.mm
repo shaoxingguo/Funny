@@ -109,7 +109,7 @@ static NSInteger sortCacheObjects(id co1, id co2, void *keyForSorting)
         self.requiredInitialPrebufferedByteCountForContinuousStream = 256000;
         self.requiredInitialPrebufferedByteCountForNonContinuousStream = 256000;
         
-        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
         
         if ([paths count] > 0) {
             self.cacheDirectory = [paths objectAtIndex:0];

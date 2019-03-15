@@ -72,7 +72,7 @@ class XGVoicePlayerViewController: UIViewController
     // MARK: - 事件监听
     
     /// 暂停播放按钮
-    @IBAction func playOrPauseAction(_ button: UIButton)
+    @IBAction private func playOrPauseAction(_ button: UIButton)
     {
         button.isSelected = !button.isSelected
         // audioController.pause()如果当前在播放 会暂停 如果当前暂停 会进行播放
@@ -86,7 +86,7 @@ class XGVoicePlayerViewController: UIViewController
     }
     
     /// slider正在拖动
-    @IBAction func progressSliderValueChanged(_ slider: UISlider)
+    @IBAction private func progressSliderValueChanged(_ slider: UISlider)
     {
         // 停止定时器
         if timer != nil {
@@ -102,7 +102,7 @@ class XGVoicePlayerViewController: UIViewController
     }
     
     /// slider拖动结束
-    @IBAction func progressSliderTouchUpAction(_ slider: UISlider)
+    @IBAction private func progressSliderTouchUpAction(_ slider: UISlider)
     {
         // 恢复定时器
         startTimer()
@@ -119,7 +119,7 @@ class XGVoicePlayerViewController: UIViewController
     }
     
     /// 关闭当前控制器
-    @IBAction func closeAction(_ sender: UIButton)
+    @IBAction private func closeAction(_ sender: UIButton)
     {
         // 停止播放音乐
         audioController.stop()

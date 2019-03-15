@@ -31,6 +31,9 @@
 		8C1883EE2239456700FB7614 /* SettingInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C1883ED2239456700FB7614 /* SettingInfo.plist */; };
 		8C1883F02239488500FB7614 /* XGSettingItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1883EF2239488500FB7614 /* XGSettingItemModel.swift */; };
 		8C1883F322394A3000FB7614 /* XGSettingGroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1883F222394A3000FB7614 /* XGSettingGroupModel.swift */; };
+		8C21DD71223B3C7B00763EC2 /* XGFocusCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C21DD70223B3C7B00763EC2 /* XGFocusCategoryModel.swift */; };
+		8C21DD73223B3DB300763EC2 /* XGFocusCategoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C21DD72223B3DB300763EC2 /* XGFocusCategoryListViewModel.swift */; };
+		8C21DD77223B3EE000763EC2 /* XGRecommendFocusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C21DD76223B3EE000763EC2 /* XGRecommendFocusTableViewController.swift */; };
 		8C3FE08222368DF300CAF4B0 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE07622368DF300CAF4B0 /* UIColor+Extension.swift */; };
 		8C3FE08322368DF300CAF4B0 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE07722368DF300CAF4B0 /* UILabel+Extension.swift */; };
 		8C3FE08422368DF300CAF4B0 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE07822368DF300CAF4B0 /* UIButton+Extension.swift */; };
@@ -108,6 +111,9 @@
 		8C1883ED2239456700FB7614 /* SettingInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SettingInfo.plist; sourceTree = "<group>"; };
 		8C1883EF2239488500FB7614 /* XGSettingItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGSettingItemModel.swift; sourceTree = "<group>"; };
 		8C1883F222394A3000FB7614 /* XGSettingGroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGSettingGroupModel.swift; sourceTree = "<group>"; };
+		8C21DD70223B3C7B00763EC2 /* XGFocusCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGFocusCategoryModel.swift; sourceTree = "<group>"; };
+		8C21DD72223B3DB300763EC2 /* XGFocusCategoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGFocusCategoryListViewModel.swift; sourceTree = "<group>"; };
+		8C21DD76223B3EE000763EC2 /* XGRecommendFocusTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGRecommendFocusTableViewController.swift; sourceTree = "<group>"; };
 		8C3FE07622368DF300CAF4B0 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		8C3FE07722368DF300CAF4B0 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		8C3FE07822368DF300CAF4B0 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
@@ -189,6 +195,27 @@
 				8C1883ED2239456700FB7614 /* SettingInfo.plist */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		8C21DD74223B3E7C00763EC2 /* LoginAndRegister */ = {
+			isa = PBXGroup;
+			children = (
+				8C0611F9223A360B00B19A9A /* XGLoginView.xib */,
+				8C0611F7223A360100B19A9A /* XGLoginView.swift */,
+				8C6A6C1D223A774400739B11 /* XGRegisterView.xib */,
+				8C6A6C1B223A773900739B11 /* XGRegisterView.swift */,
+				8C0611F4223A2C8400B19A9A /* XGLoginRegisterViewController.xib */,
+				8C0611F3223A2C8400B19A9A /* XGLoginRegisterViewController.swift */,
+			);
+			path = LoginAndRegister;
+			sourceTree = "<group>";
+		};
+		8C21DD75223B3EA000763EC2 /* RecommendFocus */ = {
+			isa = PBXGroup;
+			children = (
+				8C21DD76223B3EE000763EC2 /* XGRecommendFocusTableViewController.swift */,
+			);
+			path = RecommendFocus;
 			sourceTree = "<group>";
 		};
 		8C3FE05F22368DF300CAF4B0 /* Classes */ = {
@@ -293,6 +320,7 @@
 		8C3FE06922368DF300CAF4B0 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				8C21DD72223B3DB300763EC2 /* XGFocusCategoryListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -300,6 +328,7 @@
 		8C3FE06A22368DF300CAF4B0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8C21DD70223B3C7B00763EC2 /* XGFocusCategoryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -307,12 +336,8 @@
 		8C3FE06B22368DF300CAF4B0 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8C0611F9223A360B00B19A9A /* XGLoginView.xib */,
-				8C0611F7223A360100B19A9A /* XGLoginView.swift */,
-				8C6A6C1D223A774400739B11 /* XGRegisterView.xib */,
-				8C6A6C1B223A773900739B11 /* XGRegisterView.swift */,
-				8C0611F4223A2C8400B19A9A /* XGLoginRegisterViewController.xib */,
-				8C0611F3223A2C8400B19A9A /* XGLoginRegisterViewController.swift */,
+				8C21DD75223B3EA000763EC2 /* RecommendFocus */,
+				8C21DD74223B3E7C00763EC2 /* LoginAndRegister */,
 				8C0611F1223A2A3800B19A9A /* XGFocusViewController.xib */,
 				8C3FE08D223691EA00CAF4B0 /* XGFocusViewController.swift */,
 			);
@@ -556,18 +581,10 @@
 			isa = PBXGroup;
 			children = (
 				8CD5D2E3223776FA009A5BD7 /* XGImageCacheManager.swift */,
-				8C9CBD40223735DE0042BA21 /* Network */,
+				8C9CBD412237361A0042BA21 /* XGDataManager.swift */,
+				8C9CBD3E223733CF0042BA21 /* XGNetworkManager.swift */,
 			);
 			path = Tools;
-			sourceTree = "<group>";
-		};
-		8C9CBD40223735DE0042BA21 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				8C9CBD3E223733CF0042BA21 /* XGNetworkManager.swift */,
-				8C9CBD412237361A0042BA21 /* XGDataManager.swift */,
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		8CB5F55822368A76009D7A10 /* Supporting Files */ = {
@@ -761,6 +778,7 @@
 				8C3FE0A422369DC300CAF4B0 /* XGAllTableViewController.swift in Sources */,
 				8CD5D3132237EBB6009A5BD7 /* XGVideoTopicCellView.swift in Sources */,
 				8CD5D2DD22376AF9009A5BD7 /* XGBaseTopicTableViewCell.swift in Sources */,
+				8C21DD77223B3EE000763EC2 /* XGRecommendFocusTableViewController.swift in Sources */,
 				8C0F74F42238CFB20050715D /* XGNewTopicRecommendTableViewController.swift in Sources */,
 				8C1883E522391E7700FB7614 /* Bundle+Extension.swift in Sources */,
 				8C3FE08822368DF300CAF4B0 /* XGMainViewController.swift in Sources */,
@@ -774,6 +792,7 @@
 				8CD5D2E622379BD5009A5BD7 /* XGTopicCellBottomView.swift in Sources */,
 				8C3FE09E22369DAB00CAF4B0 /* XGVideoTableViewController.swift in Sources */,
 				8C3FE08422368DF300CAF4B0 /* UIButton+Extension.swift in Sources */,
+				8C21DD71223B3C7B00763EC2 /* XGFocusCategoryModel.swift in Sources */,
 				8C3FE08722368DF300CAF4B0 /* XGCommon.swift in Sources */,
 				8C0F74FB2238D89E0050715D /* XGNewTopicRecommendTableViewCell.swift in Sources */,
 				8CD5D2E4223776FA009A5BD7 /* XGImageCacheManager.swift in Sources */,
@@ -809,6 +828,7 @@
 				8CD5D30B2237CBE2009A5BD7 /* XGVideoTopicTableViewCell.swift in Sources */,
 				8C1883E022390AE800FB7614 /* XGTransitionAnimation.swift in Sources */,
 				8C0611F8223A360100B19A9A /* XGLoginView.swift in Sources */,
+				8C21DD73223B3DB300763EC2 /* XGFocusCategoryListViewModel.swift in Sources */,
 				8CD5D30D2237CBF6009A5BD7 /* XGVoiceTopicTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -22,14 +22,14 @@ class XGLoginRegisterViewController: UIViewController
     // MARK: - 事件监听
     
     /// 关闭
-    @IBAction func closeAction(_ button: UIButton)
+    @IBAction private func closeAction(_ button: UIButton)
     {
         view.endEditing(true)
         dismiss(animated: true, completion: nil)
     }
     
     /// 登录注册
-    @IBAction func loginRegisterAction(_ button: UIButton)
+    @IBAction private func loginRegisterAction(_ button: UIButton)
     {
         button.isSelected = !button.isSelected
         let offset = button.isSelected ? scrollView.width : 0

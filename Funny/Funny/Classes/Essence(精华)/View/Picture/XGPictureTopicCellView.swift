@@ -25,7 +25,7 @@ class XGPictureTopicCellView: UIView
     // MARK: - 事件监听
     
     /// 查看大图事件
-    @IBAction func seeBigPictureAction()
+    @IBAction private func seeBigPictureAction()
     {
         guard let topicViewModel = topicViewModel else {
             return

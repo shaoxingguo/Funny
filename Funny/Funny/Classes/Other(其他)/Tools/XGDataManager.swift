@@ -89,4 +89,22 @@ extension XGDataManager
             completion(responseObject as? [String:Any],nil)
         }
     }
+    
+    
+    /// 获取“推荐关注”中左侧标签的列表
+    ///
+    /// - Parameter completion: 完成回调
+    open class func loadFocusCategoryList(completion:@escaping ([String:Any]?,Error?) -> Void) -> Void
+    {
+        let parameters:[String:Any] = ["a" : "category",
+                                       "c" : "subscribe"]
+        XGNetworkManager.request(type: .Get, URLString: kSquareListAPI, parameters: parameters) { (responseObject, error) in
+            if responseObject == nil || error != nil {
+                completion(nil,error)
+                return
+            }
+            
+            completion(responseObject as? [String:Any],nil)
+        }
+    }
 }

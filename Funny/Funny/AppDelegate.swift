@@ -34,6 +34,7 @@ extension AppDelegate:UIApplicationDelegate
         window?.makeKeyAndVisible()
         
         initialSetting()
+        XGPrint(NSHomeDirectory())
         return true
     }
     

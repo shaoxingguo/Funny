@@ -24,7 +24,7 @@ class XGVideoTopicCellView: UIView
     
     // MARK: - 事件监听
 
-    @IBAction func playVideoAction(_ sender: UIButton)
+    @IBAction private func playVideoAction(_ sender: UIButton)
     {
         XGPrint("播放视频")
     }

@@ -33,7 +33,7 @@ class XGVoiceTopicCellView: UIView
     
     // MARK: - 事件监听
     
-    @IBAction func playVoiceAction(_ sender: UIButton)
+    @IBAction private func playVoiceAction(_ sender: UIButton)
     {
         guard let topicViewModel = topicViewModel else {
             return
