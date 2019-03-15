@@ -509,8 +509,8 @@
 				8CD5D30C2237CBF6009A5BD7 /* XGVoiceTopicTableViewCell.swift */,
 				8C3FE09F22369DB200CAF4B0 /* XGVoiceTableViewController.swift */,
 				8C6A6C27223A922000739B11 /* XGVoicePlayerViewController.xib */,
-				8C3FE0A322369DC300CAF4B0 /* XGAllTableViewController.swift */,
 				8CC7DB3C223A95630052DBB6 /* XGVoicePlayerViewController.swift */,
+				8C3FE0A322369DC300CAF4B0 /* XGAllTableViewController.swift */,
 			);
 			path = Voice;
 			sourceTree = "<group>";
