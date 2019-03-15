@@ -13,9 +13,13 @@ class XGImageCacheManager: NSObject
 {
     /// 单例
     public static var shared:XGImageCacheManager = XGImageCacheManager()
-    
-    /// 图片缓存数组
-    private var imageCacheDictioary = [String:UIImage]()
+    /// 图片缓存
+    private lazy var imageCache = { () -> NSCache<NSString, UIImage> in
+        let imageCache = NSCache<NSString, UIImage>()
+        imageCache.countLimit = 100 // 缓存最多对象数目
+        imageCache.totalCostLimit = 10 * 1024 * 1024  // 缓存总成本 单位是字节
+        return imageCache
+    }()
     
     // MARK: - 构造方法
     
@@ -47,50 +51,38 @@ extension XGImageCacheManager
     ///   - completion: 完成回调
     open func imageForKey(key:String?,size:CGSize,backgroundColor:UIColor = UIColor.white,isUserIcon:Bool = false,isLongPicture:Bool = false, completion:@escaping (UIImage?) -> Void) -> Void
     {
-        guard let key = key else {
+        guard let key = key as NSString? else {
             completion(nil)
             return
         }
         
         // 如果已经缓存了 直接返回
-        if imageCacheDictioary[key] != nil {
-            completion(imageCacheDictioary[key])
+        if imageCache.object(forKey: key) != nil {
+            completion(imageCache.object(forKey: key))
             return
         }
         
-        // 图片不存在 进行下载
-        SDWebImageManager.shared().loadImage(with: URL(string: key), options: [.retryFailed,.refreshCached], progress: nil) { (image, _, error, _, _, _) in
+        // 如果本地有缓存 进行处理
+        if let image = SDWebImageManager.shared().imageCache?.imageFromCache(forKey: key as String) {
+            setUpImageToCache(key: key, image: image, size: size, backgroundColor: backgroundColor, completion: completion)
+            return
+        }
+        
+        // 内存缓存 磁盘缓存图片都不存在 进行下载
+        SDWebImageManager.shared().loadImage(with: URL(string: key as String), options: [.retryFailed,.refreshCached], progress: nil) { (image, _, error, _, _, _) in
             if image == nil || error != nil {
                 completion(nil)
                 return
             }
             
-            DispatchQueue.global().async {
-                // 进行图片处理
-                var newImage:UIImage?
-                if isUserIcon {
-                    newImage = image?.circleIconImage(imageSize: size, backgroundColor: backgroundColor)
-                } else if isLongPicture {
-                    newImage = self.clipImage(sourceImage: image!, imageSize: size, backgroundColor: backgroundColor)
-                } else {
-                    newImage = image?.scaleToSize(imageSize: size, backgroundColor: backgroundColor)
-                }
-                
-                DispatchQueue.main.sync {
-                    // 保存到内存中
-                    self.imageCacheDictioary[key] = newImage!
-                    
-                    // 完成回调
-                    completion(newImage)
-                }
-            }
+            self.setUpImageToCache(key: key, image: image!, size: size, backgroundColor: backgroundColor, completion: completion)
         }
     }
     
     /// 清除缓存
     @objc private func removeCache() -> Void
     {
-        imageCacheDictioary.removeAll();
+        imageCache.removeAllObjects()
     }
     
     /// 裁剪图片
@@ -121,5 +113,38 @@ extension XGImageCacheManager
         
         // 7.返回图片
         return newImage
+    }
+    
+    /// 设置图片到缓存
+    ///
+    /// - Parameters:
+    ///   - key: 图片缓存的键
+    ///   - image: 图片
+    ///   - size: 尺寸
+    ///   - backgroundColor: 背景颜色
+    ///   - isUserIcon: 是否是用户头像
+    ///   - isLongPicture: 是否长图
+    ///   - completion: 完成回调
+    private func setUpImageToCache(key:NSString,image:UIImage,size:CGSize,backgroundColor:UIColor,isUserIcon:Bool = false,isLongPicture:Bool = false,completion:@escaping (UIImage?) -> Void) -> Void
+    {
+        DispatchQueue.global().async {
+            // 进行图片处理
+            var newImage:UIImage?
+            if isUserIcon {
+                newImage = image.circleIconImage(imageSize: size, backgroundColor: backgroundColor)
+            } else if isLongPicture {
+                newImage = self.clipImage(sourceImage: image, imageSize: size, backgroundColor: backgroundColor)
+            } else {
+                newImage = image.scaleToSize(imageSize: size, backgroundColor: backgroundColor)
+            }
+            
+            DispatchQueue.main.sync {
+                // 保存到内存中
+                self.imageCache.setObject(image, forKey: key)
+                
+                // 完成回调
+                completion(newImage)
+            }
+        }
     }
 }
