@@ -55,7 +55,7 @@ class XGRecommendFocusTableViewController: UIViewController
 
 // MARK: - UITableViewDataSource
 
-extension XGRecommendFocusTableViewController : UITableViewDataSource
+extension XGRecommendFocusTableViewController : UITableViewDataSource,UITableViewDelegate
 {
     func numberOfSections(in tableView: UITableView) -> Int
     {
@@ -85,6 +85,24 @@ extension XGRecommendFocusTableViewController : UITableViewDataSource
             let cell = tableView.dequeueReusableCell(withIdentifier: kXGRecommendItemTableViewCellReuseIdentifer) as! XGRecommendItemTableViewCell
             cell.recommendItemModel = recommendListViewModel.categoryList[selectedCategoryIndex].items[indexPath.row]
             return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        if tableView == recommendCategoryListTableView {
+            // 左边分类tableView
+            selectedCategoryIndex = indexPath.row
+            let recommendCategoryModel = recommendListViewModel.categoryList[selectedCategoryIndex]
+            if recommendCategoryModel.items.count > 0 {
+                recommendItemListTableView.reloadData()
+            } else {
+                recommendItemListTableView.reloadData()
+                loadRecommendItemData()
+            }
+        } else {
+            // 右边推荐标签tableView
+           
         }
     }
 }
@@ -131,7 +149,8 @@ private extension XGRecommendFocusTableViewController
     {
         view.backgroundColor = UIColor.purple
         recommendCategoryListTableView.backgroundColor = UIColor.purple
-        recommendItemListTableView.backgroundColor = UIColor.orange
+        recommendItemListTableView.backgroundColor = UIColor.purple
+        
         // 添加子控件
         view.addSubview(recommendCategoryListTableView)
         view.addSubview(recommendItemListTableView)
@@ -156,7 +175,9 @@ private extension XGRecommendFocusTableViewController
     {
         // 设置代理
         recommendCategoryListTableView.dataSource = self
+        recommendCategoryListTableView.delegate = self
         recommendItemListTableView.dataSource = self
+        recommendItemListTableView.delegate = self
         
         // 注册cell
         recommendCategoryListTableView.register(XGRecommendCategoryTableViewCell.self, forCellReuseIdentifier: kXGRecommendCategoryTableViewCellReuseIdentifer)

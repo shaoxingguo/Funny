@@ -50,6 +50,7 @@ private extension XGRecommendItemTableViewCell
 {
     func setUpUI() -> Void
     {
+        selectionStyle = .none
         contentView.backgroundColor = UIColor.white
         
         // 添加子控件
