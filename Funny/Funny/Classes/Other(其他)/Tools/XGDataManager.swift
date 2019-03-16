@@ -44,14 +44,22 @@ extension XGDataManager
     ///
     /// - Parameters:
     ///   - type: 帖子类型
+    ///   - isNewTopicList: 是否是新帖 默认false
     ///   - maxId: 帖子id 加载比此id小的帖子 加载更多数据
     ///   - minId: 帖子id 加载比此id大的帖子 加载最新数据
     ///   - completion: 完成回调
-    open class func loadTopicList(type:XGTopicType,maxId:Int = 0, minId:Int = 0, completion:@escaping ([String:Any]?,Error?) -> Void) -> Void
+    open class func loadTopicList(type:XGTopicType,isNewTopicList:Bool = false, maxId:Int = 0, minId:Int = 0, completion:@escaping ([String:Any]?,Error?) -> Void) -> Void
     {
-        var parameters:[String:Any] = ["a" : "list",
-                          "c" : "data",
+        var parameters:[String:Any] = ["c" : "data",
                           "type" : type.rawValue]
+        // 判断是否是新帖
+        if isNewTopicList {
+            parameters["a"] = "newlist"
+        } else {
+            parameters["a"] = "list"
+        }
+        
+        // 判断是否是上拉加载更多数据
         if maxId != 0 {
             parameters["maxtime"] = maxId
         }

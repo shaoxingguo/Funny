@@ -467,10 +467,8 @@
 		8C3FE07322368DF300CAF4B0 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8C0F74FA2238D89E0050715D /* XGNewTopicRecommendTableViewCell.xib */,
-				8C0F74F92238D89E0050715D /* XGNewTopicRecommendTableViewCell.swift */,
-				8C0F74F32238CFB20050715D /* XGNewTopicRecommendTableViewController.swift */,
 				8C3FE089223691BB00CAF4B0 /* XGNewTopicViewController.swift */,
+				8C74F2F3223CE43E00C7D7EE /* Recommend */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -669,6 +667,16 @@
 				8C74F2D7223CD4F500C7D7EE /* VGPlayerCacheAction.swift */,
 			);
 			path = MediaCache;
+			sourceTree = "<group>";
+		};
+		8C74F2F3223CE43E00C7D7EE /* Recommend */ = {
+			isa = PBXGroup;
+			children = (
+				8C0F74FA2238D89E0050715D /* XGNewTopicRecommendTableViewCell.xib */,
+				8C0F74F92238D89E0050715D /* XGNewTopicRecommendTableViewCell.swift */,
+				8C0F74F32238CFB20050715D /* XGNewTopicRecommendTableViewController.swift */,
+			);
+			path = Recommend;
 			sourceTree = "<group>";
 		};
 		8C9CBD3D223733A90042BA21 /* Tools */ = {

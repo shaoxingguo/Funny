@@ -22,12 +22,13 @@ extension XGTopicListViewModel
     ///
     /// - Parameters:
     ///   - type: 帖子类型
+    ///   - isNewTopocList: 是否是新帖 默认false
     ///   - maxId: 帖子id 加载比此id小的帖子 加载更多数据
     ///   - minId: 帖子id 加载比此id大的帖子 加载最新数据
     ///   - completion: 完成回调
-    open func loadTopicList(type:XGTopicType,maxId:Int = 0, minId:Int = 0,completion:@escaping (Bool)-> Void) -> Void
+    open func loadTopicList(type:XGTopicType,isNewTopicList:Bool = false, maxId:Int = 0, minId:Int = 0, completion:@escaping (Bool)-> Void) -> Void
     {
-        XGDataManager.loadTopicList(type: type, maxId: maxId, minId: minId) { (responseObject, error) in
+        XGDataManager.loadTopicList(type: type, isNewTopicList: isNewTopicList, maxId: maxId, minId: minId) { (responseObject, error) in
             if responseObject == nil || error != nil {
                 completion(false)
                 return

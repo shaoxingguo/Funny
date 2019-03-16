@@ -8,14 +8,23 @@
 
 import UIKit
 
-class XGNewTopicViewController: UIViewController
+class XGNewTopicViewController: XGTopicTableViewController
 {
+    override var topicType: XGTopicType {
+        return .All
+    }
+    
+    override var isNewTopicList: Bool {
+        return true
+    }
+    
     // MARK: - 控制器生命周期方法
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
+        // 设置导航栏
         setUpNavigationItem()
     }
     
@@ -29,10 +38,10 @@ class XGNewTopicViewController: UIViewController
 
 // MARK: - 其他方法
 
-private extension XGNewTopicViewController
+extension XGNewTopicViewController
 {
     /// 设置导航栏
-    func setUpNavigationItem()  -> Void
+    private func setUpNavigationItem()  -> Void
     {
         let button = UIButton(imageName: "MainTagSubIcon", target: self, action: #selector(pushToNewTopicRecommendTableViewControllerAction))
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: button)

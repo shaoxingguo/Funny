@@ -31,19 +31,20 @@ class XGTopicTableViewController: UITableViewController
         return .All
     }
     
+    /// 是否是新帖列表
+    open var isNewTopicList:Bool {
+        return false
+    }
+    
     // MARK: - 控制器生命周期方法
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
+        // 设置tableView
         setUpTableView()
-    }
-    
-    override func viewWillAppear(_ animated: Bool)
-    {
-        super.viewWillAppear(animated)
-        
+        // 刷新数据
         tableView.mj_header.beginRefreshing()
     }
 }
@@ -60,18 +61,20 @@ private extension XGTopicTableViewController
         
         // 取消默认64偏移
         tableView.contentInsetAdjustmentBehavior = .never
+       
+        // 注册cell
+        registerTableCell()
         
         // 设置下拉刷新
         tableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(loadNewTopicList))
         tableView.mj_header.isAutomaticallyChangeAlpha = true
         // 设置上拉刷新
         tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(loadMoreTopicList))
-
+        
         // 设置边距
-        tableView.contentInset = UIEdgeInsets(top: kNavigationBarHeight + kToolBarHeight, left: 0, bottom: kTopicCellBottomViewHeight + tableView.mj_footer.height, right: 0)
+        let topMargin = kNavigationBarHeight + (isNewTopicList ? 0 : kToolBarHeight)
+        tableView.contentInset = UIEdgeInsets(top: topMargin, left: 0, bottom: kTopicCellBottomViewHeight + tableView.mj_footer.height, right: 0)
         tableView.scrollIndicatorInsets = tableView.contentInset
-        // 注册cell
-        registerTableCell()
     }
     
     /// 注册cell
@@ -82,7 +85,6 @@ private extension XGTopicTableViewController
         tableView.register(XGVoiceTopicTableViewCell.self, forCellReuseIdentifier: kVoiceTopicTableViewCellReuseIdentifier)
         tableView.register(XGWordTopicTableViewCell.self, forCellReuseIdentifier: kWordTopicTableViewCellReuseIdentifier)
     }
-    
     
     /// 根据视图模型返回对应的cell重用标识符
     ///
@@ -114,7 +116,7 @@ private extension XGTopicTableViewController
     {
         let minId = topicListViewModel.topicList.first?.topicId ?? 0
 
-        topicListViewModel.loadTopicList(type: topicType, minId: minId) { (isSuccess) in
+        topicListViewModel.loadTopicList(type: topicType, isNewTopicList: isNewTopicList, minId: minId) { (isSuccess) in
             self.tableView.mj_header.endRefreshing()
             if !isSuccess {
                 XGPrint("加载自定义帖子失败")
@@ -132,7 +134,8 @@ private extension XGTopicTableViewController
     {
         let count = topicListViewModel.topicList.count
         let maxId = topicListViewModel.topicList.last?.topicId ?? 0
-        topicListViewModel.loadTopicList(type: topicType, maxId: maxId) { (isSuccess) in
+        
+        topicListViewModel.loadTopicList(type: topicType, isNewTopicList: isNewTopicList,maxId: maxId) { (isSuccess) in
             count == self.topicListViewModel.topicList.count ? self.tableView.mj_footer.endRefreshingWithNoMoreData() : self.tableView.mj_footer.endRefreshing()
             if !isSuccess {
                 XGPrint("加载自定义帖子失败")
