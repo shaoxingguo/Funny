@@ -8,7 +8,7 @@
 
 import UIKit
 
-@objcMembers class XGFocusCategoryModel: NSObject
+@objcMembers class XGRecommendCategoryModel: NSObject
 {
     /// 列表个数
     var count:Int = 0

@@ -108,8 +108,8 @@ extension UIButton
             imageEdgeInsets = UIEdgeInsets(top:0, left:0, bottom:-labelHeight-space/2.0, right:-labelWidth)
             labelEdgeInsets = UIEdgeInsets(top:-imageHeight-space/2.0, left:-imageWith, bottom:0, right:0)
         case .right:
-            imageEdgeInsets = UIEdgeInsets(top:0, left:labelWidth+space/2.0, bottom:0, right:-labelWidth-space/2.0);
-            labelEdgeInsets = UIEdgeInsets(top:0, left:-imageWith-space/2.0, bottom:0, right:imageWith+space/2.0);
+            imageEdgeInsets = UIEdgeInsets(top:0, left:labelWidth+space/2.0, bottom:0, right:-labelWidth-space/2.0)
+            labelEdgeInsets = UIEdgeInsets(top:0, left:-imageWith-space/2.0, bottom:0, right:imageWith+space/2.0)
         }
 
         // 4. 赋值

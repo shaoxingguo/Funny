@@ -94,11 +94,31 @@ extension XGDataManager
     /// 获取“推荐关注”中左侧标签的列表
     ///
     /// - Parameter completion: 完成回调
-    open class func loadFocusCategoryList(completion:@escaping ([String:Any]?,Error?) -> Void) -> Void
+    open class func loadRecommendCategoryList(completion:@escaping ([String:Any]?,Error?) -> Void) -> Void
     {
         let parameters:[String:Any] = ["a" : "category",
                                        "c" : "subscribe"]
-        XGNetworkManager.request(type: .Get, URLString: kSquareListAPI, parameters: parameters) { (responseObject, error) in
+        XGNetworkManager.request(type: .Get, URLString: kRecommendCategoryAPI, parameters: parameters) { (responseObject, error) in
+            if responseObject == nil || error != nil {
+                completion(nil,error)
+                return
+            }
+            
+            completion(responseObject as? [String:Any],nil)
+        }
+    }
+    
+    /// 获取“推荐关注”中左侧标签每个标签对应的推荐用户组
+    ///
+    /// - Parameters:
+    ///   - categoryId: 分类ID
+    ///   - completion: 完成回调
+    open class func loadRecommendItemList(categoryId:Int,completion:@escaping ([String:Any]?,Error?) -> Void) -> Void
+    {
+        let parameters:[String:Any] = ["a" : "list",
+                                       "c" : "subscribe",
+                                       "category_id": categoryId]
+        XGNetworkManager.request(type: .Get, URLString: kRecommendCategoryAPI, parameters: parameters) { (responseObject, error) in
             if responseObject == nil || error != nil {
                 completion(nil,error)
                 return

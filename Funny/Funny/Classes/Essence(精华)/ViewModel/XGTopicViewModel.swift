@@ -123,7 +123,7 @@ private extension XGTopicViewModel
         var height:CGFloat = 0
         
         // 顶部视图高度
-        height += kTopicCellTopViewHeight;
+        height += kTopicCellTopViewHeight
         
         if let text = text {
             // 正文高度

@@ -40,7 +40,7 @@ class XGNavigationController: UINavigationController
     private func addPanGestureRecognizer() -> Void
     {
         /*
-         <UIScreenEdgePanGestureRecognizer: 0x7fd53340f760; state = Possible; delaysTouchesBegan = YES; view = <UILayoutContainerView 0x7fd533707a30>; target= <(action=handleNavigationTransition:, target=<_UINavigationInteractiveTransition 0x7fd533604b80>)>>
+         <UIScreenEdgePanGestureRecognizer: 0x7fd53340f760; state = Possible delaysTouchesBegan = YES; view = <UILayoutContainerView 0x7fd533707a30>; target= <(action=handleNavigationTransition:, target=<_UINavigationInteractiveTransition 0x7fd533604b80>)>>
          _targets
          */
         

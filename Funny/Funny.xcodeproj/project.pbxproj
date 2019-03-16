@@ -14,6 +14,8 @@
 		8C0611F6223A2C8400B19A9A /* XGLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C0611F4223A2C8400B19A9A /* XGLoginRegisterViewController.xib */; };
 		8C0611F8223A360100B19A9A /* XGLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0611F7223A360100B19A9A /* XGLoginView.swift */; };
 		8C0611FA223A360B00B19A9A /* XGLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C0611F9223A360B00B19A9A /* XGLoginView.xib */; };
+		8C064F9B223C76C1008C2601 /* XGRecommendCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C064F9A223C76C1008C2601 /* XGRecommendCategoryTableViewCell.swift */; };
+		8C064F9D223C7FC8008C2601 /* XGRecommendItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C064F9C223C7FC8008C2601 /* XGRecommendItemModel.swift */; };
 		8C0F74F02238BCEC0050715D /* XGVoiceTopicCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C0F74EF2238BCEC0050715D /* XGVoiceTopicCellView.xib */; };
 		8C0F74F22238CB8D0050715D /* XGNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F74F12238CB8D0050715D /* XGNavigationController.swift */; };
 		8C0F74F42238CFB20050715D /* XGNewTopicRecommendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F74F32238CFB20050715D /* XGNewTopicRecommendTableViewController.swift */; };
@@ -31,8 +33,8 @@
 		8C1883EE2239456700FB7614 /* SettingInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C1883ED2239456700FB7614 /* SettingInfo.plist */; };
 		8C1883F02239488500FB7614 /* XGSettingItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1883EF2239488500FB7614 /* XGSettingItemModel.swift */; };
 		8C1883F322394A3000FB7614 /* XGSettingGroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1883F222394A3000FB7614 /* XGSettingGroupModel.swift */; };
-		8C21DD71223B3C7B00763EC2 /* XGFocusCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C21DD70223B3C7B00763EC2 /* XGFocusCategoryModel.swift */; };
-		8C21DD73223B3DB300763EC2 /* XGFocusCategoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C21DD72223B3DB300763EC2 /* XGFocusCategoryListViewModel.swift */; };
+		8C21DD71223B3C7B00763EC2 /* XGRecommendCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C21DD70223B3C7B00763EC2 /* XGRecommendCategoryModel.swift */; };
+		8C21DD73223B3DB300763EC2 /* XGRecommendListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C21DD72223B3DB300763EC2 /* XGRecommendListViewModel.swift */; };
 		8C21DD77223B3EE000763EC2 /* XGRecommendFocusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C21DD76223B3EE000763EC2 /* XGRecommendFocusTableViewController.swift */; };
 		8C3FE08222368DF300CAF4B0 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE07622368DF300CAF4B0 /* UIColor+Extension.swift */; };
 		8C3FE08322368DF300CAF4B0 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FE07722368DF300CAF4B0 /* UILabel+Extension.swift */; };
@@ -54,6 +56,7 @@
 		8C6A6C1C223A773900739B11 /* XGRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A6C1B223A773900739B11 /* XGRegisterView.swift */; };
 		8C6A6C1E223A774400739B11 /* XGRegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C6A6C1D223A774400739B11 /* XGRegisterView.xib */; };
 		8C6A6C28223A922000739B11 /* XGVoicePlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C6A6C27223A922000739B11 /* XGVoicePlayerViewController.xib */; };
+		8C74F2C2223C844600C7D7EE /* XGRecommendItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74F2C1223C844600C7D7EE /* XGRecommendItemTableViewCell.swift */; };
 		8C9CBD3F223733CF0042BA21 /* XGNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CBD3E223733CF0042BA21 /* XGNetworkManager.swift */; };
 		8C9CBD422237361A0042BA21 /* XGDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CBD412237361A0042BA21 /* XGDataManager.swift */; };
 		8C9CBD44223738890042BA21 /* XGTopicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CBD43223738890042BA21 /* XGTopicModel.swift */; };
@@ -94,6 +97,8 @@
 		8C0611F4223A2C8400B19A9A /* XGLoginRegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XGLoginRegisterViewController.xib; sourceTree = "<group>"; };
 		8C0611F7223A360100B19A9A /* XGLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGLoginView.swift; sourceTree = "<group>"; };
 		8C0611F9223A360B00B19A9A /* XGLoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XGLoginView.xib; sourceTree = "<group>"; };
+		8C064F9A223C76C1008C2601 /* XGRecommendCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGRecommendCategoryTableViewCell.swift; sourceTree = "<group>"; };
+		8C064F9C223C7FC8008C2601 /* XGRecommendItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGRecommendItemModel.swift; sourceTree = "<group>"; };
 		8C0F74EF2238BCEC0050715D /* XGVoiceTopicCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XGVoiceTopicCellView.xib; sourceTree = "<group>"; };
 		8C0F74F12238CB8D0050715D /* XGNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XGNavigationController.swift; sourceTree = "<group>"; };
 		8C0F74F32238CFB20050715D /* XGNewTopicRecommendTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGNewTopicRecommendTableViewController.swift; sourceTree = "<group>"; };
@@ -111,8 +116,8 @@
 		8C1883ED2239456700FB7614 /* SettingInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SettingInfo.plist; sourceTree = "<group>"; };
 		8C1883EF2239488500FB7614 /* XGSettingItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGSettingItemModel.swift; sourceTree = "<group>"; };
 		8C1883F222394A3000FB7614 /* XGSettingGroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGSettingGroupModel.swift; sourceTree = "<group>"; };
-		8C21DD70223B3C7B00763EC2 /* XGFocusCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGFocusCategoryModel.swift; sourceTree = "<group>"; };
-		8C21DD72223B3DB300763EC2 /* XGFocusCategoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGFocusCategoryListViewModel.swift; sourceTree = "<group>"; };
+		8C21DD70223B3C7B00763EC2 /* XGRecommendCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGRecommendCategoryModel.swift; sourceTree = "<group>"; };
+		8C21DD72223B3DB300763EC2 /* XGRecommendListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGRecommendListViewModel.swift; sourceTree = "<group>"; };
 		8C21DD76223B3EE000763EC2 /* XGRecommendFocusTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGRecommendFocusTableViewController.swift; sourceTree = "<group>"; };
 		8C3FE07622368DF300CAF4B0 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		8C3FE07722368DF300CAF4B0 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
@@ -136,6 +141,7 @@
 		8C6A6C1B223A773900739B11 /* XGRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGRegisterView.swift; sourceTree = "<group>"; };
 		8C6A6C1D223A774400739B11 /* XGRegisterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XGRegisterView.xib; sourceTree = "<group>"; };
 		8C6A6C27223A922000739B11 /* XGVoicePlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XGVoicePlayerViewController.xib; sourceTree = "<group>"; };
+		8C74F2C1223C844600C7D7EE /* XGRecommendItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGRecommendItemTableViewCell.swift; sourceTree = "<group>"; };
 		8C9CBD3E223733CF0042BA21 /* XGNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XGNetworkManager.swift; sourceTree = "<group>"; };
 		8C9CBD412237361A0042BA21 /* XGDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGDataManager.swift; sourceTree = "<group>"; };
 		8C9CBD43223738890042BA21 /* XGTopicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGTopicModel.swift; sourceTree = "<group>"; };
@@ -213,6 +219,8 @@
 		8C21DD75223B3EA000763EC2 /* RecommendFocus */ = {
 			isa = PBXGroup;
 			children = (
+				8C064F9A223C76C1008C2601 /* XGRecommendCategoryTableViewCell.swift */,
+				8C74F2C1223C844600C7D7EE /* XGRecommendItemTableViewCell.swift */,
 				8C21DD76223B3EE000763EC2 /* XGRecommendFocusTableViewController.swift */,
 			);
 			path = RecommendFocus;
@@ -320,7 +328,7 @@
 		8C3FE06922368DF300CAF4B0 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				8C21DD72223B3DB300763EC2 /* XGFocusCategoryListViewModel.swift */,
+				8C21DD72223B3DB300763EC2 /* XGRecommendListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -328,7 +336,8 @@
 		8C3FE06A22368DF300CAF4B0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8C21DD70223B3C7B00763EC2 /* XGFocusCategoryModel.swift */,
+				8C064F9C223C7FC8008C2601 /* XGRecommendItemModel.swift */,
+				8C21DD70223B3C7B00763EC2 /* XGRecommendCategoryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -770,6 +779,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C74F2C2223C844600C7D7EE /* XGRecommendItemTableViewCell.swift in Sources */,
 				8CFB11102239D6FE0018A0A3 /* XGSquareCollectionViewCell.swift in Sources */,
 				8CD5D3092237CA3F009A5BD7 /* XGTopicTableViewController.swift in Sources */,
 				8C9CBD422237361A0042BA21 /* XGDataManager.swift in Sources */,
@@ -792,7 +802,7 @@
 				8CD5D2E622379BD5009A5BD7 /* XGTopicCellBottomView.swift in Sources */,
 				8C3FE09E22369DAB00CAF4B0 /* XGVideoTableViewController.swift in Sources */,
 				8C3FE08422368DF300CAF4B0 /* UIButton+Extension.swift in Sources */,
-				8C21DD71223B3C7B00763EC2 /* XGFocusCategoryModel.swift in Sources */,
+				8C21DD71223B3C7B00763EC2 /* XGRecommendCategoryModel.swift in Sources */,
 				8C3FE08722368DF300CAF4B0 /* XGCommon.swift in Sources */,
 				8C0F74FB2238D89E0050715D /* XGNewTopicRecommendTableViewCell.swift in Sources */,
 				8CD5D2E4223776FA009A5BD7 /* XGImageCacheManager.swift in Sources */,
@@ -814,6 +824,8 @@
 				8CD5D3152237EBC3009A5BD7 /* XGVoiceTopicCellView.swift in Sources */,
 				8C9CBD4C22373EC80042BA21 /* XGTopicViewModel.swift in Sources */,
 				8C9CBD44223738890042BA21 /* XGTopicModel.swift in Sources */,
+				8C064F9D223C7FC8008C2601 /* XGRecommendItemModel.swift in Sources */,
+				8C064F9B223C76C1008C2601 /* XGRecommendCategoryTableViewCell.swift in Sources */,
 				8C1883E322391E6A00FB7614 /* PHPhotoLibrary+Extension.swift in Sources */,
 				8C3FE08322368DF300CAF4B0 /* UILabel+Extension.swift in Sources */,
 				8C3FE09C22369DA200CAF4B0 /* XGPictureTableViewController.swift in Sources */,
@@ -828,7 +840,7 @@
 				8CD5D30B2237CBE2009A5BD7 /* XGVideoTopicTableViewCell.swift in Sources */,
 				8C1883E022390AE800FB7614 /* XGTransitionAnimation.swift in Sources */,
 				8C0611F8223A360100B19A9A /* XGLoginView.swift in Sources */,
-				8C21DD73223B3DB300763EC2 /* XGFocusCategoryListViewModel.swift in Sources */,
+				8C21DD73223B3DB300763EC2 /* XGRecommendListViewModel.swift in Sources */,
 				8CD5D30D2237CBF6009A5BD7 /* XGVoiceTopicTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
