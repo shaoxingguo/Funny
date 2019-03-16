@@ -80,8 +80,11 @@
 		8C74F2EF223CD4F600C7D7EE /* VGPlayerLoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74F2D9223CD4F500C7D7EE /* VGPlayerLoadingIndicator.swift */; };
 		8C74F2F0223CD4F600C7D7EE /* VGSubtitles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74F2DA223CD4F600C7D7EE /* VGSubtitles.swift */; };
 		8C74F2F2223CD5B700C7D7EE /* XGVideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74F2F1223CD5B700C7D7EE /* XGVideoPlayerViewController.swift */; };
+		8C74F2F5223D052900C7D7EE /* XGSQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74F2F4223D052900C7D7EE /* XGSQLiteManager.swift */; };
+		8C74F2F7223D087100C7D7EE /* XGTopicDAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74F2F6223D087100C7D7EE /* XGTopicDAL.swift */; };
+		8C74F2F9223D095600C7D7EE /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74F2F8223D095600C7D7EE /* Date+Extension.swift */; };
+		8C74F2FB223D0E6600C7D7EE /* Funny.sql in Resources */ = {isa = PBXBuildFile; fileRef = 8C74F2FA223D0E6600C7D7EE /* Funny.sql */; };
 		8C9CBD3F223733CF0042BA21 /* XGNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CBD3E223733CF0042BA21 /* XGNetworkManager.swift */; };
-		8C9CBD422237361A0042BA21 /* XGDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CBD412237361A0042BA21 /* XGDataManager.swift */; };
 		8C9CBD44223738890042BA21 /* XGTopicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CBD43223738890042BA21 /* XGTopicModel.swift */; };
 		8C9CBD4622373C140042BA21 /* XGUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CBD4522373C140042BA21 /* XGUserModel.swift */; };
 		8C9CBD4822373C7F0042BA21 /* XGHotCommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CBD4722373C7F0042BA21 /* XGHotCommentModel.swift */; };
@@ -188,8 +191,11 @@
 		8C74F2D9223CD4F500C7D7EE /* VGPlayerLoadingIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGPlayerLoadingIndicator.swift; sourceTree = "<group>"; };
 		8C74F2DA223CD4F600C7D7EE /* VGSubtitles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGSubtitles.swift; sourceTree = "<group>"; };
 		8C74F2F1223CD5B700C7D7EE /* XGVideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGVideoPlayerViewController.swift; sourceTree = "<group>"; };
+		8C74F2F4223D052900C7D7EE /* XGSQLiteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XGSQLiteManager.swift; sourceTree = "<group>"; };
+		8C74F2F6223D087100C7D7EE /* XGTopicDAL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGTopicDAL.swift; sourceTree = "<group>"; };
+		8C74F2F8223D095600C7D7EE /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		8C74F2FA223D0E6600C7D7EE /* Funny.sql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Funny.sql; sourceTree = "<group>"; };
 		8C9CBD3E223733CF0042BA21 /* XGNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XGNetworkManager.swift; sourceTree = "<group>"; };
-		8C9CBD412237361A0042BA21 /* XGDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGDataManager.swift; sourceTree = "<group>"; };
 		8C9CBD43223738890042BA21 /* XGTopicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGTopicModel.swift; sourceTree = "<group>"; };
 		8C9CBD4522373C140042BA21 /* XGUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGUserModel.swift; sourceTree = "<group>"; };
 		8C9CBD4722373C7F0042BA21 /* XGHotCommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGHotCommentModel.swift; sourceTree = "<group>"; };
@@ -487,6 +493,7 @@
 		8C3FE07522368DF300CAF4B0 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				8C74F2F8223D095600C7D7EE /* Date+Extension.swift */,
 				8C0611EF223A25FD00B19A9A /* FileManager+Extension.swift */,
 				8C1883E422391E7700FB7614 /* Bundle+Extension.swift */,
 				8C1883E222391E6A00FB7614 /* PHPhotoLibrary+Extension.swift */,
@@ -682,8 +689,10 @@
 		8C9CBD3D223733A90042BA21 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				8C74F2FA223D0E6600C7D7EE /* Funny.sql */,
+				8C74F2F6223D087100C7D7EE /* XGTopicDAL.swift */,
+				8C74F2F4223D052900C7D7EE /* XGSQLiteManager.swift */,
 				8CD5D2E3223776FA009A5BD7 /* XGImageCacheManager.swift */,
-				8C9CBD412237361A0042BA21 /* XGDataManager.swift */,
 				8C9CBD3E223733CF0042BA21 /* XGNetworkManager.swift */,
 			);
 			path = Tools;
@@ -787,6 +796,7 @@
 				8C0611F6223A2C8400B19A9A /* XGLoginRegisterViewController.xib in Resources */,
 				8CFB11112239D6FE0018A0A3 /* XGSquareCollectionViewCell.xib in Resources */,
 				8CB5F57222368C2C009D7A10 /* Assets.xcassets in Resources */,
+				8C74F2FB223D0E6600C7D7EE /* Funny.sql in Resources */,
 				8C0F74FC2238D89E0050715D /* XGNewTopicRecommendTableViewCell.xib in Resources */,
 				8C0611F2223A2A3800B19A9A /* XGFocusViewController.xib in Resources */,
 				8C6A6C1E223A774400739B11 /* XGRegisterView.xib in Resources */,
@@ -877,7 +887,6 @@
 				8C74F2C2223C844600C7D7EE /* XGRecommendItemTableViewCell.swift in Sources */,
 				8CFB11102239D6FE0018A0A3 /* XGSquareCollectionViewCell.swift in Sources */,
 				8CD5D3092237CA3F009A5BD7 /* XGTopicTableViewController.swift in Sources */,
-				8C9CBD422237361A0042BA21 /* XGDataManager.swift in Sources */,
 				8C1883F322394A3000FB7614 /* XGSettingGroupModel.swift in Sources */,
 				8C0F74FE2238DEA50050715D /* Int+Extension.swift in Sources */,
 				8C3FE0A422369DC300CAF4B0 /* XGAllTableViewController.swift in Sources */,
@@ -911,6 +920,7 @@
 				8C74F2E7223CD4F600C7D7EE /* VGPlayerCacheMediaConfiguration.swift in Sources */,
 				8C9CBD4822373C7F0042BA21 /* XGHotCommentModel.swift in Sources */,
 				8C74F2E9223CD4F600C7D7EE /* VGPlayerResourceLoader.swift in Sources */,
+				8C74F2F9223D095600C7D7EE /* Date+Extension.swift in Sources */,
 				8C3FE08222368DF300CAF4B0 /* UIColor+Extension.swift in Sources */,
 				8C74F2EB223CD4F600C7D7EE /* VGPlayerDownloadActionWorker.swift in Sources */,
 				8C3FE090223691FE00CAF4B0 /* XGMineTableViewController.swift in Sources */,
@@ -925,6 +935,7 @@
 				8C3FE08522368DF300CAF4B0 /* UIView+Extension.swift in Sources */,
 				8C3FE08E223691EA00CAF4B0 /* XGFocusViewController.swift in Sources */,
 				8C3FE08A223691BB00CAF4B0 /* XGNewTopicViewController.swift in Sources */,
+				8C74F2F5223D052900C7D7EE /* XGSQLiteManager.swift in Sources */,
 				8C3FE0A222369DBB00CAF4B0 /* XGWordTableViewController.swift in Sources */,
 				8C9CBD4622373C140042BA21 /* XGUserModel.swift in Sources */,
 				8C0F74F62238D0FF0050715D /* XGNewTopicRecommendModel.swift in Sources */,
@@ -939,6 +950,7 @@
 				8C74F2E8223CD4F600C7D7EE /* VGPlayerCacheManager.swift in Sources */,
 				8C74F2E2223CD4F600C7D7EE /* VGPlayerCacheMediaWorker.swift in Sources */,
 				8C1883E322391E6A00FB7614 /* PHPhotoLibrary+Extension.swift in Sources */,
+				8C74F2F7223D087100C7D7EE /* XGTopicDAL.swift in Sources */,
 				8C3FE08322368DF300CAF4B0 /* UILabel+Extension.swift in Sources */,
 				8C74F2DC223CD4F600C7D7EE /* VGPlayerSlider.swift in Sources */,
 				8C3FE09C22369DA200CAF4B0 /* XGPictureTableViewController.swift in Sources */,

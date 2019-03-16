@@ -24,7 +24,7 @@ extension XGSquareListViewModel
     /// - Parameter completion: 完成回调
     open func loadSquareList(completion:@escaping (Bool) -> Void) -> Void
     {
-        XGDataManager.loadSquareList { (responseObject, error) in
+        XGTopicDAL.shared.loadSquareList { (responseObject, error) in
             if responseObject == nil || error != nil {
                 completion(false)
                 return

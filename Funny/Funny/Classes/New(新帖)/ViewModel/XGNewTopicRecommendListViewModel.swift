@@ -23,7 +23,7 @@ extension XGNewTopicRecommendListViewModel
     /// - Parameter completion: 完成回调
     open func loadNewTopicRecommendList(completion:@escaping(Bool) -> Void) -> Void
     {
-        XGDataManager.loadNewTopicRecommendList { (responseObject, error) in
+        XGTopicDAL.shared.loadNewTopicRecommendList { (responseObject, error) in
             if responseObject == nil || error != nil {
                 completion(false)
                 return

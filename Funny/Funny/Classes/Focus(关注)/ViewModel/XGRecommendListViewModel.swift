@@ -24,7 +24,7 @@ extension XGRecommendListViewModel
     /// - Parameter completion: 完成回调
     open func loadRecommendCategoryList(completion:@escaping (Bool) -> Void) -> Void
     {
-        XGDataManager.loadRecommendCategoryList { (responseObject, error) in
+        XGTopicDAL.shared.loadRecommendCategoryList { (responseObject, error) in
             if responseObject == nil || error != nil {
                 completion(false)
                 return
@@ -54,7 +54,7 @@ extension XGRecommendListViewModel
             return
         }
         
-        XGDataManager.loadRecommendItemList(categoryId: recommendCategoryModel.id, page: page) { (responseObject, error) in
+        XGTopicDAL.shared.loadRecommendItemList(categoryId: recommendCategoryModel.id, page: page) { (responseObject, error) in
             if responseObject == nil || error != nil {
                 completion(false)
                 return
