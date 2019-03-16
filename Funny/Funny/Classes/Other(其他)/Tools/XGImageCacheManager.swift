@@ -64,7 +64,7 @@ extension XGImageCacheManager
         
         // 如果本地有缓存 进行处理
         if let image = SDWebImageManager.shared().imageCache?.imageFromCache(forKey: key as String) {
-            setUpImageToCache(key: key, image: image, size: size, backgroundColor: backgroundColor, completion: completion)
+            setUpImageToCache(key: key, image: image, size: size, backgroundColor: backgroundColor, isUserIcon: isUserIcon, isLongPicture: isLongPicture, completion: completion)
             return
         }
         
@@ -75,7 +75,7 @@ extension XGImageCacheManager
                 return
             }
             
-            self.setUpImageToCache(key: key, image: image!, size: size, backgroundColor: backgroundColor, completion: completion)
+            self.setUpImageToCache(key: key, image: image!, size: size, backgroundColor: backgroundColor, isUserIcon: isUserIcon, isLongPicture: isLongPicture, completion: completion)
         }
     }
     
@@ -140,7 +140,7 @@ extension XGImageCacheManager
             
             DispatchQueue.main.sync {
                 // 保存到内存中
-                self.imageCache.setObject(image, forKey: key)
+                self.imageCache.setObject(newImage!, forKey: key)
                 
                 // 完成回调
                 completion(newImage)

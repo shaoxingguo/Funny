@@ -7,15 +7,15 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 /// 分类cell重用标识符
 private let kXGRecommendCategoryTableViewCellReuseIdentifer:String = "XGRecommendCategoryTableViewCell"
+/// 推荐标签重用标识符
+private let kXGRecommendItemTableViewCellReuseIdentifer:String = "XGRecommendItemTableViewCell"
 
 class XGRecommendFocusTableViewController: UIViewController
 {
-    /// 分类列表视图模型
-    private lazy var recommendListViewModel = XGRecommendListViewModel()
-    
     // MARK: - 控制器生命周期方法
     
     override func loadView()
@@ -34,12 +34,23 @@ class XGRecommendFocusTableViewController: UIViewController
         loadRecmmendCategoryData()
     }
     
-    // MARK: - 懒加载
+    override func viewWillDisappear(_ animated: Bool)
+    {
+        super.viewWillDisappear(animated)
+        
+        SVProgressHUD.dismiss()
+    }
     
+    // MARK: - 懒加载 && 私有属性
+    
+    /// 分类列表视图模型
+    private lazy var recommendListViewModel = XGRecommendListViewModel()
     /// 分类列表
     private lazy var recommendCategoryListTableView = UITableView()
     /// 推荐标签列表
     private lazy var recommendItemListTableView = UITableView()
+    /// 当前选中的分类索引
+    private var selectedCategoryIndex:Int = 0
 }
 
 // MARK: - UITableViewDataSource
@@ -58,7 +69,7 @@ extension XGRecommendFocusTableViewController : UITableViewDataSource
             return recommendListViewModel.categoryList.count
         } else {
             // 右边推荐标签tableView
-            return recommendListViewModel.itemList.count
+            return recommendListViewModel.categoryList.count > 0 ?recommendListViewModel.categoryList[selectedCategoryIndex].items.count : 0
         }
     }
     
@@ -67,11 +78,13 @@ extension XGRecommendFocusTableViewController : UITableViewDataSource
         if tableView == recommendCategoryListTableView {
             // 左边分类tableView
             let cell = tableView.dequeueReusableCell(withIdentifier: kXGRecommendCategoryTableViewCellReuseIdentifer) as! XGRecommendCategoryTableViewCell
-            cell.focusCategoryModel = recommendListViewModel.categoryList[indexPath.row]
+            cell.recommendCategoryModel = recommendListViewModel.categoryList[indexPath.row]
             return cell
         } else {
             // 右边推荐标签tableView
-            return UITableViewCell(style: .default, reuseIdentifier: "id")
+            let cell = tableView.dequeueReusableCell(withIdentifier: kXGRecommendItemTableViewCellReuseIdentifer) as! XGRecommendItemTableViewCell
+            cell.recommendItemModel = recommendListViewModel.categoryList[selectedCategoryIndex].items[indexPath.row]
+            return cell
         }
     }
 }
@@ -83,7 +96,9 @@ private extension XGRecommendFocusTableViewController
     /// 加载推荐分类数据
     func loadRecmmendCategoryData() -> Void
     {
+        SVProgressHUD.show()
         recommendListViewModel.loadRecommendCategoryList { (isSuccess) in
+            SVProgressHUD.dismiss()
             if !isSuccess {
                 XGPrint("加载推荐分类数据失败")
                 return
@@ -93,13 +108,15 @@ private extension XGRecommendFocusTableViewController
             self.recommendCategoryListTableView.reloadData()
             // 选中第一个分类
             self.recommendCategoryListTableView.selectRow(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: .none)
+            // 加载分类下数据
+            self.loadRecommendItemData()
         }
     }
     
     /// 加载推荐标签数据
-    func loadRecommendItemData(recommendCategoryModel:XGRecommendCategoryModel) -> Void
+    func loadRecommendItemData() -> Void
     {
-        recommendListViewModel.loadRecommendItemList(categoryId: recommendCategoryModel.id) { (isSuccess) in
+        recommendListViewModel.loadRecommendItemList(recommendCategoryModel: recommendListViewModel.categoryList[selectedCategoryIndex]) { (isSuccess) in
             if !isSuccess {
                 XGPrint("加载推荐标签数据失败")
                 return
@@ -139,9 +156,15 @@ private extension XGRecommendFocusTableViewController
     {
         // 设置代理
         recommendCategoryListTableView.dataSource = self
+        recommendItemListTableView.dataSource = self
         
         // 注册cell
         recommendCategoryListTableView.register(XGRecommendCategoryTableViewCell.self, forCellReuseIdentifier: kXGRecommendCategoryTableViewCellReuseIdentifer)
+        recommendItemListTableView.register(XGRecommendItemTableViewCell.self, forCellReuseIdentifier: kXGRecommendItemTableViewCellReuseIdentifer)
+        
+        // 设置行高
+        recommendCategoryListTableView.rowHeight = 44
+        recommendItemListTableView.rowHeight = 60
     }
 }
 

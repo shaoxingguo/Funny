@@ -16,4 +16,6 @@ import UIKit
     var id:Int = 0
     /// 分类名称
     var name:String?
+    /// 推荐标签数组
+    var items = [XGRecommendItemModel]()
 }

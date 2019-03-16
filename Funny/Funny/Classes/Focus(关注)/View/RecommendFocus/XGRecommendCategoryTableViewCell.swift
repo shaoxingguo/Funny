@@ -12,9 +12,9 @@ class XGRecommendCategoryTableViewCell: UITableViewCell
 {
     // MARK: - 数据模型
     
-    open var focusCategoryModel:XGRecommendCategoryModel? {
+    open var recommendCategoryModel:XGRecommendCategoryModel? {
         didSet {
-            titleLabel.text = focusCategoryModel?.name
+            titleLabel.text = recommendCategoryModel?.name
         }
     }
     

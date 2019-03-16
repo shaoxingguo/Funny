@@ -216,7 +216,7 @@ extension XGVoicePlayerViewController
         modalPresentationCapturesStatusBarAppearance = true
         
         progressSlider.setThumbImage(UIImage(named: "player_slider_playback_thumb"), for: .normal)
-        view.addSubview(imageView)
+        view.insertSubview(imageView, at: 1)
     }
     
     // 注册通知

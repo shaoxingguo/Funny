@@ -27,6 +27,13 @@ class XGNewTopicRecommendTableViewController: UITableViewController
         navigationItem.title = "热门推荐"
         loadData()
     }
+    
+    override func viewWillDisappear(_ animated: Bool)
+    {
+        super.viewWillDisappear(animated)
+        
+        SVProgressHUD.dismiss()
+    }
 }
 
 // MARK: - UITableViewDataSource
