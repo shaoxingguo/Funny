@@ -102,7 +102,11 @@ extension XGTopicDAL
                 return
             }
             
-            let dictArray = (responseObject as? [String:Any])?["list"] as? [[String:Any]]
+            var dictArray = (responseObject as? [String:Any])?["list"] as? [[String:Any]]
+            // 帖子按id进行排序 从服务器请求回来的数据并没有进行排序
+            dictArray?.sort(by: { (dict1, dict2) -> Bool in
+                return (dict1["t"] as! Int) > (dict2["t"] as! Int)
+            })
             // 保存数据到数据库
             self.saveTopicListToSqlite(dictArray: dictArray)
             completion(dictArray,nil)
@@ -200,9 +204,10 @@ private extension XGTopicDAL
         sql += "ORDER BY id DESC LIMIT 20;\n"
         let result = SQLiteManager.query(sql: sql)
         for dictionary in result {
-            if let str = dictionary["topic"] as? String,
-                let data = str.data(using: .utf8),
+            if let str = dictionary["topic"] as? String,  // 取出字符串
+                let data = str.data(using: .utf8),        // 字符串转二进制数据
                 let topic = (try? JSONSerialization.jsonObject(with: data, options: [])) as? [String:Any]  {
+                // 二进制json序列化成字典
                 topicList.append(topic)
             }
         }
@@ -223,9 +228,10 @@ private extension XGTopicDAL
             for dict in dictArray {
                 // 遍历数组字典 将字典序列化成二进制数据 二进制再转成字符串存入数据库
                 if let data = try? JSONSerialization.data(withJSONObject: dict, options: [.prettyPrinted]),
-                   let str = String(data: data, encoding: .utf8) {
-                    let sql = "INSERT OR REPLACE INTO T_Topic (topic) VALUES (?);"
-                    let isSuccess = db.executeUpdate(sql, withArgumentsIn: [str])
+                   let str = String(data: data, encoding: .utf8),
+                   let id = dict["t"] as? Int {
+                    let sql = "INSERT OR REPLACE INTO T_Topic (id,topic) VALUES (?,?);"
+                    let isSuccess = db.executeUpdate(sql, withArgumentsIn: [id,str])
                     
                     if isSuccess == false {
                         // 插入错误 进行回滚
@@ -236,6 +242,7 @@ private extension XGTopicDAL
             }
         }
     }
+    
     /// 清除过期数据
     func clearCache() -> Void
     {
