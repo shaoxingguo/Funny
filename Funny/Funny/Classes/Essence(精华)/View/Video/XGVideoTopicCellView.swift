@@ -26,7 +26,12 @@ class XGVideoTopicCellView: UIView
 
     @IBAction private func playVideoAction(_ sender: UIButton)
     {
-        XGPrint("播放视频")
+        guard let topicViewModel = topicViewModel else {
+            return
+        }
+        
+        // 发布通知
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: kTopicCellDidTapNotification), object: nil, userInfo: [kTopicTypeKey:XGTopicType.Video,kTopicViewModelKey: topicViewModel])
     }
     
     // MARK: - 私有属性

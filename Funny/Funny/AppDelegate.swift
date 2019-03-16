@@ -19,6 +19,11 @@ class AppDelegate: UIResponder
     private func initialSetting() -> Void
     {
         SVProgressHUD.setMaximumDismissTimeInterval(2)
+        
+        // 最大缓存尺寸
+        VGPlayerCacheManager.shared.cacheConfig.maxCacheSize = 160000000
+        /// 缓存时间
+        VGPlayerCacheManager.shared.cacheConfig.maxCacheAge = 60 * 60 * 24 * 3
     }
 }
 
@@ -43,9 +48,10 @@ extension AppDelegate:UIApplicationDelegate
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
     }
     
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    func applicationDidEnterBackground(_ application: UIApplication)
+    {
+        // 清除过期缓存
+       VGPlayerCacheManager.shared.cleanOldFiles()
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {

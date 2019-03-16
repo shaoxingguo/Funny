@@ -140,10 +140,20 @@ extension XGSeeBigPictureViewController:UIScrollViewDelegate
 
  // MARK: - 其他方法
 
-private extension XGSeeBigPictureViewController
+extension XGSeeBigPictureViewController
 {
+    /// 支持方向
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return [.portrait]
+    }
+    
+    /// 状态栏样式
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     /// 设置图片
-    func setImage() -> Void
+    private func setImage() -> Void
     {
         guard let imageURL = topicViewModel?.imageURL else {
             return
@@ -194,7 +204,7 @@ private extension XGSeeBigPictureViewController
     }
     
     /// 设置界面
-     func setUpUI() -> Void
+    private func setUpUI() -> Void
     {
         modalPresentationCapturesStatusBarAppearance = true
         
@@ -214,7 +224,7 @@ private extension XGSeeBigPictureViewController
     }
     
     /// 设置scrollView
-    func setUpScrollView() -> Void
+    private func setUpScrollView() -> Void
     {
         // 设置scrollView
         scrollView.showsHorizontalScrollIndicator = false

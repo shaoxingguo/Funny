@@ -57,6 +57,29 @@
 		8C6A6C1E223A774400739B11 /* XGRegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C6A6C1D223A774400739B11 /* XGRegisterView.xib */; };
 		8C6A6C28223A922000739B11 /* XGVoicePlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C6A6C27223A922000739B11 /* XGVoicePlayerViewController.xib */; };
 		8C74F2C2223C844600C7D7EE /* XGRecommendItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74F2C1223C844600C7D7EE /* XGRecommendItemTableViewCell.swift */; };
+		8C74F2DB223CD4F600C7D7EE /* VGPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74F2C4223CD4F400C7D7EE /* VGPlayer.swift */; };
+		8C74F2DC223CD4F600C7D7EE /* VGPlayerSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74F2C5223CD4F400C7D7EE /* VGPlayerSlider.swift */; };
+		8C74F2DD223CD4F600C7D7EE /* VGPlayerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74F2C6223CD4F400C7D7EE /* VGPlayerUtils.swift */; };
+		8C74F2DE223CD4F600C7D7EE /* Timer+VGPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74F2C7223CD4F500C7D7EE /* Timer+VGPlayer.swift */; };
+		8C74F2DF223CD4F600C7D7EE /* VGPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74F2C8223CD4F500C7D7EE /* VGPlayerView.swift */; };
+		8C74F2E0223CD4F600C7D7EE /* VGPlayerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74F2C9223CD4F500C7D7EE /* VGPlayerError.swift */; };
+		8C74F2E1223CD4F600C7D7EE /* VGPlayerCacheConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74F2CB223CD4F500C7D7EE /* VGPlayerCacheConfiguration.swift */; };
+		8C74F2E2223CD4F600C7D7EE /* VGPlayerCacheMediaWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74F2CC223CD4F500C7D7EE /* VGPlayerCacheMediaWorker.swift */; };
+		8C74F2E3223CD4F600C7D7EE /* VGPlayerDownloadURLSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74F2CD223CD4F500C7D7EE /* VGPlayerDownloadURLSessionManager.swift */; };
+		8C74F2E4223CD4F600C7D7EE /* VGPlayerCacheMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74F2CE223CD4F500C7D7EE /* VGPlayerCacheMedia.swift */; };
+		8C74F2E5223CD4F600C7D7EE /* VGPlayerDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74F2CF223CD4F500C7D7EE /* VGPlayerDownloader.swift */; };
+		8C74F2E6223CD4F600C7D7EE /* VGPlayerResourceLoaderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74F2D0223CD4F500C7D7EE /* VGPlayerResourceLoaderManager.swift */; };
+		8C74F2E7223CD4F600C7D7EE /* VGPlayerCacheMediaConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74F2D1223CD4F500C7D7EE /* VGPlayerCacheMediaConfiguration.swift */; };
+		8C74F2E8223CD4F600C7D7EE /* VGPlayerCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74F2D2223CD4F500C7D7EE /* VGPlayerCacheManager.swift */; };
+		8C74F2E9223CD4F600C7D7EE /* VGPlayerResourceLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74F2D3223CD4F500C7D7EE /* VGPlayerResourceLoader.swift */; };
+		8C74F2EA223CD4F600C7D7EE /* VGPlayerResourceLoadingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74F2D4223CD4F500C7D7EE /* VGPlayerResourceLoadingRequest.swift */; };
+		8C74F2EB223CD4F600C7D7EE /* VGPlayerDownloadActionWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74F2D5223CD4F500C7D7EE /* VGPlayerDownloadActionWorker.swift */; };
+		8C74F2EC223CD4F600C7D7EE /* VGPlayerCacheSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74F2D6223CD4F500C7D7EE /* VGPlayerCacheSession.swift */; };
+		8C74F2ED223CD4F600C7D7EE /* VGPlayerCacheAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74F2D7223CD4F500C7D7EE /* VGPlayerCacheAction.swift */; };
+		8C74F2EE223CD4F600C7D7EE /* UIButton+VGPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74F2D8223CD4F500C7D7EE /* UIButton+VGPlayer.swift */; };
+		8C74F2EF223CD4F600C7D7EE /* VGPlayerLoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74F2D9223CD4F500C7D7EE /* VGPlayerLoadingIndicator.swift */; };
+		8C74F2F0223CD4F600C7D7EE /* VGSubtitles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74F2DA223CD4F600C7D7EE /* VGSubtitles.swift */; };
+		8C74F2F2223CD5B700C7D7EE /* XGVideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74F2F1223CD5B700C7D7EE /* XGVideoPlayerViewController.swift */; };
 		8C9CBD3F223733CF0042BA21 /* XGNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CBD3E223733CF0042BA21 /* XGNetworkManager.swift */; };
 		8C9CBD422237361A0042BA21 /* XGDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CBD412237361A0042BA21 /* XGDataManager.swift */; };
 		8C9CBD44223738890042BA21 /* XGTopicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CBD43223738890042BA21 /* XGTopicModel.swift */; };
@@ -142,6 +165,29 @@
 		8C6A6C1D223A774400739B11 /* XGRegisterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XGRegisterView.xib; sourceTree = "<group>"; };
 		8C6A6C27223A922000739B11 /* XGVoicePlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XGVoicePlayerViewController.xib; sourceTree = "<group>"; };
 		8C74F2C1223C844600C7D7EE /* XGRecommendItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGRecommendItemTableViewCell.swift; sourceTree = "<group>"; };
+		8C74F2C4223CD4F400C7D7EE /* VGPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGPlayer.swift; sourceTree = "<group>"; };
+		8C74F2C5223CD4F400C7D7EE /* VGPlayerSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGPlayerSlider.swift; sourceTree = "<group>"; };
+		8C74F2C6223CD4F400C7D7EE /* VGPlayerUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGPlayerUtils.swift; sourceTree = "<group>"; };
+		8C74F2C7223CD4F500C7D7EE /* Timer+VGPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Timer+VGPlayer.swift"; sourceTree = "<group>"; };
+		8C74F2C8223CD4F500C7D7EE /* VGPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGPlayerView.swift; sourceTree = "<group>"; };
+		8C74F2C9223CD4F500C7D7EE /* VGPlayerError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGPlayerError.swift; sourceTree = "<group>"; };
+		8C74F2CB223CD4F500C7D7EE /* VGPlayerCacheConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGPlayerCacheConfiguration.swift; sourceTree = "<group>"; };
+		8C74F2CC223CD4F500C7D7EE /* VGPlayerCacheMediaWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGPlayerCacheMediaWorker.swift; sourceTree = "<group>"; };
+		8C74F2CD223CD4F500C7D7EE /* VGPlayerDownloadURLSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGPlayerDownloadURLSessionManager.swift; sourceTree = "<group>"; };
+		8C74F2CE223CD4F500C7D7EE /* VGPlayerCacheMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGPlayerCacheMedia.swift; sourceTree = "<group>"; };
+		8C74F2CF223CD4F500C7D7EE /* VGPlayerDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGPlayerDownloader.swift; sourceTree = "<group>"; };
+		8C74F2D0223CD4F500C7D7EE /* VGPlayerResourceLoaderManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGPlayerResourceLoaderManager.swift; sourceTree = "<group>"; };
+		8C74F2D1223CD4F500C7D7EE /* VGPlayerCacheMediaConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGPlayerCacheMediaConfiguration.swift; sourceTree = "<group>"; };
+		8C74F2D2223CD4F500C7D7EE /* VGPlayerCacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGPlayerCacheManager.swift; sourceTree = "<group>"; };
+		8C74F2D3223CD4F500C7D7EE /* VGPlayerResourceLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGPlayerResourceLoader.swift; sourceTree = "<group>"; };
+		8C74F2D4223CD4F500C7D7EE /* VGPlayerResourceLoadingRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGPlayerResourceLoadingRequest.swift; sourceTree = "<group>"; };
+		8C74F2D5223CD4F500C7D7EE /* VGPlayerDownloadActionWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGPlayerDownloadActionWorker.swift; sourceTree = "<group>"; };
+		8C74F2D6223CD4F500C7D7EE /* VGPlayerCacheSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGPlayerCacheSession.swift; sourceTree = "<group>"; };
+		8C74F2D7223CD4F500C7D7EE /* VGPlayerCacheAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGPlayerCacheAction.swift; sourceTree = "<group>"; };
+		8C74F2D8223CD4F500C7D7EE /* UIButton+VGPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+VGPlayer.swift"; sourceTree = "<group>"; };
+		8C74F2D9223CD4F500C7D7EE /* VGPlayerLoadingIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGPlayerLoadingIndicator.swift; sourceTree = "<group>"; };
+		8C74F2DA223CD4F600C7D7EE /* VGSubtitles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGSubtitles.swift; sourceTree = "<group>"; };
+		8C74F2F1223CD5B700C7D7EE /* XGVideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGVideoPlayerViewController.swift; sourceTree = "<group>"; };
 		8C9CBD3E223733CF0042BA21 /* XGNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XGNetworkManager.swift; sourceTree = "<group>"; };
 		8C9CBD412237361A0042BA21 /* XGDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGDataManager.swift; sourceTree = "<group>"; };
 		8C9CBD43223738890042BA21 /* XGTopicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XGTopicModel.swift; sourceTree = "<group>"; };
@@ -432,6 +478,7 @@
 		8C3FE07422368DF300CAF4B0 /* Other(其他) */ = {
 			isa = PBXGroup;
 			children = (
+				8C74F2C3223CD4D700C7D7EE /* VGPlayer */,
 				8C9CBD3D223733A90042BA21 /* Tools */,
 				8C3FE07522368DF300CAF4B0 /* Category */,
 				8C3FE07B22368DF300CAF4B0 /* Common */,
@@ -499,6 +546,7 @@
 		8C3FE09122369AD800CAF4B0 /* All */ = {
 			isa = PBXGroup;
 			children = (
+				8C3FE0A322369DC300CAF4B0 /* XGAllTableViewController.swift */,
 			);
 			path = All;
 			sourceTree = "<group>";
@@ -510,6 +558,7 @@
 				8CD5D3122237EBB6009A5BD7 /* XGVideoTopicCellView.swift */,
 				8CD5D30A2237CBE2009A5BD7 /* XGVideoTopicTableViewCell.swift */,
 				8C3FE09D22369DAB00CAF4B0 /* XGVideoTableViewController.swift */,
+				8C74F2F1223CD5B700C7D7EE /* XGVideoPlayerViewController.swift */,
 			);
 			path = Video;
 			sourceTree = "<group>";
@@ -544,7 +593,6 @@
 				8C3FE09F22369DB200CAF4B0 /* XGVoiceTableViewController.swift */,
 				8C6A6C27223A922000739B11 /* XGVoicePlayerViewController.xib */,
 				8CC7DB3C223A95630052DBB6 /* XGVoicePlayerViewController.swift */,
-				8C3FE0A322369DC300CAF4B0 /* XGAllTableViewController.swift */,
 			);
 			path = Voice;
 			sourceTree = "<group>";
@@ -584,6 +632,43 @@
 				1E3FC2A792F29E37B5F15D78 /* Pods-Funny.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		8C74F2C3223CD4D700C7D7EE /* VGPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				8C74F2CA223CD4F500C7D7EE /* MediaCache */,
+				8C74F2C7223CD4F500C7D7EE /* Timer+VGPlayer.swift */,
+				8C74F2D8223CD4F500C7D7EE /* UIButton+VGPlayer.swift */,
+				8C74F2C4223CD4F400C7D7EE /* VGPlayer.swift */,
+				8C74F2C9223CD4F500C7D7EE /* VGPlayerError.swift */,
+				8C74F2D9223CD4F500C7D7EE /* VGPlayerLoadingIndicator.swift */,
+				8C74F2C5223CD4F400C7D7EE /* VGPlayerSlider.swift */,
+				8C74F2C6223CD4F400C7D7EE /* VGPlayerUtils.swift */,
+				8C74F2C8223CD4F500C7D7EE /* VGPlayerView.swift */,
+				8C74F2DA223CD4F600C7D7EE /* VGSubtitles.swift */,
+			);
+			path = VGPlayer;
+			sourceTree = "<group>";
+		};
+		8C74F2CA223CD4F500C7D7EE /* MediaCache */ = {
+			isa = PBXGroup;
+			children = (
+				8C74F2CB223CD4F500C7D7EE /* VGPlayerCacheConfiguration.swift */,
+				8C74F2CC223CD4F500C7D7EE /* VGPlayerCacheMediaWorker.swift */,
+				8C74F2CD223CD4F500C7D7EE /* VGPlayerDownloadURLSessionManager.swift */,
+				8C74F2CE223CD4F500C7D7EE /* VGPlayerCacheMedia.swift */,
+				8C74F2CF223CD4F500C7D7EE /* VGPlayerDownloader.swift */,
+				8C74F2D0223CD4F500C7D7EE /* VGPlayerResourceLoaderManager.swift */,
+				8C74F2D1223CD4F500C7D7EE /* VGPlayerCacheMediaConfiguration.swift */,
+				8C74F2D2223CD4F500C7D7EE /* VGPlayerCacheManager.swift */,
+				8C74F2D3223CD4F500C7D7EE /* VGPlayerResourceLoader.swift */,
+				8C74F2D4223CD4F500C7D7EE /* VGPlayerResourceLoadingRequest.swift */,
+				8C74F2D5223CD4F500C7D7EE /* VGPlayerDownloadActionWorker.swift */,
+				8C74F2D6223CD4F500C7D7EE /* VGPlayerCacheSession.swift */,
+				8C74F2D7223CD4F500C7D7EE /* VGPlayerCacheAction.swift */,
+			);
+			path = MediaCache;
 			sourceTree = "<group>";
 		};
 		8C9CBD3D223733A90042BA21 /* Tools */ = {
@@ -787,10 +872,13 @@
 				8C0F74FE2238DEA50050715D /* Int+Extension.swift in Sources */,
 				8C3FE0A422369DC300CAF4B0 /* XGAllTableViewController.swift in Sources */,
 				8CD5D3132237EBB6009A5BD7 /* XGVideoTopicCellView.swift in Sources */,
+				8C74F2EA223CD4F600C7D7EE /* VGPlayerResourceLoadingRequest.swift in Sources */,
 				8CD5D2DD22376AF9009A5BD7 /* XGBaseTopicTableViewCell.swift in Sources */,
 				8C21DD77223B3EE000763EC2 /* XGRecommendFocusTableViewController.swift in Sources */,
+				8C74F2E6223CD4F600C7D7EE /* VGPlayerResourceLoaderManager.swift in Sources */,
 				8C0F74F42238CFB20050715D /* XGNewTopicRecommendTableViewController.swift in Sources */,
 				8C1883E522391E7700FB7614 /* Bundle+Extension.swift in Sources */,
+				8C74F2ED223CD4F600C7D7EE /* VGPlayerCacheAction.swift in Sources */,
 				8C3FE08822368DF300CAF4B0 /* XGMainViewController.swift in Sources */,
 				8C9CBD4A22373E150042BA21 /* XGTopicListViewModel.swift in Sources */,
 				8CD5D2E022376BE0009A5BD7 /* XGTopicCellTopView.swift in Sources */,
@@ -801,15 +889,26 @@
 				8C1883E722393F3F00FB7614 /* XGSquareModel.swift in Sources */,
 				8CD5D2E622379BD5009A5BD7 /* XGTopicCellBottomView.swift in Sources */,
 				8C3FE09E22369DAB00CAF4B0 /* XGVideoTableViewController.swift in Sources */,
+				8C74F2E4223CD4F600C7D7EE /* VGPlayerCacheMedia.swift in Sources */,
+				8C74F2E3223CD4F600C7D7EE /* VGPlayerDownloadURLSessionManager.swift in Sources */,
 				8C3FE08422368DF300CAF4B0 /* UIButton+Extension.swift in Sources */,
+				8C74F2F2223CD5B700C7D7EE /* XGVideoPlayerViewController.swift in Sources */,
+				8C74F2F0223CD4F600C7D7EE /* VGSubtitles.swift in Sources */,
 				8C21DD71223B3C7B00763EC2 /* XGRecommendCategoryModel.swift in Sources */,
 				8C3FE08722368DF300CAF4B0 /* XGCommon.swift in Sources */,
 				8C0F74FB2238D89E0050715D /* XGNewTopicRecommendTableViewCell.swift in Sources */,
 				8CD5D2E4223776FA009A5BD7 /* XGImageCacheManager.swift in Sources */,
+				8C74F2E7223CD4F600C7D7EE /* VGPlayerCacheMediaConfiguration.swift in Sources */,
 				8C9CBD4822373C7F0042BA21 /* XGHotCommentModel.swift in Sources */,
+				8C74F2E9223CD4F600C7D7EE /* VGPlayerResourceLoader.swift in Sources */,
 				8C3FE08222368DF300CAF4B0 /* UIColor+Extension.swift in Sources */,
+				8C74F2EB223CD4F600C7D7EE /* VGPlayerDownloadActionWorker.swift in Sources */,
 				8C3FE090223691FE00CAF4B0 /* XGMineTableViewController.swift in Sources */,
+				8C74F2DF223CD4F600C7D7EE /* VGPlayerView.swift in Sources */,
 				8C3FE08622368DF300CAF4B0 /* UIImage+Extension.swift in Sources */,
+				8C74F2E1223CD4F600C7D7EE /* VGPlayerCacheConfiguration.swift in Sources */,
+				8C74F2E0223CD4F600C7D7EE /* VGPlayerError.swift in Sources */,
+				8C74F2EF223CD4F600C7D7EE /* VGPlayerLoadingIndicator.swift in Sources */,
 				8C0F74F22238CB8D0050715D /* XGNavigationController.swift in Sources */,
 				8CD5D2FF2237B0E3009A5BD7 /* XGHotCommentView.swift in Sources */,
 				8C0611F5223A2C8400B19A9A /* XGLoginRegisterViewController.swift in Sources */,
@@ -823,20 +922,29 @@
 				8C6A6C1C223A773900739B11 /* XGRegisterView.swift in Sources */,
 				8CD5D3152237EBC3009A5BD7 /* XGVoiceTopicCellView.swift in Sources */,
 				8C9CBD4C22373EC80042BA21 /* XGTopicViewModel.swift in Sources */,
+				8C74F2EC223CD4F600C7D7EE /* VGPlayerCacheSession.swift in Sources */,
 				8C9CBD44223738890042BA21 /* XGTopicModel.swift in Sources */,
 				8C064F9D223C7FC8008C2601 /* XGRecommendItemModel.swift in Sources */,
 				8C064F9B223C76C1008C2601 /* XGRecommendCategoryTableViewCell.swift in Sources */,
+				8C74F2E8223CD4F600C7D7EE /* VGPlayerCacheManager.swift in Sources */,
+				8C74F2E2223CD4F600C7D7EE /* VGPlayerCacheMediaWorker.swift in Sources */,
 				8C1883E322391E6A00FB7614 /* PHPhotoLibrary+Extension.swift in Sources */,
 				8C3FE08322368DF300CAF4B0 /* UILabel+Extension.swift in Sources */,
+				8C74F2DC223CD4F600C7D7EE /* VGPlayerSlider.swift in Sources */,
 				8C3FE09C22369DA200CAF4B0 /* XGPictureTableViewController.swift in Sources */,
 				8CD5D30F2237CC05009A5BD7 /* XGWordTopicTableViewCell.swift in Sources */,
+				8C74F2DB223CD4F600C7D7EE /* VGPlayer.swift in Sources */,
 				8CC7DB3E223A95630052DBB6 /* XGVoicePlayerViewController.swift in Sources */,
+				8C74F2E5223CD4F600C7D7EE /* VGPlayerDownloader.swift in Sources */,
 				8C1883F02239488500FB7614 /* XGSettingItemModel.swift in Sources */,
 				8C0F74F82238D3570050715D /* XGNewTopicRecommendListViewModel.swift in Sources */,
 				8C0611F0223A25FD00B19A9A /* FileManager+Extension.swift in Sources */,
 				8C1883E922393F9600FB7614 /* XGSquareListViewModel.swift in Sources */,
+				8C74F2DE223CD4F600C7D7EE /* Timer+VGPlayer.swift in Sources */,
 				8C9CBD3F223733CF0042BA21 /* XGNetworkManager.swift in Sources */,
+				8C74F2DD223CD4F600C7D7EE /* VGPlayerUtils.swift in Sources */,
 				8CD5D3072237C90C009A5BD7 /* XGPictureTopicTableViewCell.swift in Sources */,
+				8C74F2EE223CD4F600C7D7EE /* UIButton+VGPlayer.swift in Sources */,
 				8CD5D30B2237CBE2009A5BD7 /* XGVideoTopicTableViewCell.swift in Sources */,
 				8C1883E022390AE800FB7614 /* XGTransitionAnimation.swift in Sources */,
 				8C0611F8223A360100B19A9A /* XGLoginView.swift in Sources */,

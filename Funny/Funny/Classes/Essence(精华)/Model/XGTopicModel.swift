@@ -51,6 +51,8 @@ import MJExtension
     var voicetime:Int = 0
     /// 音频资源
     var voiceuri:String?
+    /// 视频资源
+    var videouri:String?
 }
 
 // MARK: - MJExtension

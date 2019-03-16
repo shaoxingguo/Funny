@@ -60,6 +60,11 @@ class XGTopicViewModel
         return topicModel?.voiceuri
     }
     
+    /// 视频资源
+    open var videoURL:String? {
+        return topicModel?.videouri
+    }
+    
     /// 帖子id
     open var topicId:Int {
         return topicModel?.timeId ?? 0

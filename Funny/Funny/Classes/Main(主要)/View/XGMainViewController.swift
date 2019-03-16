@@ -49,6 +49,12 @@ class XGMainViewController: UITabBarController
     {
         XGPrint("别摸我")
     }
+    
+    // MARK: - 支持方向
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
 }
 
 // MARK: - 添加子控制器

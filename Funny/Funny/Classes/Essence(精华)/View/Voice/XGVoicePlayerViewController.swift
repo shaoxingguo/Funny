@@ -12,9 +12,18 @@ import FreeStreamer
 
 class XGVoicePlayerViewController: UIViewController
 {
-    /// 帖子视图模型
-    open var topicViewModel:XGTopicViewModel?
+    // MARK: - 构造方法
     
+    init(topicViewModel:XGTopicViewModel)
+    {
+        self.topicViewModel = topicViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     // MARK: - 控制器生命周期方法
     
     override func viewDidLoad()
@@ -128,12 +137,13 @@ class XGVoicePlayerViewController: UIViewController
     }
     
     // MARK: - 私有属性
-    
+    /// 帖子视图模型
+    private var topicViewModel:XGTopicViewModel
     /// 图片
     private var imageView = UIImageView()
     /// 音频播放器
     private lazy var audioController:FSAudioController = { [weak self] in
-        let urlString = self?.topicViewModel?.voiceURL
+        let urlString = self?.topicViewModel.voiceURL
         let voiceURL = URL(string: urlString!)
         let audioController = FSAudioController(url: voiceURL!)
         return audioController!
@@ -204,6 +214,11 @@ private extension XGVoicePlayerViewController
 
 extension XGVoicePlayerViewController
 {
+    /// 支持方向
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return [.portrait]
+    }
+    
     /// 状态栏样式
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -229,7 +244,7 @@ extension XGVoicePlayerViewController
     /// 设置图片
     private func setImageView() -> Void
     {
-        guard let imageURL = topicViewModel?.imageURL else {
+        guard let imageURL = topicViewModel.imageURL else {
             return
         }
         

@@ -42,10 +42,10 @@ class XGAllTableViewController: XGTopicTableViewController
         case .Picture:
             viewController = XGSeeBigPictureViewController(topicViewModel: topicViewModel)
         case .Video:
+            viewController = XGVideoPlayerViewController(topicViewModel: topicViewModel)
             break
         case .Voice:
-            viewController = XGVoicePlayerViewController()
-            (viewController as! XGVoicePlayerViewController).topicViewModel = topicViewModel
+            viewController = XGVoicePlayerViewController(topicViewModel: topicViewModel)
             break
         case .Word:
             break
