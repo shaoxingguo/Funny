@@ -16,4 +16,6 @@ pod 'MJRefresh'
 pod 'SDWebImage'
 pod 'SDWebImage/GIF'
 pod 'FreeStreamer'
+pod 'MJRefresh'
+
 end

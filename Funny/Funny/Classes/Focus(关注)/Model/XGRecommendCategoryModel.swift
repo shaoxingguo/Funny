@@ -18,4 +18,8 @@ import UIKit
     var name:String?
     /// 推荐标签数组
     var items = [XGRecommendItemModel]()
+    /// 页码
+    var page:Int = 0
+    /// 总页码
+    var totalPage:Int = 0
 }

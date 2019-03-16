@@ -112,12 +112,14 @@ extension XGDataManager
     ///
     /// - Parameters:
     ///   - categoryId: 分类ID
+    ///   - page: 页码
     ///   - completion: 完成回调
-    open class func loadRecommendItemList(categoryId:Int,completion:@escaping ([String:Any]?,Error?) -> Void) -> Void
+    open class func loadRecommendItemList(categoryId:Int,page:Int = 1, completion:@escaping ([String:Any]?,Error?) -> Void) -> Void
     {
         let parameters:[String:Any] = ["a" : "list",
                                        "c" : "subscribe",
-                                       "category_id": categoryId]
+                                       "category_id": categoryId,
+                                       "page": page]
         XGNetworkManager.request(type: .Get, URLString: kRecommendCategoryAPI, parameters: parameters) { (responseObject, error) in
             if responseObject == nil || error != nil {
                 completion(nil,error)

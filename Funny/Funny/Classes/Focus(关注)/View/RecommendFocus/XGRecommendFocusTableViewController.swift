@@ -8,6 +8,7 @@
 
 import UIKit
 import SVProgressHUD
+import MJRefresh
 
 /// 分类cell重用标识符
 private let kXGRecommendCategoryTableViewCellReuseIdentifer:String = "XGRecommendCategoryTableViewCell"
@@ -69,6 +70,7 @@ extension XGRecommendFocusTableViewController : UITableViewDataSource,UITableVie
             return recommendListViewModel.categoryList.count
         } else {
             // 右边推荐标签tableView
+              recommendItemListTableView.mj_footer.isHidden = (recommendListViewModel.categoryList.count == 0 || recommendListViewModel.categoryList[selectedCategoryIndex].items.count == 0)
             return recommendListViewModel.categoryList.count > 0 ?recommendListViewModel.categoryList[selectedCategoryIndex].items.count : 0
         }
     }
@@ -96,6 +98,7 @@ extension XGRecommendFocusTableViewController : UITableViewDataSource,UITableVie
             let recommendCategoryModel = recommendListViewModel.categoryList[selectedCategoryIndex]
             if recommendCategoryModel.items.count > 0 {
                 recommendItemListTableView.reloadData()
+                checkFooterStatus()
             } else {
                 recommendItemListTableView.reloadData()
                 loadRecommendItemData()
@@ -132,7 +135,7 @@ private extension XGRecommendFocusTableViewController
     }
     
     /// 加载推荐标签数据
-    func loadRecommendItemData() -> Void
+    @objc func loadRecommendItemData() -> Void
     {
         recommendListViewModel.loadRecommendItemList(recommendCategoryModel: recommendListViewModel.categoryList[selectedCategoryIndex]) { (isSuccess) in
             if !isSuccess {
@@ -142,6 +145,20 @@ private extension XGRecommendFocusTableViewController
             
             // 刷新表格
             self.recommendItemListTableView.reloadData()
+            self.checkFooterStatus()
+        }
+    }
+    
+    /// 检查上拉刷新控件状态
+    func checkFooterStatus() -> Void
+    {
+        // 当推荐分类或推荐标签没有数据时 隐藏上拉刷新控件
+        recommendItemListTableView.mj_footer.isHidden = (recommendListViewModel.categoryList.count == 0 || recommendListViewModel.categoryList[selectedCategoryIndex].items.count == 0)
+        let recommendCategoryModel = recommendListViewModel.categoryList[selectedCategoryIndex]
+        if recommendCategoryModel.items.count < recommendCategoryModel.count {
+            recommendItemListTableView.mj_footer.endRefreshing()
+        } else {
+            recommendItemListTableView.mj_footer.endRefreshingWithNoMoreData()
         }
     }
     
@@ -173,7 +190,7 @@ private extension XGRecommendFocusTableViewController
     /// 设置tableView
     func setUpTableView() -> Void
     {
-        // 设置代理
+        // 设置数据源和代理
         recommendCategoryListTableView.dataSource = self
         recommendCategoryListTableView.delegate = self
         recommendItemListTableView.dataSource = self
@@ -186,6 +203,9 @@ private extension XGRecommendFocusTableViewController
         // 设置行高
         recommendCategoryListTableView.rowHeight = 44
         recommendItemListTableView.rowHeight = 60
+        
+        // 设置上拉刷新
+        recommendItemListTableView.mj_footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(loadRecommendItemData))
+        recommendItemListTableView.mj_footer.backgroundColor = UIColor.white
     }
 }
-

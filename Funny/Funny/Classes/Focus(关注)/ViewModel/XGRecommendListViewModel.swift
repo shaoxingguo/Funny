@@ -46,7 +46,15 @@ extension XGRecommendListViewModel
     ///   - completion: 完成回调
     open func loadRecommendItemList(recommendCategoryModel:XGRecommendCategoryModel,completion:@escaping (Bool) -> Void) -> Void
     {
-        XGDataManager.loadRecommendItemList(categoryId: recommendCategoryModel.id) { (responseObject, error) in
+        // 判断页码 是否还有数据
+        let page = recommendCategoryModel.page == 0 ? 1 : recommendCategoryModel.page
+        if page == recommendCategoryModel.totalPage {
+            XGPrint("推荐标签已经全部加载完毕,没有更多数据")
+            completion(false)
+            return
+        }
+        
+        XGDataManager.loadRecommendItemList(categoryId: recommendCategoryModel.id, page: page) { (responseObject, error) in
             if responseObject == nil || error != nil {
                 completion(false)
                 return
@@ -55,7 +63,15 @@ extension XGRecommendListViewModel
             // 字典转模型
             let dictArray = responseObject?["list"] as? [[String:Any]]
             let itemModelList = XGRecommendItemModel.mj_objectArray(withKeyValuesArray: dictArray!) as? [XGRecommendItemModel]
+            // 标签总数
+            recommendCategoryModel.count = (responseObject?["count"] as? Int) ?? 0
+            // 总页码
+            recommendCategoryModel.totalPage = (responseObject?["total_page"] as? Int) ?? 0
+            // 当前页码
+            recommendCategoryModel.page += 1
+            // 标签数组
             recommendCategoryModel.items += (itemModelList ?? [])
+            // 完成回调
             completion(true)
         }
     }
