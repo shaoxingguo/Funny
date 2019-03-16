@@ -22,10 +22,12 @@ extension XGTopicListViewModel
     ///
     /// - Parameters:
     ///   - type: 帖子类型
-    ///   - completion: 完成类型
-    open func loadTopicList(type:XGTopicType,completion:@escaping (Bool)-> Void) -> Void
+    ///   - maxId: 帖子id 加载比此id小的帖子 加载更多数据
+    ///   - minId: 帖子id 加载比此id大的帖子 加载最新数据
+    ///   - completion: 完成回调
+    open func loadTopicList(type:XGTopicType,maxId:Int = 0, minId:Int = 0,completion:@escaping (Bool)-> Void) -> Void
     {
-        XGDataManager.loadTopicList(type: type) { (responseObject, error) in
+        XGDataManager.loadTopicList(type: type, maxId: maxId, minId: minId) { (responseObject, error) in
             if responseObject == nil || error != nil {
                 completion(false)
                 return
@@ -34,6 +36,11 @@ extension XGTopicListViewModel
             // 字典转模型
             let dictArr = responseObject?["list"] as? [[String:Any]]
             let topicModelArr = XGTopicModel.mj_objectArray(withKeyValuesArray: dictArr!) as? [XGTopicModel]
+            if minId != 0 {
+                // 下拉刷新 加载最新帖子 删除之前的帖子 加载最新数据
+                self.topicList.removeAll()
+            }
+            
             // 模型转视图模型
             for topicModel in topicModelArr ?? [] {
                 self.topicList.append(XGTopicViewModel(model: topicModel))

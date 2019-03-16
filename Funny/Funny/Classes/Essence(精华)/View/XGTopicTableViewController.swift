@@ -8,6 +8,7 @@
 
 import UIKit
 import SVProgressHUD
+import MJRefresh
 
 /// 视频cell重用标识符
 public let kVideoTopicTableViewCellReuseIdentifier:String = "XGVideoTopicTableViewCell"
@@ -37,7 +38,13 @@ class XGTopicTableViewController: UITableViewController
         super.viewDidLoad()
         
         setUpTableView()
-        loadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        
+        tableView.mj_header.beginRefreshing()
     }
 }
 
@@ -53,9 +60,15 @@ private extension XGTopicTableViewController
         
         // 取消默认64偏移
         tableView.contentInsetAdjustmentBehavior = .never
+        
+        // 设置下拉刷新
+        tableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(loadNewTopicList))
+        tableView.mj_header.isAutomaticallyChangeAlpha = true
+        // 设置上拉刷新
+        tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(loadMoreTopicList))
 
         // 设置边距
-        tableView.contentInset = UIEdgeInsets(top: kNavigationBarHeight + kToolBarHeight, left: 0, bottom: kTopicCellBottomViewHeight, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: kNavigationBarHeight + kToolBarHeight, left: 0, bottom: kTopicCellBottomViewHeight + tableView.mj_footer.height, right: 0)
         tableView.scrollIndicatorInsets = tableView.contentInset
         // 注册cell
         registerTableCell()
@@ -96,10 +109,31 @@ private extension XGTopicTableViewController
 
 private extension XGTopicTableViewController
 {
-    /// 加载数据
-    func loadData() -> Void
+    /// 加载最新帖子
+    @objc func loadNewTopicList() -> Void
     {
-        topicListViewModel.loadTopicList(type: topicType) { (isSuccess) in
+        let minId = topicListViewModel.topicList.first?.topicId ?? 0
+
+        topicListViewModel.loadTopicList(type: topicType, minId: minId) { (isSuccess) in
+            self.tableView.mj_header.endRefreshing()
+            if !isSuccess {
+                XGPrint("加载自定义帖子失败")
+                SVProgressHUD.showError(withStatus: "数据加载失败,请检查网络连接~")
+                return
+            }
+            
+            // 刷新表格
+            self.tableView.reloadData()
+        }
+    }
+    
+    /// 加载更多数据
+    @objc func loadMoreTopicList() -> Void
+    {
+        let count = topicListViewModel.topicList.count
+        let maxId = topicListViewModel.topicList.last?.topicId ?? 0
+        topicListViewModel.loadTopicList(type: topicType, maxId: maxId) { (isSuccess) in
+            count == self.topicListViewModel.topicList.count ? self.tableView.mj_footer.endRefreshingWithNoMoreData() : self.tableView.mj_footer.endRefreshing()
             if !isSuccess {
                 XGPrint("加载自定义帖子失败")
                 SVProgressHUD.showError(withStatus: "数据加载失败,请检查网络连接~")
@@ -123,6 +157,7 @@ extension XGTopicTableViewController
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
+        tableView.mj_footer.isHidden = (topicListViewModel.topicList.count == 0)
         return topicListViewModel.topicList.count
     }
     

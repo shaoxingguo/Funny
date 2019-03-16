@@ -60,6 +60,11 @@ class XGTopicViewModel
         return topicModel?.voiceuri
     }
     
+    /// 帖子id
+    open var topicId:Int {
+        return topicModel?.timeId ?? 0
+    }
+    
     /// 赞
     private(set) open var likeStr:String?
     /// 踩

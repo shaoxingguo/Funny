@@ -39,11 +39,23 @@ extension XGDataManager
     /// - Parameters:
     ///   - type: 帖子类型
     ///   - completion: 完成回调
-    open class func loadTopicList(type:XGTopicType,completion:@escaping ([String:Any]?,Error?) -> Void) -> Void
+    
+    /// 获取自定义类型的帖子
+    ///
+    /// - Parameters:
+    ///   - type: 帖子类型
+    ///   - maxId: 帖子id 加载比此id小的帖子 加载更多数据
+    ///   - minId: 帖子id 加载比此id大的帖子 加载最新数据
+    ///   - completion: 完成回调
+    open class func loadTopicList(type:XGTopicType,maxId:Int = 0, minId:Int = 0, completion:@escaping ([String:Any]?,Error?) -> Void) -> Void
     {
-        let parameters:[String:Any] = ["a" : "list",
+        var parameters:[String:Any] = ["a" : "list",
                           "c" : "data",
                           "type" : type.rawValue]
+        if maxId != 0 {
+            parameters["maxtime"] = maxId
+        }
+        
         XGNetworkManager.request(type: .Get, URLString: kTopicListAPI, parameters: parameters) { (responseObject, error) in
             if responseObject == nil || error != nil {
                 completion(nil,error)
