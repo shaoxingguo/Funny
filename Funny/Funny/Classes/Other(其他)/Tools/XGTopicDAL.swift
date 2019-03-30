@@ -74,7 +74,7 @@ extension XGTopicDAL
     {
         if !isNewTopicList && minId == 0 {
             // 非新帖模块 非下拉刷新
-            let dictArray = loadTopicListFromSqlite(maxId: maxId)
+            let dictArray = loadTopicListFromSqlite(maxId: maxId,topicType: type)
             if dictArray.count > 0 {
                 completion(dictArray,nil)
                 XGPrint("从数据库加载\(dictArray.count)条数据")
@@ -109,6 +109,7 @@ extension XGTopicDAL
             })
             // 保存数据到数据库
             self.saveTopicListToSqlite(dictArray: dictArray)
+            XGPrint("从网络加载\(dictArray?.count ?? 0)条数据")
             completion(dictArray,nil)
         }
     }
@@ -193,12 +194,21 @@ extension XGTopicDAL
 private extension XGTopicDAL
 {
     /// 从数据库中加载缓存数据
-    func loadTopicListFromSqlite(maxId:Int = 0) -> [[String:Any]]
+    func loadTopicListFromSqlite(maxId:Int = 0,topicType:XGTopicType) -> [[String:Any]]
     {
         var topicList = [[String:Any]]()
         var sql = "SELECT topic FROM T_Topic\n"
+        
         if maxId > 0 {
             sql += "WHERE id < \(maxId)\n"
+        }
+        
+        if topicType != .All {
+            sql += "AND topicType = \(topicType.rawValue)\n"
+            if !sql.contains("WHERE") {
+                let range = sql.range(of: "AND")
+                sql.replaceSubrange(range!, with: "WHERE")
+            }
         }
         
         sql += "ORDER BY id DESC LIMIT 20;\n"
@@ -229,9 +239,10 @@ private extension XGTopicDAL
                 // 遍历数组字典 将字典序列化成二进制数据 二进制再转成字符串存入数据库
                 if let data = try? JSONSerialization.data(withJSONObject: dict, options: [.prettyPrinted]),
                    let str = String(data: data, encoding: .utf8),
-                   let id = dict["t"] as? Int {
-                    let sql = "INSERT OR REPLACE INTO T_Topic (id,topic) VALUES (?,?);"
-                    let isSuccess = db.executeUpdate(sql, withArgumentsIn: [id,str])
+                   let id = dict["t"] as? Int,
+                   let topicType = dict["type"] as? String {
+                    let sql = "INSERT OR REPLACE INTO T_Topic (id,topic,topicType) VALUES (?,?,?);"
+                    let isSuccess = db.executeUpdate(sql, withArgumentsIn: [id,str,topicType])
                     
                     if isSuccess == false {
                         // 插入错误 进行回滚
